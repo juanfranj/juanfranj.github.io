@@ -1,0 +1,6 @@
+# app-ads.txt for MemoryKing
+# Publicidad autorizada para AdMob
+# Este archivo debe estar disponible públicamente en:
+# https://juanfranj.github.io/privace-policy-MemoryKing/app-ads.txt
+
+google.com, pub-3378097856628013, DIRECT, f08c47fec0942fa0
