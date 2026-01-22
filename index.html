@@ -646,6 +646,70 @@
             51%, 100% { opacity: 0; }
         }
 
+        /* PRIVACY POLICIES SECTION */
+        .privacy-section {
+            margin-bottom: 30px;
+        }
+
+        .privacy-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .privacy-title::before,
+        .privacy-title::after {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan));
+        }
+
+        .privacy-title::after {
+            background: linear-gradient(90deg, var(--neon-cyan), transparent);
+        }
+
+        .privacy-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .privacy-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            background: rgba(0, 245, 255, 0.03);
+            clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+            transition: all 0.3s ease;
+        }
+
+        .privacy-link:hover {
+            color: var(--neon-cyan);
+            border-color: var(--neon-cyan);
+            background: rgba(0, 245, 255, 0.1);
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .privacy-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             header {
@@ -749,11 +813,11 @@
 
             <div class="stats-bar">
                 <div class="stat-item">
-                    <span class="stat-value">4</span>
+                    <span class="stat-value">5</span>
                     <span class="stat-label">Apps</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value">3</span>
+                    <span class="stat-value">4</span>
                     <span class="stat-label">Juegos</span>
                 </div>
                 <div class="stat-item">
@@ -768,10 +832,38 @@
             <div class="section-header">
                 <div class="section-icon">🕹️</div>
                 <h2 class="section-title">Juegos</h2>
-                <span class="section-count">×3</span>
+                <span class="section-count">×4</span>
             </div>
 
             <div class="apps-grid">
+                <!-- Multiplication Race -->
+                <a href="https://play.google.com/store/apps/details?id=com.games.multiplicationrace"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="app-card glitch-hover">
+                    <div class="corner-marker tl"></div>
+                    <div class="corner-marker tr"></div>
+                    <div class="corner-marker bl"></div>
+                    <div class="corner-marker br"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <img src="images/app_icon_multiplicatiorace.webp" alt="Multiplication Race" class="app-icon">
+                            <div class="app-meta">
+                                <span class="featured-tag">★ Nuevo</span>
+                                <h3 class="app-name">Multiplication Race</h3>
+                                <p class="app-category">Educativo • Carreras</p>
+                            </div>
+                        </div>
+                        <p class="app-description">Compite en emocionantes carreras mientras dominas las tablas de multiplicar. Aprende matemáticas a toda velocidad.</p>
+                        <span class="app-cta">
+                            Play Store
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
                 <!-- Slide Quest -->
                 <a href="https://play.google.com/store/apps/details?id=com.games.puzzleslider"
                    target="_blank"
@@ -785,7 +877,6 @@
                         <div class="card-header">
                             <img src="images/app_icon_puzzle.webp" alt="Slide Quest" class="app-icon">
                             <div class="app-meta">
-                                <span class="featured-tag">★ Nuevo</span>
                                 <h3 class="app-name">Slide Quest</h3>
                                 <p class="app-category">Puzzle • Casual</p>
                             </div>
@@ -896,13 +987,26 @@
 
         <!-- Footer -->
         <footer>
+            <!-- Privacy Policies -->
+            <div class="privacy-section">
+                <p class="privacy-title">Políticas de Privacidad</p>
+                <div class="privacy-links">
+                    <a href="privacy-policy-slidequest.html" class="privacy-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Slide Quest
+                    </a>
+                    <a href="privacy-policy-multiplicationrace.html" class="privacy-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Multiplication Race
+                    </a>
+                </div>
+            </div>
+
             <nav class="footer-links">
-                <a href="privacy-policy-slidequest.html" class="footer-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    </svg>
-                    Política de Privacidad
-                </a>
                 <a href="mailto:juanfranj.dev@gmail.com" class="footer-link">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
