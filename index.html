@@ -717,19 +717,42 @@
             }
 
             .arcade-frame {
-                padding: 30px 40px;
+                padding: 24px 28px;
+                margin: 0 10px;
+                max-width: calc(100% - 20px);
+            }
+
+            .brand-icon {
+                font-size: 40px;
+                margin-bottom: 12px;
             }
 
             .brand-name {
                 letter-spacing: 0.05em;
             }
 
+            .tagline {
+                font-size: 0.85rem;
+                letter-spacing: 0.15em;
+                margin-top: 16px;
+                line-height: 1.5;
+            }
+
             .stats-bar {
-                gap: 20px;
+                gap: 15px;
+                margin-top: 30px;
             }
 
             .stat-item {
                 padding: 10px 16px;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
             }
 
             .section {
@@ -752,6 +775,165 @@
 
             .footer-links {
                 gap: 20px;
+            }
+        }
+
+        /* RESPONSIVE - PANTALLAS MUY PEQUEÑAS */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            header {
+                padding: 40px 0 30px;
+            }
+
+            .arcade-frame {
+                padding: 20px 16px;
+                margin: 0 5px;
+                max-width: calc(100% - 10px);
+                clip-path: polygon(
+                    0 12px, 12px 0, calc(100% - 12px) 0, 100% 12px,
+                    100% calc(100% - 12px), calc(100% - 12px) 100%,
+                    12px 100%, 0 calc(100% - 12px)
+                );
+            }
+
+            .arcade-frame::before {
+                width: 120px;
+                height: 4px;
+            }
+
+            .brand-icon {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+
+            .brand-name {
+                font-size: clamp(1.5rem, 7vw, 2.5rem);
+                letter-spacing: 0.02em;
+            }
+
+            .tagline {
+                font-size: 0.75rem;
+                letter-spacing: 0.1em;
+                margin-top: 12px;
+                word-break: break-word;
+            }
+
+            .stats-bar {
+                gap: 10px;
+                margin-top: 24px;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .stat-item {
+                padding: 8px 12px;
+                clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+            }
+
+            .stat-value {
+                font-size: 1.1rem;
+            }
+
+            .stat-label {
+                font-size: 0.6rem;
+                letter-spacing: 0.05em;
+            }
+
+            .section-header {
+                gap: 12px;
+                margin-bottom: 30px;
+            }
+
+            .section-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+                letter-spacing: 0.1em;
+            }
+
+            .section-count {
+                padding: 4px 12px;
+                font-size: 0.65rem;
+            }
+
+            .card-header {
+                gap: 14px;
+            }
+
+            .app-icon {
+                width: 52px;
+                height: 52px;
+            }
+
+            .app-name {
+                font-size: 1rem;
+            }
+
+            .featured-tag {
+                font-size: 0.6rem;
+                padding: 3px 10px;
+            }
+
+            .app-description {
+                font-size: 0.85rem;
+            }
+
+            .privacy-links {
+                gap: 12px;
+            }
+
+            .privacy-link {
+                padding: 6px 12px;
+                font-size: 0.75rem;
+            }
+
+            .footer-link {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+
+            .insert-coin {
+                font-size: 0.65rem;
+                letter-spacing: 0.2em;
+            }
+        }
+
+        /* RESPONSIVE - PANTALLAS EXTRA PEQUEÑAS */
+        @media (max-width: 360px) {
+            .arcade-frame {
+                padding: 16px 12px;
+            }
+
+            .brand-name {
+                font-size: 1.4rem;
+            }
+
+            .tagline {
+                font-size: 0.7rem;
+                letter-spacing: 0.05em;
+            }
+
+            .stats-bar {
+                gap: 8px;
+            }
+
+            .stat-item {
+                padding: 6px 10px;
+            }
+
+            .stat-value {
+                font-size: 1rem;
+            }
+
+            .stat-label {
+                font-size: 0.55rem;
             }
         }
 
