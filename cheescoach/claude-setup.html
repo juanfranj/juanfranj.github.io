@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthropic Claude API Key Setup - CheesCoach</title>
+    <meta name="description" content="Step-by-step guide to create an Anthropic Claude API key for CheesCoach chess coaching app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        a {
+            color: #f59e0b;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #fbbf24;
+            text-decoration: underline;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #94a3b8;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #f59e0b;
+            text-decoration: none;
+        }
+
+        .back-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            background-color: #0f172a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            color: #94a3b8;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background-color: #f59e0b;
+            color: #0f172a;
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: #e2e8f0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid #334155;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 100px;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #f59e0b;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #f8fafc;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .info-box h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f59e0b;
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .info-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .info-box li::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            min-width: 8px;
+            background-color: #f59e0b;
+            border-radius: 50%;
+            margin-top: 0.5rem;
+        }
+
+        /* Steps */
+        .steps-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .steps-section > h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #f59e0b;
+            display: inline-block;
+        }
+
+        .step {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .step:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            border-radius: 50%;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: #0f172a;
+        }
+
+        .step h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #f8fafc;
+            padding-top: 0.3rem;
+        }
+
+        .step-body {
+            margin-left: 3.25rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .step-body a {
+            word-break: break-all;
+        }
+
+        .step-body code {
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 4px;
+            padding: 0.15rem 0.4rem;
+            font-size: 0.85rem;
+            color: #f59e0b;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background-color: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-left: 4px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-top: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .warning-box .warning-icon {
+            font-size: 1.2rem;
+            line-height: 1;
+            min-width: 1.2rem;
+        }
+
+        .warning-box p {
+            font-size: 0.9rem;
+            color: #fbbf24;
+            font-weight: 500;
+        }
+
+        /* Pricing Table */
+        .pricing-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-section h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+
+        .pricing-table thead th {
+            background-color: rgba(245, 158, 11, 0.1);
+            padding: 0.9rem 1.25rem;
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #f59e0b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #334155;
+        }
+
+        .pricing-table tbody td {
+            padding: 0.9rem 1.25rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            border-bottom: 1px solid #334155;
+        }
+
+        .pricing-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-table tbody tr:hover {
+            background-color: rgba(245, 158, 11, 0.03);
+        }
+
+        .model-recommended {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .recommended-badge {
+            background-color: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 4px;
+            padding: 0.1rem 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #f59e0b;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        /* Notes Section */
+        .notes-section {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .notes-section h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f59e0b;
+            margin-bottom: 1rem;
+        }
+
+        .notes-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .notes-section li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .notes-section li::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            min-width: 6px;
+            background-color: #f59e0b;
+            border-radius: 2px;
+            margin-top: 0.6rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #94a3b8;
+        }
+
+        .footer a:hover {
+            color: #f59e0b;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .step-header {
+                gap: 0.75rem;
+            }
+
+            .step-body {
+                margin-left: 2.9rem;
+            }
+
+            .step-number {
+                width: 32px;
+                height: 32px;
+                min-width: 32px;
+                font-size: 0.8rem;
+            }
+
+            .pricing-table thead th,
+            .pricing-table tbody td {
+                padding: 0.7rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="top-nav-inner">
+            <a href="api-setup.html" class="back-link">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                <span data-en="Back to guides" data-es="Volver a las guias">Back to guides</span>
+            </a>
+            <div class="lang-toggle">
+                <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <span data-en="API Setup Guide" data-es="Guia de configuracion API">API Setup Guide</span>
+            </div>
+            <h1 data-en="Anthropic Claude API Key Setup" data-es="Configuracion de API Key de Anthropic Claude">Anthropic Claude API Key Setup</h1>
+            <p data-en="Get your Claude API key to enable advanced chess coaching in CheesCoach." data-es="Obtene tu API key de Claude para habilitar el coaching de ajedrez avanzado en CheesCoach.">Get your Claude API key to enable advanced chess coaching in CheesCoach.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- What you'll get -->
+        <div class="info-box">
+            <h2 data-en="What you'll get" data-es="Lo que obtendras">What you'll get</h2>
+            <ul>
+                <li data-en="Access to Claude Haiku 4.5 (recommended for CheesCoach — best quality/price ratio)" data-es="Acceso a Claude Haiku 4.5 (recomendado para CheesCoach — mejor relacion calidad/precio)">Access to Claude Haiku 4.5 (recommended for CheesCoach — best quality/price ratio)</li>
+                <li data-en="$5 free credits available via phone verification (region dependent)" data-es="$5 en creditos gratuitos disponibles mediante verificacion telefonica (depende de la region)">$5 free credits available via phone verification (region dependent)</li>
+                <li data-en="Excellent chess analysis quality" data-es="Excelente calidad de analisis de ajedrez">Excellent chess analysis quality</li>
+            </ul>
+        </div>
+
+        <!-- Step-by-step guide -->
+        <div class="steps-section">
+            <h2 data-en="Step-by-step guide" data-es="Guia paso a paso">Step-by-step guide</h2>
+
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">1</span>
+                    <h3 data-en="Create an account" data-es="Crea una cuenta">Create an account</h3>
+                </div>
+                <div class="step-body">
+                    <p data-en='Visit <a href="https://console.anthropic.com" target="_blank" rel="noopener noreferrer">console.anthropic.com</a> and click "Sign up".' data-es='Visita <a href="https://console.anthropic.com" target="_blank" rel="noopener noreferrer">console.anthropic.com</a> y hace clic en "Sign up".'>Visit <a href="https://console.anthropic.com" target="_blank" rel="noopener noreferrer">console.anthropic.com</a> and click "Sign up".</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">2</span>
+                    <h3 data-en="Verify your email (Magic Link)" data-es="Verifica tu email (Magic Link)">Verify your email (Magic Link)</h3>
+                </div>
+                <div class="step-body">
+                    <p data-en="Anthropic uses magic links instead of passwords. Check your email and click the verification link. You'll use this method every time you log in." data-es="Anthropic usa magic links en vez de contrasenas. Revisa tu email y hace clic en el enlace de verificacion. Usaras este metodo cada vez que inicies sesion.">Anthropic uses magic links instead of passwords. Check your email and click the verification link. You'll use this method every time you log in.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">3</span>
+                    <h3 data-en="Complete onboarding" data-es="Completa el registro">Complete onboarding</h3>
+                </div>
+                <div class="step-body">
+                    <p data-en="Enter your full name, confirm you're over 18, and accept the terms of service." data-es="Ingresa tu nombre completo, confirma que sos mayor de 18 y acepta los terminos de servicio.">Enter your full name, confirm you're over 18, and accept the terms of service.</p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">4</span>
+                    <h3 data-en="Create your organization" data-es="Crea tu organizacion">Create your organization</h3>
+                </div>
+                <div class="step-body">
+                    <p data-en="Enter an organization name (can be your personal name)." data-es="Ingresa un nombre de organizacion (puede ser tu nombre personal).">Enter an organization name (can be your personal name).</p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">5</span>
+                    <h3 data-en="Get free credits (optional)" data-es="Obtene creditos gratuitos (opcional)">Get free credits (optional)</h3>
+                </div>
+                <div class="step-body">
+                    <p data-en="Try verifying your phone number to get $5 in free credits. This works in many countries but not all. If it doesn't work in your region, you'll need to add a payment method." data-es="Intenta verificar tu numero de telefono para obtener $5 en creditos gratuitos. Esto funciona en muchos paises pero no en todos. Si no funciona en tu region, necesitaras agregar un metodo de pago.">Try verifying your phone number to get $5 in free credits. This works in many countries but not all. If it doesn't work in your region, you'll need to add a payment method.</p>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">6</span>
+                    <h3 data-en="Set up billing (if needed)" data-es="Configura la facturacion (si es necesario)">Set up billing (if needed)</h3>
+                </div>
+                <div class="step-body">
+                    <p data-en='If free credits aren&apos;t available, go to Settings &rarr; Billing &rarr; Add credits. Anthropic uses a prepaid system — you buy credits upfront (minimum $5).' data-es='Si los creditos gratuitos no estan disponibles, ve a Settings &rarr; Billing &rarr; Add credits. Anthropic usa un sistema prepago — compras creditos por adelantado (minimo $5).'>If free credits aren't available, go to Settings &rarr; Billing &rarr; Add credits. Anthropic uses a prepaid system — you buy credits upfront (minimum $5).</p>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">7</span>
+                    <h3 data-en="Navigate to API Keys" data-es="Navega a API Keys">Navigate to API Keys</h3>
+                </div>
+                <div class="step-body">
+                    <p data-en='Go to Settings &rarr; API Keys or visit <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener noreferrer">console.anthropic.com/settings/keys</a>.' data-es='Ve a Settings &rarr; API Keys o visita <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener noreferrer">console.anthropic.com/settings/keys</a>.'>Go to Settings &rarr; API Keys or visit <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener noreferrer">console.anthropic.com/settings/keys</a>.</p>
+                </div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">8</span>
+                    <h3 data-en="Create an API key" data-es="Crea una API key">Create an API key</h3>
+                </div>
+                <div class="step-body">
+                    <p data-en='Click "+ Create Key", give it a name like "CheesCoach".' data-es='Hace clic en "+ Create Key", dale un nombre como "CheesCoach".'>Click "+ Create Key", give it a name like "CheesCoach".</p>
+                </div>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">9</span>
+                    <h3 data-en="Copy your key immediately!" data-es="Copia tu key inmediatamente!">Copy your key immediately!</h3>
+                </div>
+                <div class="step-body">
+                    <div class="warning-box">
+                        <span class="warning-icon">&#9888;&#65039;</span>
+                        <p data-en='IMPORTANT: The key (starts with <code>sk-ant-...</code>) is only shown ONCE. Copy it immediately!' data-es='IMPORTANTE: La key (empieza con <code>sk-ant-...</code>) solo se muestra UNA VEZ. Copiala inmediatamente!'>IMPORTANT: The key (starts with <code>sk-ant-...</code>) is only shown ONCE. Copy it immediately!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 10 -->
+            <div class="step">
+                <div class="step-header">
+                    <span class="step-number">10</span>
+                    <h3 data-en="Paste in CheesCoach" data-es="Pega en CheesCoach">Paste in CheesCoach</h3>
+                </div>
+                <div class="step-body">
+                    <p data-en='Open CheesCoach &rarr; Settings &rarr; AI section &rarr; Select "Claude Haiku 4.5" &rarr; Configure &rarr; Paste your API key.' data-es='Abri CheesCoach &rarr; Settings &rarr; Seccion IA &rarr; Selecciona "Claude Haiku 4.5" &rarr; Configurar &rarr; Pega tu API key.'>Open CheesCoach &rarr; Settings &rarr; AI section &rarr; Select "Claude Haiku 4.5" &rarr; Configure &rarr; Paste your API key.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="pricing-section">
+            <h2 data-en="Pricing" data-es="Precios">Pricing</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th data-en="Model" data-es="Modelo">Model</th>
+                        <th data-en="Input (1M tokens)" data-es="Entrada (1M tokens)">Input (1M tokens)</th>
+                        <th data-en="Output (1M tokens)" data-es="Salida (1M tokens)">Output (1M tokens)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="model-recommended">
+                                Claude Haiku 4.5
+                                <span class="recommended-badge" data-en="Recommended" data-es="Recomendado">Recommended</span>
+                            </span>
+                        </td>
+                        <td>$1.00</td>
+                        <td>$5.00</td>
+                    </tr>
+                    <tr>
+                        <td>Claude Sonnet 4</td>
+                        <td>$3.00</td>
+                        <td>$15.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="notes-section">
+            <h2 data-en="Important notes" data-es="Notas importantes">Important notes</h2>
+            <ul>
+                <li data-en="Claude uses magic links (no password) — check your email each time you log in" data-es="Claude usa magic links (sin contrasena) — revisa tu email cada vez que inicies sesion">Claude uses magic links (no password) — check your email each time you log in</li>
+                <li data-en="Prepaid credits are non-refundable" data-es="Los creditos prepagos no son reembolsables">Prepaid credits are non-refundable</li>
+                <li data-en="Claude Haiku 4.5 offers the best quality for chess coaching" data-es="Claude Haiku 4.5 ofrece la mejor calidad para coaching de ajedrez">Claude Haiku 4.5 offers the best quality for chess coaching</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 CheesCoach. <a href="api-setup.html" data-en="Back to API guides" data-es="Volver a las guias API">Back to API guides</a>.</p>
+    </footer>
+
+    <!-- Language Toggle Script -->
+    <script>
+        function setLang(lang) {
+            localStorage.setItem('cheescoach-lang', lang);
+            applyLang(lang);
+        }
+
+        function applyLang(lang) {
+            // Update toggle buttons
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+
+            // Update all elements with data-en/data-es attributes
+            const elements = document.querySelectorAll('[data-en][data-es]');
+            elements.forEach(function(el) {
+                const text = lang === 'es' ? el.getAttribute('data-es') : el.getAttribute('data-en');
+                if (text) {
+                    el.innerHTML = text;
+                }
+            });
+
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize language on page load
+        (function() {
+            const savedLang = localStorage.getItem('cheescoach-lang') || 'en';
+            applyLang(savedLang);
+        })();
+    </script>
+
+</body>
+</html>

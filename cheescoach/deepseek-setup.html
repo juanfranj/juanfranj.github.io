@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek API Key Setup - CheesCoach</title>
+    <meta name="description" content="Step-by-step guide to create a DeepSeek API key and add funds for CheesCoach chess coaching app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --bg-card-hover: #253349;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #334155;
+            --border-accent: #6366f1;
+            --success: #22c55e;
+            --success-bg: rgba(34, 197, 94, 0.1);
+            --success-border: rgba(34, 197, 94, 0.3);
+            --warning: #f59e0b;
+            --warning-bg: rgba(245, 158, 11, 0.1);
+            --warning-border: rgba(245, 158, 11, 0.3);
+            --info: #3b82f6;
+            --info-bg: rgba(59, 130, 246, 0.1);
+            --info-border: rgba(59, 130, 246, 0.3);
+            --recommended: #22c55e;
+            --recommended-bg: rgba(34, 197, 94, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem 4rem;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .back-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Language toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            padding: 0.25rem;
+        }
+
+        .lang-btn {
+            padding: 0.35rem 0.85rem;
+            border: none;
+            border-radius: 9999px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: transparent;
+            color: var(--text-muted);
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--text-primary);
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--accent-glow);
+            border: 2px solid var(--accent);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* Benefits list */
+        .benefits {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1.75rem;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            text-align: left;
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            background: var(--accent-glow);
+            border: 1px solid var(--accent);
+            margin-top: 0.1rem;
+        }
+
+        .benefit span {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Part headers */
+        .part-header {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-glow), transparent);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 1rem;
+        }
+
+        .part-header .part-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .part-header h2 {
+            font-size: clamp(1.35rem, 4vw, 1.6rem);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Step cards */
+        .step {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            margin-top: 0.15rem;
+        }
+
+        .step-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .step-content a {
+            color: var(--accent-light);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .step-content a:hover {
+            border-bottom-color: var(--accent-light);
+        }
+
+        /* Callout boxes */
+        .callout {
+            border-radius: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .callout-icon {
+            flex-shrink: 0;
+            font-size: 1.25rem;
+            margin-top: 0.1rem;
+        }
+
+        .callout-content {
+            flex: 1;
+        }
+
+        .callout-content strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .callout-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .callout-warning {
+            background: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+        }
+
+        .callout-warning .callout-icon {
+            color: var(--warning);
+        }
+
+        .callout-warning strong {
+            color: var(--warning);
+        }
+
+        .callout-info {
+            background: var(--info-bg);
+            border: 1px solid var(--info-border);
+        }
+
+        .callout-info .callout-icon {
+            color: var(--info);
+        }
+
+        .callout-info strong {
+            color: var(--info);
+        }
+
+        .callout-success {
+            background: var(--success-bg);
+            border: 1px solid var(--success-border);
+        }
+
+        .callout-success .callout-icon {
+            color: var(--success);
+        }
+
+        .callout-success strong {
+            color: var(--success);
+        }
+
+        /* Payment option cards */
+        .payment-options {
+            display: grid;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .payment-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: border-color 0.2s;
+            position: relative;
+        }
+
+        .payment-card:hover {
+            border-color: var(--text-muted);
+        }
+
+        .payment-card.recommended {
+            border-color: var(--recommended);
+            box-shadow: 0 0 0 1px var(--recommended), 0 4px 24px rgba(34, 197, 94, 0.1);
+        }
+
+        .payment-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .payment-card-letter {
+            width: 34px;
+            height: 34px;
+            background: var(--accent);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .payment-card.recommended .payment-card-letter {
+            background: var(--recommended);
+        }
+
+        .payment-card-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .badge-recommended {
+            background: var(--recommended-bg);
+            color: var(--recommended);
+            border: 1px solid var(--success-border);
+        }
+
+        .payment-card-body {
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+        }
+
+        .payment-card-body ol {
+            margin: 0.75rem 0 0;
+            padding-left: 1.25rem;
+        }
+
+        .payment-card-body ol li {
+            margin-bottom: 0.4rem;
+        }
+
+        .payment-card-body a {
+            color: var(--accent-light);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .payment-card-body a:hover {
+            border-bottom-color: var(--accent-light);
+        }
+
+        .payment-card-note {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Pricing table */
+        .pricing-section {
+            margin-top: 3rem;
+        }
+
+        .pricing-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-secondary);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .pricing-table thead th {
+            text-align: left;
+            padding: 0.85rem 1.25rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            background: rgba(99, 102, 241, 0.08);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-table tbody td {
+            padding: 0.85rem 1.25rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-table .price {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+
+        .pricing-highlight {
+            margin-top: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--accent-glow);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 0.75rem;
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-highlight strong {
+            color: var(--accent-light);
+        }
+
+        /* Important notes */
+        .notes-section {
+            margin-top: 2.5rem;
+        }
+
+        .notes-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .notes-list {
+            list-style: none;
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .notes-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+        }
+
+        .notes-list li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-top: 0.55rem;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bilingual: hide inactive lang */
+        [data-en], [data-es] {
+            display: none;
+        }
+
+        html[lang="en"] [data-en] {
+            display: revert;
+        }
+
+        html[lang="es"] [data-es] {
+            display: revert;
+        }
+
+        /* For flex/grid children, use contents to not break layout */
+        .bilingual-inline [data-en],
+        .bilingual-inline [data-es] {
+            display: none;
+        }
+
+        html[lang="en"] .bilingual-inline [data-en] {
+            display: inline;
+        }
+
+        html[lang="es"] .bilingual-inline [data-es] {
+            display: inline;
+        }
+
+        /* Block bilingual within flex */
+        .bilingual-block [data-en],
+        .bilingual-block [data-es] {
+            display: none;
+        }
+
+        html[lang="en"] .bilingual-block [data-en] {
+            display: block;
+        }
+
+        html[lang="es"] .bilingual-block [data-es] {
+            display: block;
+        }
+
+        /* Flex bilingual */
+        .bilingual-flex [data-en],
+        .bilingual-flex [data-es] {
+            display: none;
+        }
+
+        html[lang="en"] .bilingual-flex [data-en] {
+            display: flex;
+        }
+
+        html[lang="es"] .bilingual-flex [data-es] {
+            display: flex;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.25rem 1rem 3rem;
+            }
+
+            .step {
+                gap: 1rem;
+            }
+
+            .payment-card {
+                padding: 1.25rem;
+            }
+
+            .payment-card-header {
+                flex-wrap: wrap;
+            }
+
+            .badge {
+                margin-left: 0;
+            }
+
+            .pricing-table thead th,
+            .pricing-table tbody td {
+                padding: 0.65rem 0.85rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+</div>
+
+<div class="container">
+
+    <!-- Back link -->
+    <a href="api-setup.html" class="back-link bilingual-inline">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <span data-en>Back to guides</span>
+        <span data-es>Volver a las guias</span>
+    </a>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h1>
+            <span data-en>DeepSeek API Key Setup</span>
+            <span data-es>Configurar API Key de DeepSeek</span>
+        </h1>
+        <p>
+            <span data-en>Complete guide to creating your API key and adding funds for the most affordable AI provider.</span>
+            <span data-es>Guia completa para crear tu API key y agregar fondos en el proveedor de IA mas economico.</span>
+        </p>
+
+        <div class="benefits">
+            <div class="benefit bilingual-inline">
+                <div class="benefit-icon">$</div>
+                <span>
+                    <span data-en>The cheapest AI provider by far ($0.28/M input tokens)</span>
+                    <span data-es>El proveedor de IA mas barato con diferencia ($0.28/M tokens de entrada)</span>
+                </span>
+            </div>
+            <div class="benefit bilingual-inline">
+                <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <span>
+                    <span data-en>5 million free tokens when you sign up (no credit card needed)</span>
+                    <span data-es>5 millones de tokens gratis al registrarte (sin tarjeta de credito)</span>
+                </span>
+            </div>
+            <div class="benefit bilingual-inline">
+                <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <span>
+                    <span data-en>API compatible with OpenAI format</span>
+                    <span data-es>API compatible con el formato de OpenAI</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PART 1: Creating your API Key -->
+    <!-- ============================================ -->
+
+    <div class="part-header bilingual-block">
+        <span class="part-label">
+            <span data-en>Part 1</span>
+            <span data-es>Parte 1</span>
+        </span>
+        <h2>
+            <span data-en>Creating your API Key</span>
+            <span data-es>Crear tu API Key</span>
+        </h2>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step bilingual-block">
+        <div class="step-number">1</div>
+        <div class="step-content">
+            <h3>
+                <span data-en>Create an account</span>
+                <span data-es>Crear una cuenta</span>
+            </h3>
+            <p>
+                <span data-en>Visit <a href="https://platform.deepseek.com" target="_blank" rel="noopener">platform.deepseek.com</a> and click <strong>"Sign Up"</strong>.</span>
+                <span data-es>Visita <a href="https://platform.deepseek.com" target="_blank" rel="noopener">platform.deepseek.com</a> y haz clic en <strong>"Sign Up"</strong>.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step bilingual-block">
+        <div class="step-number">2</div>
+        <div class="step-content">
+            <h3>
+                <span data-en>Verify your email</span>
+                <span data-es>Verificar tu email</span>
+            </h3>
+            <p>
+                <span data-en>Check your inbox and click the verification link.</span>
+                <span data-es>Revisa tu bandeja de entrada y haz clic en el enlace de verificacion.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step bilingual-block">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            <h3>
+                <span data-en>Phone verification (optional)</span>
+                <span data-es>Verificacion telefonica (opcional)</span>
+            </h3>
+            <p>
+                <span data-en>Phone verification is optional but recommended. Supports international numbers from 180+ countries.</span>
+                <span data-es>La verificacion telefonica es opcional pero recomendada. Admite numeros internacionales de mas de 180 paises.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step bilingual-block">
+        <div class="step-number">4</div>
+        <div class="step-content">
+            <h3>
+                <span data-en>Navigate to API Keys</span>
+                <span data-es>Ir a API Keys</span>
+            </h3>
+            <p>
+                <span data-en>In the left sidebar, click <strong>"API Keys"</strong>.</span>
+                <span data-es>En la barra lateral izquierda, haz clic en <strong>"API Keys"</strong>.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step bilingual-block">
+        <div class="step-number">5</div>
+        <div class="step-content">
+            <h3>
+                <span data-en>Create API Key</span>
+                <span data-es>Crear API Key</span>
+            </h3>
+            <p>
+                <span data-en>Click <strong>"Create API Key"</strong> and give it a descriptive name (e.g. "CheesCoach").</span>
+                <span data-es>Haz clic en <strong>"Create API Key"</strong> y ponle un nombre descriptivo (ej. "CheesCoach").</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step bilingual-block">
+        <div class="step-number">6</div>
+        <div class="step-content">
+            <h3>
+                <span data-en>Copy your key</span>
+                <span data-es>Copiar tu clave</span>
+            </h3>
+            <p>
+                <span data-en>Copy the key immediately &mdash; <strong>it won't be shown again</strong> after closing the window.</span>
+                <span data-es>Copia la clave inmediatamente &mdash; <strong>no se mostrara de nuevo</strong> despues de cerrar la ventana.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step bilingual-block">
+        <div class="step-number">7</div>
+        <div class="step-content">
+            <h3>
+                <span data-en>Paste in CheesCoach</span>
+                <span data-es>Pegar en CheesCoach</span>
+            </h3>
+            <p>
+                <span data-en>Open CheesCoach &rarr; Settings &rarr; AI section &rarr; Select <strong>"DeepSeek Chat"</strong> &rarr; Configure &rarr; Paste your API key.</span>
+                <span data-es>Abre CheesCoach &rarr; Ajustes &rarr; Seccion IA &rarr; Selecciona <strong>"DeepSeek Chat"</strong> &rarr; Configurar &rarr; Pega tu API key.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PART 2: Adding Funds -->
+    <!-- ============================================ -->
+
+    <div class="part-header bilingual-block">
+        <span class="part-label">
+            <span data-en>Part 2</span>
+            <span data-es>Parte 2</span>
+        </span>
+        <h2>
+            <span data-en>Adding Funds (for international users)</span>
+            <span data-es>Agregar Fondos (para usuarios internacionales)</span>
+        </h2>
+    </div>
+
+    <!-- Warning callout -->
+    <div class="callout callout-warning bilingual-block">
+        <div class="callout-icon">&#9888;&#65039;</div>
+        <div class="callout-content">
+            <strong>
+                <span data-en>Payment may be challenging</span>
+                <span data-es>El pago puede ser complicado</span>
+            </strong>
+            <p>
+                <span data-en>DeepSeek is a Chinese company and payment can be challenging for users outside China. Below are your options, from easiest to most involved.</span>
+                <span data-es>DeepSeek es una empresa china y el pago puede ser complicado para usuarios fuera de China. A continuacion tus opciones, de la mas facil a la mas compleja.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Payment options -->
+    <div class="payment-options">
+
+        <!-- Option A: Free tokens (Recommended) -->
+        <div class="payment-card recommended">
+            <div class="payment-card-header bilingual-inline">
+                <div class="payment-card-letter">A</div>
+                <div class="payment-card-title">
+                    <span data-en>Use your free tokens first</span>
+                    <span data-es>Usa tus tokens gratis primero</span>
+                </div>
+                <span class="badge badge-recommended">
+                    <span data-en>Recommended</span>
+                    <span data-es>Recomendado</span>
+                </span>
+            </div>
+            <div class="payment-card-body bilingual-block">
+                <p>
+                    <span data-en>New accounts get <strong>5 million free tokens</strong>. This is enough for many analysis sessions. Try it before worrying about payment.</span>
+                    <span data-es>Las cuentas nuevas reciben <strong>5 millones de tokens gratis</strong>. Esto es suficiente para muchas sesiones de analisis. Pruebalo antes de preocuparte por el pago.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Option B: PayPal -->
+        <div class="payment-card">
+            <div class="payment-card-header bilingual-inline">
+                <div class="payment-card-letter">B</div>
+                <div class="payment-card-title">PayPal</div>
+            </div>
+            <div class="payment-card-body bilingual-block">
+                <div data-en>
+                    <p>If PayPal is available in your country:</p>
+                    <ol>
+                        <li>Go to <a href="https://platform.deepseek.com/top_up" target="_blank" rel="noopener">platform.deepseek.com/top_up</a></li>
+                        <li>Select <strong>"PayPal"</strong></li>
+                        <li>Follow the PayPal payment flow</li>
+                        <li>Minimum top-up: ~$2</li>
+                    </ol>
+                </div>
+                <div data-es>
+                    <p>Si PayPal esta disponible en tu pais:</p>
+                    <ol>
+                        <li>Ve a <a href="https://platform.deepseek.com/top_up" target="_blank" rel="noopener">platform.deepseek.com/top_up</a></li>
+                        <li>Selecciona <strong>"PayPal"</strong></li>
+                        <li>Sigue el flujo de pago de PayPal</li>
+                        <li>Recarga minima: ~$2</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="payment-card-note bilingual-inline">
+                <span data-en>Note: PayPal is NOT available in all countries. If you see an error, try the other options.</span>
+                <span data-es>Nota: PayPal NO esta disponible en todos los paises. Si ves un error, prueba las otras opciones.</span>
+            </div>
+        </div>
+
+        <!-- Option C: Bank Card -->
+        <div class="payment-card">
+            <div class="payment-card-header bilingual-inline">
+                <div class="payment-card-letter">C</div>
+                <div class="payment-card-title bilingual-inline">
+                    <span data-en>Bank Card</span>
+                    <span data-es>Tarjeta Bancaria</span>
+                </div>
+            </div>
+            <div class="payment-card-body bilingual-block">
+                <div data-en>
+                    <ol>
+                        <li>Go to <strong>Top Up</strong> &rarr; Select <strong>"Bank Card"</strong></li>
+                        <li>Enter your Visa/Mastercard details</li>
+                        <li>Some international cards may be rejected depending on your region</li>
+                    </ol>
+                </div>
+                <div data-es>
+                    <ol>
+                        <li>Ve a <strong>Top Up</strong> &rarr; Selecciona <strong>"Bank Card"</strong></li>
+                        <li>Introduce los datos de tu Visa/Mastercard</li>
+                        <li>Algunas tarjetas internacionales pueden ser rechazadas dependiendo de tu region</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option D: Virtual Card with Crypto -->
+        <div class="payment-card">
+            <div class="payment-card-header bilingual-inline">
+                <div class="payment-card-letter">D</div>
+                <div class="payment-card-title bilingual-inline">
+                    <span data-en>Virtual Card with Crypto</span>
+                    <span data-es>Tarjeta Virtual con Cripto</span>
+                </div>
+            </div>
+            <div class="payment-card-body bilingual-block">
+                <div data-en>
+                    <p>If PayPal and bank cards don't work, you can use a crypto-funded virtual card:</p>
+                    <ol>
+                        <li>Create an account on a service like <strong>Kazawallet</strong> (<a href="https://kazawallet.com" target="_blank" rel="noopener">kazawallet.com</a>) &mdash; requires identity verification (KYC)</li>
+                        <li>Deposit cryptocurrency (USDT recommended for stability)</li>
+                        <li>Convert to USD and issue a virtual Visa card</li>
+                        <li>Use the virtual card details in DeepSeek's "Bank Card" payment option</li>
+                    </ol>
+                </div>
+                <div data-es>
+                    <p>Si PayPal y las tarjetas bancarias no funcionan, puedes usar una tarjeta virtual financiada con cripto:</p>
+                    <ol>
+                        <li>Crea una cuenta en un servicio como <strong>Kazawallet</strong> (<a href="https://kazawallet.com" target="_blank" rel="noopener">kazawallet.com</a>) &mdash; requiere verificacion de identidad (KYC)</li>
+                        <li>Deposita criptomonedas (USDT recomendado por estabilidad)</li>
+                        <li>Convierte a USD y emite una tarjeta Visa virtual</li>
+                        <li>Usa los datos de la tarjeta virtual en la opcion "Bank Card" de DeepSeek</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="payment-card-note bilingual-inline">
+                <span data-en>Note: fees apply (~4% total).</span>
+                <span data-es>Nota: se aplican comisiones (~4% en total).</span>
+            </div>
+        </div>
+
+        <!-- Option E: OpenRouter (Recommended) -->
+        <div class="payment-card recommended">
+            <div class="payment-card-header bilingual-inline">
+                <div class="payment-card-letter">E</div>
+                <div class="payment-card-title bilingual-inline">
+                    <span data-en>Use OpenRouter as intermediary</span>
+                    <span data-es>Usar OpenRouter como intermediario</span>
+                </div>
+                <span class="badge badge-recommended">
+                    <span data-en>Recommended alternative</span>
+                    <span data-es>Alternativa recomendada</span>
+                </span>
+            </div>
+            <div class="payment-card-body bilingual-block">
+                <div data-en>
+                    <p>If you can't pay DeepSeek directly, <strong>OpenRouter.ai</strong> acts as a middleman:</p>
+                    <ol>
+                        <li>Create an account at <a href="https://openrouter.ai" target="_blank" rel="noopener">openrouter.ai</a></li>
+                        <li>Buy credits with a normal credit card (they use Stripe &mdash; works worldwide)</li>
+                        <li>In CheesCoach settings, use the OpenRouter API key instead</li>
+                    </ol>
+                </div>
+                <div data-es>
+                    <p>Si no puedes pagar a DeepSeek directamente, <strong>OpenRouter.ai</strong> actua como intermediario:</p>
+                    <ol>
+                        <li>Crea una cuenta en <a href="https://openrouter.ai" target="_blank" rel="noopener">openrouter.ai</a></li>
+                        <li>Compra creditos con una tarjeta de credito normal (usan Stripe &mdash; funciona en todo el mundo)</li>
+                        <li>En los ajustes de CheesCoach, usa la API key de OpenRouter en su lugar</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="callout callout-info" style="margin-bottom: 0; margin-top: 0.75rem;">
+                <div class="callout-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="callout-content">
+                    <p>
+                        <span data-en>CheesCoach's DeepSeek provider uses the same API format as OpenRouter, making this a seamless alternative.</span>
+                        <span data-es>El proveedor DeepSeek de CheesCoach usa el mismo formato de API que OpenRouter, lo que hace que sea una alternativa transparente.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ============================================ -->
+    <!-- Pricing -->
+    <!-- ============================================ -->
+
+    <div class="pricing-section">
+        <h2>
+            <span data-en>Pricing</span>
+            <span data-es>Precios</span>
+        </h2>
+
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>
+                        <span data-en>Type</span>
+                        <span data-es>Tipo</span>
+                    </th>
+                    <th>
+                        <span data-en>Price per 1M tokens</span>
+                        <span data-es>Precio por 1M tokens</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span data-en>Input (cache hit)</span>
+                        <span data-es>Entrada (cache hit)</span>
+                    </td>
+                    <td class="price">$0.028</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span data-en>Input (cache miss)</span>
+                        <span data-es>Entrada (cache miss)</span>
+                    </td>
+                    <td class="price">$0.28</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span data-en>Output</span>
+                        <span data-es>Salida</span>
+                    </td>
+                    <td class="price">$0.42</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pricing-highlight bilingual-inline">
+            <span data-en><strong>DeepSeek is by far the cheapest option</strong> &mdash; about 10x cheaper than competitors.</span>
+            <span data-es><strong>DeepSeek es con diferencia la opcion mas barata</strong> &mdash; unas 10 veces mas economico que la competencia.</span>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- Important notes -->
+    <!-- ============================================ -->
+
+    <div class="notes-section">
+        <h2>
+            <span data-en>Important notes</span>
+            <span data-es>Notas importantes</span>
+        </h2>
+
+        <ul class="notes-list">
+            <li>
+                <span data-en>DeepSeek has occasionally suspended new account top-ups due to high demand.</span>
+                <span data-es>DeepSeek ha suspendido ocasionalmente las recargas de cuentas nuevas debido a la alta demanda.</span>
+            </li>
+            <li>
+                <span data-en>Response times can vary during peak hours.</span>
+                <span data-es>Los tiempos de respuesta pueden variar durante las horas punta.</span>
+            </li>
+            <li>
+                <span data-en>The 5 million free tokens are enough for extensive testing.</span>
+                <span data-es>Los 5 millones de tokens gratis son suficientes para pruebas extensivas.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer bilingual-inline">
+        <span data-en>CheesCoach &mdash; Your AI Chess Coach &middot; <a href="api-setup.html">All setup guides</a></span>
+        <span data-es>CheesCoach &mdash; Tu Entrenador de Ajedrez con IA &middot; <a href="api-setup.html">Todas las guias</a></span>
+    </div>
+
+</div>
+
+<script>
+    function setLang(lang) {
+        document.documentElement.lang = lang;
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+        try {
+            localStorage.setItem('cheescoach-lang', lang);
+        } catch (e) {}
+    }
+
+    (function() {
+        var saved = null;
+        try {
+            saved = localStorage.getItem('cheescoach-lang');
+        } catch (e) {}
+        setLang(saved || 'en');
+    })();
+</script>
+
+</body>
+</html>

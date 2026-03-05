@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="CheesCoach - AI API Key Setup Instructions">
+    <title>CheesCoach - API Key Setup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --bg-card-hover: #253347;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #334155;
+            --border-light: #475569;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --info: #06b6d4;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.25);
+            --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.35);
+            --transition: 0.2s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+            line-height: 1.2;
+        }
+
+        /* ---- Background pattern ---- */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ---- Header ---- */
+        .header {
+            padding: 32px 0 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .lang-toggle {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .lang-btn {
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--accent), #1d4ed8);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .logo-icon svg {
+            width: 44px;
+            height: 44px;
+        }
+
+        .logo-img {
+            width: 72px;
+            height: 72px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+            object-fit: cover;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* ---- Intro Section ---- */
+        .intro {
+            background: linear-gradient(135deg, var(--bg-secondary), rgba(30, 41, 59, 0.7));
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .intro h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .intro p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-highlight {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--accent-glow);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .intro-highlight svg {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+            color: var(--accent-light);
+        }
+
+        .intro-highlight p {
+            font-size: 13px;
+            color: var(--accent-light);
+            margin-bottom: 0;
+        }
+
+        /* ---- Provider Cards ---- */
+        .providers-section {
+            margin-bottom: 40px;
+        }
+
+        .providers-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .provider-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .provider-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .provider-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--card-accent, var(--accent));
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .provider-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .provider-card:hover::before {
+            opacity: 1;
+        }
+
+        .provider-card[data-provider="gemini"] { --card-accent: #4285f4; }
+        .provider-card[data-provider="openai"] { --card-accent: #10a37f; }
+        .provider-card[data-provider="claude"] { --card-accent: #d4a574; }
+        .provider-card[data-provider="deepseek"] { --card-accent: #06b6d4; }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .card-identity {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .provider-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .provider-icon.gemini {
+            background: linear-gradient(135deg, #4285f4, #1a73e8);
+        }
+
+        .provider-icon.openai {
+            background: linear-gradient(135deg, #10a37f, #0d8c6c);
+        }
+
+        .provider-icon.claude {
+            background: linear-gradient(135deg, #d4a574, #c4956a);
+        }
+
+        .provider-icon.deepseek {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+        }
+
+        .provider-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .provider-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .provider-model {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .badge-free {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.25);
+        }
+
+        .badge-recommended {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-light);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .badge-cheapest {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .card-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .guide-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--card-accent, var(--accent));
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition);
+        }
+
+        .guide-btn:hover {
+            filter: brightness(1.15);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .guide-btn svg {
+            width: 16px;
+            height: 16px;
+            transition: transform var(--transition);
+        }
+
+        .guide-btn:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* ---- FAQ Section ---- */
+        .faq-section {
+            margin-bottom: 40px;
+        }
+
+        .faq-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 18px 24px;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transition: background var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .faq-chevron {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .faq-answer-inner p {
+            margin-bottom: 10px;
+        }
+
+        .faq-answer-inner p:last-child {
+            margin-bottom: 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 13px;
+        }
+
+        .comparison-table th {
+            text-align: left;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .provider-col {
+            font-weight: 600;
+            color: var(--text-primary);
+            white-space: nowrap;
+        }
+
+        /* ---- Footer ---- */
+        .footer {
+            text-align: center;
+            padding: 32px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 8px;
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 12px;
+        }
+
+        /* ---- Responsive ---- */
+        @media (min-width: 480px) {
+            .container {
+                padding: 0 32px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .header {
+                padding: 48px 0 32px;
+            }
+
+            .intro {
+                padding: 28px;
+            }
+
+            .provider-card {
+                padding: 28px;
+            }
+        }
+
+        /* ---- Accessibility ---- */
+        .faq-question:focus-visible,
+        .guide-btn:focus-visible,
+        .lang-btn:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* ---- Animation ---- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .animate-in:nth-child(1) { animation-delay: 0.05s; }
+        .animate-in:nth-child(2) { animation-delay: 0.1s; }
+        .animate-in:nth-child(3) { animation-delay: 0.15s; }
+        .animate-in:nth-child(4) { animation-delay: 0.2s; }
+    </style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<div class="container">
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="header-top">
+            <div class="logo-area">
+                <picture>
+                    <source srcset="../images/cheescoach_logo.webp" type="image/webp">
+                    <img src="../images/cheescoach_logo.webp"
+                         alt="CheesCoach logo"
+                         class="logo-img"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="logo-icon" style="display:none;">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 6C22.5 6 21.2 6.5 20.2 7.3C19 8.3 18.2 9.8 18.2 11.5C18.2 12.3 18.4 13 18.7 13.7L14 18.5C13 17.8 11.8 17.4 10.5 17.4C7.5 17.4 5 19.9 5 22.9C5 25.3 6.7 27.4 9 28.1V36C9 38.2 10.8 40 13 40H35C37.2 40 39 38.2 39 36V28.1C41.3 27.4 43 25.3 43 22.9C43 19.9 40.5 17.4 37.5 17.4C36.2 17.4 35 17.8 34 18.5L29.3 13.7C29.6 13 29.8 12.3 29.8 11.5C29.8 9.8 29 8.3 27.8 7.3C26.8 6.5 25.5 6 24 6Z" fill="white"/>
+                            <circle cx="17" cy="30" r="3" fill="#3b82f6"/>
+                            <circle cx="31" cy="30" r="3" fill="#3b82f6"/>
+                        </svg>
+                    </div>
+                </picture>
+            </div>
+            <div class="lang-toggle" role="group" aria-label="Language selector">
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" aria-label="English">EN</button>
+                <button class="lang-btn" data-lang="es" onclick="setLanguage('es')" aria-label="Espanol">ES</button>
+            </div>
+        </div>
+        <h1>CheesCoach</h1>
+        <p class="header-subtitle"
+           data-en="AI Coach Setup Guide"
+           data-es="Guia de configuracion del Coach IA">AI Coach Setup Guide</p>
+    </header>
+
+    <!-- ========== INTRO ========== -->
+    <section class="intro">
+        <h2 data-en="What are API keys?"
+            data-es="Que son las API keys?">What are API keys?</h2>
+        <p data-en="An API key is a unique password that lets CheesCoach connect to an AI service to analyze your chess games. Think of it like a library card &mdash; it identifies you so the AI provider knows who is making the request."
+           data-es="Una API key es una contrasena unica que permite a CheesCoach conectarse a un servicio de IA para analizar tus partidas de ajedrez. Piensa en ella como una tarjeta de biblioteca &mdash; te identifica para que el proveedor de IA sepa quien hace la solicitud.">An API key is a unique password that lets CheesCoach connect to an AI service to analyze your chess games. Think of it like a library card &mdash; it identifies you so the AI provider knows who is making the request.</p>
+        <p data-en="You only need to set up ONE provider. Choose whichever suits you best. Your key is stored encrypted on your device and never shared."
+           data-es="Solo necesitas configurar UN proveedor. Elige el que mejor se adapte a ti. Tu clave se almacena cifrada en tu dispositivo y nunca se comparte.">You only need to set up ONE provider. Choose whichever suits you best. Your key is stored encrypted on your device and never shared.</p>
+        <div class="intro-highlight">
+            <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd"/>
+            </svg>
+            <p data-en="New to AI APIs? We recommend starting with Google Gemini &mdash; it offers a generous free tier, perfect for getting started."
+               data-es="Nuevo en APIs de IA? Recomendamos empezar con Google Gemini &mdash; ofrece un plan gratuito generoso, perfecto para comenzar.">New to AI APIs? We recommend starting with Google Gemini &mdash; it offers a generous free tier, perfect for getting started.</p>
+        </div>
+    </section>
+
+    <!-- ========== PROVIDER CARDS ========== -->
+    <section class="providers-section">
+        <h2 data-en="Choose your AI provider"
+            data-es="Elige tu proveedor de IA">Choose your AI provider</h2>
+
+        <div class="provider-cards">
+
+            <!-- Gemini -->
+            <div class="provider-card animate-in" data-provider="gemini">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="provider-icon gemini">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C12 2 14.5 7 17.5 9.5C20 11.5 22 12 22 12C22 12 20 12.5 17.5 14.5C14.5 17 12 22 12 22C12 22 9.5 17 6.5 14.5C4 12.5 2 12 2 12C2 12 4 11.5 6.5 9.5C9.5 7 12 2 12 2Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="provider-name">Google Gemini</div>
+                            <div class="provider-model">Gemini 2.5 Flash</div>
+                        </div>
+                    </div>
+                    <span class="badge badge-free"
+                          data-en="Free"
+                          data-es="Gratis">Free</span>
+                </div>
+                <p class="card-description"
+                   data-en="Google's fast AI model with a generous free tier. Best option for most users &mdash; no credit card required to start."
+                   data-es="El modelo rapido de IA de Google con un plan gratuito generoso. La mejor opcion para la mayoria de usuarios &mdash; no se necesita tarjeta de credito para empezar.">Google's fast AI model with a generous free tier. Best option for most users &mdash; no credit card required to start.</p>
+                <div class="card-bottom">
+                    <span class="card-meta"
+                          data-en="Free: 15 RPM &bull; 1M tokens/min"
+                          data-es="Gratis: 15 RPM &bull; 1M tokens/min">Free: 15 RPM &bull; 1M tokens/min</span>
+                    <a href="gemini-setup.html" class="guide-btn" style="background:#4285f4;">
+                        <span data-en="View guide" data-es="Ver guia">View guide</span>
+                        <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Claude -->
+            <div class="provider-card animate-in" data-provider="claude">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="provider-icon claude">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" fill="white" opacity="0.9"/>
+                                <path d="M12 6L7 9V15L12 18L17 15V9L12 6Z" fill="#c4956a"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="provider-name">Anthropic Claude</div>
+                            <div class="provider-model">Claude Haiku 4.5</div>
+                        </div>
+                    </div>
+                    <span class="badge badge-recommended"
+                          data-en="Recommended"
+                          data-es="Recomendado">Recommended</span>
+                </div>
+                <p class="card-description"
+                   data-en="Anthropic's lightweight yet capable model. Excellent at producing clear, educational chess explanations with nuanced analysis."
+                   data-es="El modelo ligero pero capaz de Anthropic. Excelente para producir explicaciones de ajedrez claras y educativas con analisis matizado.">Anthropic's lightweight yet capable model. Excellent at producing clear, educational chess explanations with nuanced analysis.</p>
+                <div class="card-bottom">
+                    <span class="card-meta"
+                          data-en="~$0.001 per analysis"
+                          data-es="~$0.001 por analisis">~$0.001 per analysis</span>
+                    <a href="claude-setup.html" class="guide-btn" style="background:#d4a574;">
+                        <span data-en="View guide" data-es="Ver guia">View guide</span>
+                        <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DeepSeek -->
+            <div class="provider-card animate-in" data-provider="deepseek">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="provider-icon deepseek">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2" fill="none"/>
+                                <path d="M12 7V12L15.5 14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="12" cy="12" r="2" fill="white"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="provider-name">DeepSeek</div>
+                            <div class="provider-model">DeepSeek Chat</div>
+                        </div>
+                    </div>
+                    <span class="badge badge-cheapest"
+                          data-en="Cheapest"
+                          data-es="Mas barato">Cheapest</span>
+                </div>
+                <p class="card-description"
+                   data-en="Chinese AI lab offering extremely competitive pricing. Great value for high-volume analysis at the lowest cost per request."
+                   data-es="Laboratorio chino de IA que ofrece precios extremadamente competitivos. Gran valor para analisis de alto volumen al menor costo por solicitud.">Chinese AI lab offering extremely competitive pricing. Great value for high-volume analysis at the lowest cost per request.</p>
+                <div class="card-bottom">
+                    <span class="card-meta"
+                          data-en="~$0.0003 per analysis"
+                          data-es="~$0.0003 por analisis">~$0.0003 per analysis</span>
+                    <a href="deepseek-setup.html" class="guide-btn" style="background:#06b6d4;">
+                        <span data-en="View guide" data-es="Ver guia">View guide</span>
+                        <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- OpenAI -->
+            <div class="provider-card animate-in" data-provider="openai">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="provider-icon openai">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.2 8.7C21.8 7.2 20.8 5.9 19.5 5.1C17.6 3.8 15.1 3.6 13 4.5C11.9 3.4 10.3 2.8 8.7 2.9C7 3 5.5 3.8 4.5 5.1C2.7 6.7 2.1 9.2 2.8 11.4C1.7 12.5 1.1 14.1 1.2 15.7C1.4 17.4 2.2 18.9 3.5 19.8C5.4 21.1 7.9 21.3 10 20.4C11.1 21.5 12.7 22.1 14.3 22C16 21.9 17.5 21.1 18.5 19.8C20.3 18.2 20.9 15.7 20.2 13.5C21.3 12.4 21.9 10.8 21.8 9.2L22.2 8.7Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="provider-name">OpenAI</div>
+                            <div class="provider-model">GPT-4o mini</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-description"
+                   data-en="The widely-known AI provider behind ChatGPT. Reliable and well-documented, with solid chess analysis capabilities."
+                   data-es="El conocido proveedor de IA detras de ChatGPT. Fiable y bien documentado, con solidas capacidades de analisis de ajedrez.">The widely-known AI provider behind ChatGPT. Reliable and well-documented, with solid chess analysis capabilities.</p>
+                <div class="card-bottom">
+                    <span class="card-meta"
+                          data-en="~$0.001 per analysis"
+                          data-es="~$0.001 por analisis">~$0.001 per analysis</span>
+                    <a href="openai-setup.html" class="guide-btn" style="background:#10a37f;">
+                        <span data-en="View guide" data-es="Ver guia">View guide</span>
+                        <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq-section">
+        <h2 data-en="Frequently asked questions"
+            data-es="Preguntas frecuentes">Frequently asked questions</h2>
+
+        <div class="faq-card">
+
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span data-en="Which provider should I choose?"
+                          data-es="Que proveedor deberia elegir?">Which provider should I choose?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p data-en="It depends on your priorities:"
+                           data-es="Depende de tus prioridades:">It depends on your priorities:</p>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th data-en="Provider" data-es="Proveedor">Provider</th>
+                                    <th data-en="Price" data-es="Precio">Price</th>
+                                    <th data-en="Quality" data-es="Calidad">Quality</th>
+                                    <th data-en="Best for" data-es="Ideal para">Best for</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="provider-col">Gemini</td>
+                                    <td data-en="Free tier" data-es="Plan gratuito">Free tier</td>
+                                    <td>&#9733;&#9733;&#9733;&#9734;</td>
+                                    <td data-en="Getting started" data-es="Empezar">Getting started</td>
+                                </tr>
+                                <tr>
+                                    <td class="provider-col">Claude</td>
+                                    <td data-en="Low" data-es="Bajo">Low</td>
+                                    <td>&#9733;&#9733;&#9733;&#9733;</td>
+                                    <td data-en="Best explanations" data-es="Mejores explicaciones">Best explanations</td>
+                                </tr>
+                                <tr>
+                                    <td class="provider-col">DeepSeek</td>
+                                    <td data-en="Lowest" data-es="El mas bajo">Lowest</td>
+                                    <td>&#9733;&#9733;&#9733;&#9734;</td>
+                                    <td data-en="Heavy usage" data-es="Uso intensivo">Heavy usage</td>
+                                </tr>
+                                <tr>
+                                    <td class="provider-col">OpenAI</td>
+                                    <td data-en="Low" data-es="Bajo">Low</td>
+                                    <td>&#9733;&#9733;&#9733;&#9734;</td>
+                                    <td data-en="Familiarity" data-es="Familiaridad">Familiarity</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span data-en="Is my API key safe?"
+                          data-es="Esta segura mi API key?">Is my API key safe?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p data-en="Yes. CheesCoach stores your API key encrypted on your device using Android's EncryptedSharedPreferences (AES-256-GCM). Your key is never sent to our servers &mdash; it goes directly from your device to the AI provider's API."
+                           data-es="Si. CheesCoach almacena tu API key cifrada en tu dispositivo usando EncryptedSharedPreferences de Android (AES-256-GCM). Tu clave nunca se envia a nuestros servidores &mdash; va directamente desde tu dispositivo a la API del proveedor de IA.">Yes. CheesCoach stores your API key encrypted on your device using Android's EncryptedSharedPreferences (AES-256-GCM). Your key is never sent to our servers &mdash; it goes directly from your device to the AI provider's API.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span data-en="How much will it cost me?"
+                          data-es="Cuanto me costara?">How much will it cost me?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p data-en="Very little. Each chess analysis request uses a small amount of tokens. With Gemini's free tier, you can analyze hundreds of positions per day at no cost. With paid providers, a typical game review costs less than $0.01."
+                           data-es="Muy poco. Cada solicitud de analisis de ajedrez usa una pequena cantidad de tokens. Con el plan gratuito de Gemini, puedes analizar cientos de posiciones por dia sin costo. Con proveedores de pago, una revision tipica de partida cuesta menos de $0.01.">Very little. Each chess analysis request uses a small amount of tokens. With Gemini's free tier, you can analyze hundreds of positions per day at no cost. With paid providers, a typical game review costs less than $0.01.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span data-en="Can I switch providers later?"
+                          data-es="Puedo cambiar de proveedor despues?">Can I switch providers later?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p data-en="Absolutely! You can change your AI provider at any time in the app's Settings screen. Just enter a new API key for the provider you want to use and select it from the dropdown."
+                           data-es="Por supuesto! Puedes cambiar tu proveedor de IA en cualquier momento en la pantalla de Ajustes de la app. Solo ingresa una nueva API key para el proveedor que quieras usar y seleccionalo del menu desplegable.">Absolutely! You can change your AI provider at any time in the app's Settings screen. Just enter a new API key for the provider you want to use and select it from the dropdown.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span data-en="Do I need an API key to use CheesCoach?"
+                          data-es="Necesito una API key para usar CheesCoach?">Do I need an API key to use CheesCoach?</span>
+                    <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p data-en="Not entirely. You can play against Stockfish, solve puzzles, review games, and play online on Lichess without any API key. The API key is only needed for the AI Coach feature, which provides natural language explanations and educational commentary about your moves."
+                           data-es="No del todo. Puedes jugar contra Stockfish, resolver puzzles, revisar partidas y jugar en linea en Lichess sin ninguna API key. La API key solo se necesita para la funcion de Coach IA, que proporciona explicaciones en lenguaje natural y comentarios educativos sobre tus jugadas.">Not entirely. You can play against Stockfish, solve puzzles, review games, and play online on Lichess without any API key. The API key is only needed for the AI Coach feature, which provides natural language explanations and educational commentary about your moves.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <p data-en="CheesCoach &mdash; Your AI chess coach"
+           data-es="CheesCoach &mdash; Tu entrenador de ajedrez con IA">CheesCoach &mdash; Your AI chess coach</p>
+        <div class="footer-links">
+            <a href="https://github.com/juanfranj/CheesCoach"
+               target="_blank"
+               rel="noopener noreferrer">GitHub</a>
+            <span style="color: var(--text-muted);">&bull;</span>
+            <a href="mailto:cheescoach@proton.me">
+                <span data-en="Contact" data-es="Contacto">Contact</span>
+            </a>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    // ========== Language System ==========
+    function detectLanguage() {
+        const stored = localStorage.getItem('cheescoach-lang');
+        if (stored === 'en' || stored === 'es') return stored;
+        const browserLang = navigator.language || navigator.userLanguage || '';
+        return browserLang.startsWith('es') ? 'es' : 'en';
+    }
+
+    function setLanguage(lang) {
+        localStorage.setItem('cheescoach-lang', lang);
+        applyLanguage(lang);
+    }
+
+    function applyLanguage(lang) {
+        document.documentElement.lang = lang;
+
+        // Update all translatable elements
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+            var text = el.getAttribute('data-' + lang);
+            if (text) {
+                el.innerHTML = text;
+            }
+        });
+
+        // Update toggle buttons
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    // ========== FAQ Accordion ==========
+    function toggleFaq(button) {
+        var item = button.parentElement;
+        var answer = item.querySelector('.faq-answer');
+        var isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(function(fi) {
+            fi.classList.remove('open');
+            fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            fi.querySelector('.faq-answer').style.maxHeight = '0';
+        });
+
+        // Open clicked (if it was closed)
+        if (!isOpen) {
+            item.classList.add('open');
+            button.setAttribute('aria-expanded', 'true');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    }
+
+    // ========== Initialize ==========
+    document.addEventListener('DOMContentLoaded', function() {
+        var lang = detectLanguage();
+        applyLanguage(lang);
+    });
+</script>
+
+</body>
+</html>

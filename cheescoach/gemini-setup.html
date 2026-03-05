@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Gemini API Key Setup - CheesCoach</title>
+    <meta name="description" content="Step-by-step guide to create a Google Gemini API key for CheesCoach chess coaching app.">
+    <meta name="author" content="JuanfranDevs">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Google Gemini API Key Setup - CheesCoach">
+    <meta property="og:description" content="Free AI-powered chess coaching. Get your Gemini API key in minutes.">
+    <meta property="og:type" content="article">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #263548;
+            --bg-surface: #334155;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --accent-glow-strong: rgba(59, 130, 246, 0.25);
+            --green: #22c55e;
+            --green-bg: rgba(34, 197, 94, 0.1);
+            --green-border: rgba(34, 197, 94, 0.3);
+            --yellow: #eab308;
+            --yellow-bg: rgba(234, 179, 8, 0.1);
+            --yellow-border: rgba(234, 179, 8, 0.3);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #334155;
+            --border-light: #475569;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Back link --- */
+        .back-bar {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 48px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* --- Language toggle --- */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .lang-btn {
+            padding: 8px 14px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: var(--bg-surface);
+            color: var(--text-primary);
+        }
+
+        /* --- Hero header --- */
+        .hero {
+            text-align: center;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 48px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: var(--green-bg);
+            border: 1px solid var(--green-border);
+            border-radius: 100px;
+            color: var(--green);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--accent-light), #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* --- What you'll get --- */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 56px;
+        }
+
+        .benefit-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .benefit-icon {
+            font-size: 1.75rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .benefit-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .benefit-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* --- Section headings --- */
+        .section-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        /* --- Step cards --- */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 56px;
+        }
+
+        .step-card {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+        }
+
+        .step-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent), #6366f1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .step-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .step-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .step-desc a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .step-desc a:hover {
+            border-bottom-color: var(--accent-light);
+        }
+
+        .step-desc code {
+            background: var(--bg-surface);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            color: var(--accent-light);
+        }
+
+        /* --- Copy tip --- */
+        .copy-tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--accent-glow);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 12px;
+        }
+
+        .copy-tip svg {
+            width: 18px;
+            height: 18px;
+            color: var(--accent-light);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .copy-tip-text {
+            font-size: 0.82rem;
+            color: var(--accent-light);
+            line-height: 1.5;
+        }
+
+        /* --- Pricing table --- */
+        .pricing-section {
+            margin-bottom: 56px;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .pricing-table thead {
+            background: var(--bg-surface);
+        }
+
+        .pricing-table th {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-secondary);
+            padding: 14px 20px;
+            text-align: left;
+        }
+
+        .pricing-table td {
+            padding: 16px 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .pricing-table tr:first-child td {
+            border-top: none;
+        }
+
+        .pricing-free {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .pricing-recommended {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 10px;
+            background: var(--green-bg);
+            border: 1px solid var(--green-border);
+            border-radius: 100px;
+            color: var(--green);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-left: 8px;
+        }
+
+        /* --- Tips section --- */
+        .tips-section {
+            margin-bottom: 56px;
+        }
+
+        .tip-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 20px;
+        }
+
+        .tip-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--yellow-bg);
+            border: 1px solid var(--yellow-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .tip-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* --- Footer --- */
+        .page-footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 20px;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .footer-text a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Bilingual visibility --- */
+        [data-en],
+        [data-es] {
+            /* Both attributes present = bilingual element */
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero {
+                padding-bottom: 36px;
+                margin-bottom: 36px;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-bottom: 40px;
+            }
+
+            .step-card {
+                flex-direction: column;
+                gap: 14px;
+                padding: 20px;
+            }
+
+            .step-number {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+                border-radius: 10px;
+            }
+
+            .steps {
+                gap: 14px;
+                margin-bottom: 40px;
+            }
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 12px 14px;
+                font-size: 0.82rem;
+            }
+
+            .lang-toggle {
+                top: 12px;
+                right: 12px;
+            }
+
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+
+            .section-heading {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .step-title {
+                font-size: 0.95rem;
+            }
+
+            .step-desc {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* --- Scrollbar --- */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-deep);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-surface);
+            border-radius: 3px;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+
+    <div class="container">
+
+        <!-- Back bar -->
+        <nav class="back-bar">
+            <a href="api-setup.html" class="back-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                <span data-en="Back to guides" data-es="Volver a las guias">Back to guides</span>
+            </a>
+        </nav>
+
+        <!-- Hero -->
+        <header class="hero">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span data-en="Recommended - Free tier available" data-es="Recomendado - Plan gratuito disponible">Recommended - Free tier available</span>
+            </div>
+            <h1>
+                <span data-en="Google Gemini" data-es="Google Gemini">Google Gemini</span><br>
+                <span class="gradient" data-en="API Key Setup" data-es="Configuracion de API Key">API Key Setup</span>
+            </h1>
+            <p class="hero-subtitle" data-en="Get your free Gemini API key in under 5 minutes. No credit card required." data-es="Obtiene tu API key de Gemini gratis en menos de 5 minutos. Sin tarjeta de credito.">Get your free Gemini API key in under 5 minutes. No credit card required.</p>
+        </header>
+
+        <!-- What you'll get -->
+        <h2 class="section-heading">
+            <span data-en="What you'll get" data-es="Lo que obtendras">What you'll get</span>
+        </h2>
+
+        <div class="benefits">
+            <div class="benefit-card">
+                <span class="benefit-icon">&#127873;</span>
+                <div class="benefit-title" data-en="250 requests/day free" data-es="250 solicitudes/dia gratis">250 requests/day free</div>
+                <div class="benefit-desc" data-en="No credit card needed to start" data-es="Sin tarjeta de credito para empezar">No credit card needed to start</div>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">&#9889;</span>
+                <div class="benefit-title" data-en="Gemini 2.5 Flash" data-es="Gemini 2.5 Flash">Gemini 2.5 Flash</div>
+                <div class="benefit-desc" data-en="Fast and accurate chess analysis" data-es="Analisis de ajedrez rapido y preciso">Fast and accurate chess analysis</div>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">&#128640;</span>
+                <div class="benefit-title" data-en="Best free option" data-es="Mejor opcion gratuita">Best free option</div>
+                <div class="benefit-desc" data-en="Ideal to start without spending" data-es="Ideal para empezar sin gastar">Ideal to start without spending</div>
+            </div>
+        </div>
+
+        <!-- Steps -->
+        <h2 class="section-heading">
+            <span data-en="Step-by-step guide" data-es="Guia paso a paso">Step-by-step guide</span>
+        </h2>
+
+        <div class="steps">
+
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title" data-en="Go to Google AI Studio" data-es="Ve a Google AI Studio">Go to Google AI Studio</div>
+                    <p class="step-desc" data-en='Visit <a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">aistudio.google.com</a> and click <strong>"Get Started"</strong>.' data-es='Visita <a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">aistudio.google.com</a> y haz clic en <strong>"Get Started"</strong>.'>Visit <a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">aistudio.google.com</a> and click <strong>"Get Started"</strong>.</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title" data-en="Sign in with Google" data-es="Inicia sesion con Google">Sign in with Google</div>
+                    <p class="step-desc" data-en='Use any Google account (Gmail). If you don&apos;t have one, create one at <a href="https://accounts.google.com" target="_blank" rel="noopener noreferrer">accounts.google.com</a>.' data-es='Usa cualquier cuenta de Google (Gmail). Si no tienes una, creala en <a href="https://accounts.google.com" target="_blank" rel="noopener noreferrer">accounts.google.com</a>.'>Use any Google account (Gmail). If you don&apos;t have one, create one at <a href="https://accounts.google.com" target="_blank" rel="noopener noreferrer">accounts.google.com</a>.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title" data-en="Accept Terms of Service" data-es="Acepta los Terminos de Servicio">Accept Terms of Service</div>
+                    <p class="step-desc" data-en="Read and accept Google AI Studio's Terms of Service to continue." data-es="Lee y acepta los Terminos de Servicio de Google AI Studio para continuar.">Read and accept Google AI Studio's Terms of Service to continue.</p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-title" data-en="Navigate to API Keys" data-es="Navega a API Keys">Navigate to API Keys</div>
+                    <p class="step-desc" data-en='In the left sidebar, click on <strong>"API Keys"</strong>, or go directly to <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">aistudio.google.com/app/apikey</a>.' data-es='En la barra lateral izquierda, haz clic en <strong>"API Keys"</strong>, o ve directamente a <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">aistudio.google.com/app/apikey</a>.'>In the left sidebar, click on <strong>"API Keys"</strong>, or go directly to <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">aistudio.google.com/app/apikey</a>.</p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <div class="step-title" data-en="Create API Key" data-es="Crea la API Key">Create API Key</div>
+                    <p class="step-desc" data-en='Click <strong>"Create API Key"</strong>. Select a Google Cloud project (one will be created automatically if you don&apos;t have any).' data-es='Haz clic en <strong>"Create API Key"</strong>. Selecciona un proyecto de Google Cloud (se creara uno automaticamente si no tienes ninguno).'>Click <strong>"Create API Key"</strong>. Select a Google Cloud project (one will be created automatically if you don&apos;t have any).</p>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <div class="step-title" data-en="Copy your key" data-es="Copia tu clave">Copy your key</div>
+                    <p class="step-desc" data-en='Copy the generated API key (starts with <code>AIza...</code>). Store it safely &mdash; you can always generate a new one if lost.' data-es='Copia la API key generada (empieza con <code>AIza...</code>). Guardala en un lugar seguro &mdash; siempre puedes generar una nueva si la pierdes.'>Copy the generated API key (starts with <code>AIza...</code>). Store it safely &mdash; you can always generate a new one if lost.</p>
+                    <div class="copy-tip">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                        </svg>
+                        <span class="copy-tip-text" data-en="Tip: Click the copy icon next to the key to copy it to your clipboard instantly." data-es="Consejo: Haz clic en el icono de copiar junto a la clave para copiarla al portapapeles al instante.">Tip: Click the copy icon next to the key to copy it to your clipboard instantly.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step-card">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <div class="step-title" data-en="Paste in CheesCoach" data-es="Pega en CheesCoach">Paste in CheesCoach</div>
+                    <p class="step-desc" data-en='Open CheesCoach &rarr; <strong>Settings</strong> &rarr; <strong>AI section</strong> &rarr; Select <strong>"Gemini"</strong> &rarr; <strong>Configure</strong> &rarr; Paste your API key.' data-es='Abre CheesCoach &rarr; <strong>Ajustes</strong> &rarr; <strong>Seccion IA</strong> &rarr; Selecciona <strong>"Gemini"</strong> &rarr; <strong>Configurar</strong> &rarr; Pega tu API key.'>Open CheesCoach &rarr; <strong>Settings</strong> &rarr; <strong>AI section</strong> &rarr; Select <strong>"Gemini"</strong> &rarr; <strong>Configure</strong> &rarr; Paste your API key.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pricing -->
+        <div class="pricing-section">
+            <h2 class="section-heading">
+                <span data-en="Pricing" data-es="Precios">Pricing</span>
+            </h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th data-en="Plan" data-es="Plan">Plan</th>
+                        <th data-en="Requests" data-es="Solicitudes">Requests</th>
+                        <th data-en="Cost" data-es="Coste">Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Free</strong>
+                            <span class="pricing-recommended" data-en="Recommended" data-es="Recomendado">Recommended</span>
+                        </td>
+                        <td data-en="250 / day" data-es="250 / dia">250 / day</td>
+                        <td class="pricing-free">$0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pay-as-you-go</strong></td>
+                        <td data-en="Unlimited" data-es="Ilimitadas">Unlimited</td>
+                        <td data-en="~$0.30 / M input tokens" data-es="~$0.30 / M tokens de entrada">~$0.30 / M input tokens</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tips -->
+        <div class="tips-section">
+            <h2 class="section-heading">
+                <span data-en="Tips" data-es="Consejos">Tips</span>
+            </h2>
+            <div class="tip-list">
+                <div class="tip-item">
+                    <div class="tip-icon">&#8734;</div>
+                    <p class="tip-text" data-en="The free tier is <strong>permanent</strong> and doesn't expire. You can use it indefinitely." data-es="El plan gratuito es <strong>permanente</strong> y no caduca. Puedes usarlo indefinidamente.">The free tier is <strong>permanent</strong> and doesn't expire. You can use it indefinitely.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">&#9203;</div>
+                    <p class="tip-text" data-en="If you hit rate limits (error 429), just wait a minute and try again. The limit resets daily." data-es="Si alcanzas el limite de solicitudes (error 429), espera un minuto e intentalo de nuevo. El limite se restablece diariamente.">If you hit rate limits (error 429), just wait a minute and try again. The limit resets daily.</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">&#11088;</div>
+                    <p class="tip-text" data-en="Gemini is the <strong>best option for users who don't want to spend money</strong>. The free tier covers normal chess coaching usage." data-es="Gemini es la <strong>mejor opcion para usuarios que no quieren gastar dinero</strong>. El plan gratuito cubre el uso normal de coaching de ajedrez.">Gemini is the <strong>best option for users who don't want to spend money</strong>. The free tier covers normal chess coaching usage.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <p class="footer-text">
+                CheesCoach &mdash; <a href="https://github.com/juanfranj" target="_blank" rel="noopener noreferrer">JuanfranDevs</a>
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- Bilingual toggle (EN / ES) ---
+        function setLang(lang) {
+            document.querySelectorAll('[data-en][data-es]').forEach(function(el) {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+            document.documentElement.lang = lang === 'es' ? 'es' : 'en';
+            try {
+                localStorage.setItem('cheescoach-lang', lang);
+            } catch(e) {}
+        }
+
+        // Restore saved language
+        (function() {
+            var saved = null;
+            try {
+                saved = localStorage.getItem('cheescoach-lang');
+            } catch(e) {}
+            if (saved === 'en' || saved === 'es') {
+                setLang(saved);
+            }
+        })();
+    </script>
+
+</body>
+</html>
