@@ -310,19 +310,13 @@
             LESSONS.forEach(function(lesson) {
                 var isCompleted = completed.indexOf(lesson.num) !== -1;
                 var isCurrent = (lesson.num === firstIncomplete) && !isCompleted;
-                var isLocked = !isCompleted && !isCurrent && lesson.num > firstIncomplete;
 
                 var titleText = lesson.title[lang] || lesson.title.en;
                 var descText = lesson.description[lang] || lesson.description.en;
 
-                // Create card element
-                var card;
-                if (isLocked) {
-                    card = document.createElement('div');
-                } else {
-                    card = document.createElement('a');
-                    card.href = lesson.href;
-                }
+                // All lessons are always accessible (no lock)
+                var card = document.createElement('a');
+                card.href = lesson.href;
 
                 card.className = 'lesson-card reveal';
                 var ariaPrefix = lang === 'es' ? 'Lecci\u00f3n ' : 'Lesson ';
@@ -332,9 +326,6 @@
                     card.classList.add('completed');
                 } else if (isCurrent) {
                     card.classList.add('current');
-                } else if (isLocked) {
-                    card.classList.add('locked');
-                    card.setAttribute('aria-disabled', 'true');
                 }
 
                 // Number badge content
@@ -348,8 +339,6 @@
                     statusBadge = '<span class="lesson-card-status status-completed" data-en="Completed" data-es="Completada">' + (lang === 'es' ? 'Completada' : 'Completed') + '</span>';
                 } else if (isCurrent) {
                     statusBadge = '<span class="lesson-card-status status-current" data-en="Current" data-es="Actual">' + (lang === 'es' ? 'Actual' : 'Current') + '</span>';
-                } else if (isLocked) {
-                    statusBadge = '<span class="lesson-card-status status-locked" aria-hidden="true">\uD83D\uDD12</span>';
                 }
 
                 // Arrow text
