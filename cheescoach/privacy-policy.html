@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - CheesCoach</title>
+    <meta name="description" content="CheesCoach Privacy Policy - How we handle your data.">
+    <link rel="icon" type="image/png" href="app_icon_chesscoach.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+
+    <style>
+        .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: calc(var(--space-24) + var(--space-8)) var(--space-6) var(--space-16);
+        }
+        .policy-container h1 {
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-4);
+        }
+        .policy-date {
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-12);
+        }
+        .policy-container h2 {
+            font-size: var(--text-2xl);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-4);
+            padding-bottom: var(--space-2);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .policy-container h3 {
+            font-size: var(--text-lg);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-3);
+            color: var(--accent-bright);
+        }
+        .policy-container p,
+        .policy-container li {
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-4);
+        }
+        .policy-container ul {
+            padding-left: var(--space-6);
+            margin-bottom: var(--space-4);
+        }
+        .policy-container li {
+            margin-bottom: var(--space-2);
+        }
+        .policy-container strong {
+            color: var(--text-primary);
+        }
+        .policy-container a {
+            color: var(--accent-bright);
+        }
+        .policy-container a:hover {
+            text-decoration: underline;
+        }
+        .policy-toc {
+            background: var(--bg-glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            margin-bottom: var(--space-12);
+        }
+        .policy-toc h3 {
+            margin-top: 0;
+            color: var(--text-primary);
+        }
+        .policy-toc ol {
+            padding-left: var(--space-6);
+            margin-bottom: 0;
+        }
+        .policy-toc li {
+            margin-bottom: var(--space-2);
+        }
+        .policy-toc a {
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+        }
+        .policy-toc a:hover {
+            color: var(--accent-bright);
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-bottom: var(--space-6);
+        }
+        .data-table th,
+        .data-table td {
+            padding: var(--space-3) var(--space-4);
+            text-align: left;
+            font-size: var(--text-sm);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .data-table th {
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            font-weight: 700;
+            font-family: var(--font-display);
+        }
+        .data-table td {
+            color: var(--text-secondary);
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="chess-pattern-bg">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-logo">
+                <img src="app_icon_chesscoach.png" alt="CheesCoach" width="36" height="36">
+                <span>CheesCoach</span>
+            </a>
+            <ul class="navbar-links" id="nav-links">
+                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="curso/index.html" data-en="Course" data-es="Curso">Course</a></li>
+                <li><a href="api-setup.html">API Setup</a></li>
+                <li>
+                    <div class="lang-toggle">
+                        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+                        <button id="btn-es" onclick="setLang('es')">ES</button>
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="policy-container">
+
+        <h1 data-en="Privacy Policy" data-es="Politica de Privacidad">Privacy Policy</h1>
+        <p class="policy-date" data-en="Last updated: March 6, 2026" data-es="Ultima actualizacion: 6 de marzo de 2026">Last updated: March 6, 2026</p>
+
+        <div class="policy-toc">
+            <h3 data-en="Contents" data-es="Contenido">Contents</h3>
+            <ol>
+                <li><a href="#overview" data-en="Overview" data-es="Resumen">Overview</a></li>
+                <li><a href="#data-collection" data-en="Data Collection" data-es="Recopilacion de datos">Data Collection</a></li>
+                <li><a href="#ai-services" data-en="AI Services &amp; Third-Party APIs" data-es="Servicios de IA y APIs de terceros">AI Services &amp; Third-Party APIs</a></li>
+                <li><a href="#lichess" data-en="Lichess Integration" data-es="Integracion con Lichess">Lichess Integration</a></li>
+                <li><a href="#data-storage" data-en="Data Storage &amp; Security" data-es="Almacenamiento y seguridad de datos">Data Storage &amp; Security</a></li>
+                <li><a href="#data-sharing" data-en="Data Sharing" data-es="Comparticion de datos">Data Sharing</a></li>
+                <li><a href="#children" data-en="Children's Privacy" data-es="Privacidad de menores">Children's Privacy</a></li>
+                <li><a href="#rights" data-en="Your Rights" data-es="Tus derechos">Your Rights</a></li>
+                <li><a href="#changes" data-en="Changes to This Policy" data-es="Cambios en esta politica">Changes to This Policy</a></li>
+                <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+            </ol>
+        </div>
+
+        <!-- 1. Overview -->
+        <h2 id="overview" data-en="1. Overview" data-es="1. Resumen">1. Overview</h2>
+        <p data-en="CheesCoach is a chess coaching application for Android developed by JuanfranDevs. This privacy policy explains how our application handles your data. We are committed to protecting your privacy and being transparent about our data practices." data-es="CheesCoach es una aplicacion de coaching de ajedrez para Android desarrollada por JuanfranDevs. Esta politica de privacidad explica como nuestra aplicacion maneja tus datos. Estamos comprometidos con proteger tu privacidad y ser transparentes sobre nuestras practicas de datos.">CheesCoach is a chess coaching application for Android developed by JuanfranDevs. This privacy policy explains how our application handles your data. We are committed to protecting your privacy and being transparent about our data practices.</p>
+        <p data-en="<strong>Key principle:</strong> CheesCoach is designed to be privacy-first. All your chess data is stored locally on your device. We do not collect, store, or transmit personal information to our servers — because we don't have any." data-es="<strong>Principio clave:</strong> CheesCoach esta disenado con la privacidad como prioridad. Todos tus datos de ajedrez se almacenan localmente en tu dispositivo. No recopilamos, almacenamos ni transmitimos informacion personal a nuestros servidores — porque no tenemos ninguno."><strong>Key principle:</strong> CheesCoach is designed to be privacy-first. All your chess data is stored locally on your device. We do not collect, store, or transmit personal information to our servers — because we don't have any.</p>
+
+        <!-- 2. Data Collection -->
+        <h2 id="data-collection" data-en="2. Data Collection" data-es="2. Recopilacion de Datos">2. Data Collection</h2>
+        <p data-en="CheesCoach does <strong>not</strong> collect any personal data. The app works primarily offline and stores all information locally on your device." data-es="CheesCoach <strong>no</strong> recopila ningun dato personal. La aplicacion funciona principalmente sin conexion y almacena toda la informacion localmente en tu dispositivo.">CheesCoach does <strong>not</strong> collect any personal data. The app works primarily offline and stores all information locally on your device.</p>
+
+        <h3 data-en="Data stored locally on your device:" data-es="Datos almacenados localmente en tu dispositivo:">Data stored locally on your device:</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th data-en="Data Type" data-es="Tipo de dato">Data Type</th>
+                    <th data-en="Purpose" data-es="Proposito">Purpose</th>
+                    <th data-en="Storage" data-es="Almacenamiento">Storage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-en="Chess games (PGN)" data-es="Partidas de ajedrez (PGN)">Chess games (PGN)</td>
+                    <td data-en="Saving and reviewing your games" data-es="Guardar y repasar tus partidas">Saving and reviewing your games</td>
+                    <td data-en="Local database (Room)" data-es="Base de datos local (Room)">Local database (Room)</td>
+                </tr>
+                <tr>
+                    <td data-en="Move analysis" data-es="Analisis de movimientos">Move analysis</td>
+                    <td data-en="Caching AI analysis to avoid repeated API calls" data-es="Cache del analisis IA para evitar llamadas repetidas a la API">Caching AI analysis to avoid repeated API calls</td>
+                    <td data-en="Local database (Room)" data-es="Base de datos local (Room)">Local database (Room)</td>
+                </tr>
+                <tr>
+                    <td data-en="API keys" data-es="Claves API">API keys</td>
+                    <td data-en="Authenticating with AI providers you choose" data-es="Autenticacion con los proveedores de IA que elijas">Authenticating with AI providers you choose</td>
+                    <td data-en="Encrypted (AES-256-GCM)" data-es="Cifrado (AES-256-GCM)">Encrypted (AES-256-GCM)</td>
+                </tr>
+                <tr>
+                    <td data-en="App preferences" data-es="Preferencias de la app">App preferences</td>
+                    <td data-en="Theme, ELO level, board colors" data-es="Tema, nivel ELO, colores del tablero">Theme, ELO level, board colors</td>
+                    <td data-en="DataStore Preferences" data-es="DataStore Preferences">DataStore Preferences</td>
+                </tr>
+                <tr>
+                    <td data-en="Puzzle progress" data-es="Progreso de puzzles">Puzzle progress</td>
+                    <td data-en="Tracking your puzzle rating and streaks" data-es="Seguimiento de tu rating de puzzles y rachas">Tracking your puzzle rating and streaks</td>
+                    <td data-en="DataStore Preferences" data-es="DataStore Preferences">DataStore Preferences</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 data-en="Data we do NOT collect:" data-es="Datos que NO recopilamos:">Data we do NOT collect:</h3>
+        <ul>
+            <li data-en="Personal information (name, email, phone number)" data-es="Informacion personal (nombre, correo electronico, telefono)">Personal information (name, email, phone number)</li>
+            <li data-en="Location data" data-es="Datos de ubicacion">Location data</li>
+            <li data-en="Device identifiers or advertising IDs" data-es="Identificadores de dispositivo o IDs de publicidad">Device identifiers or advertising IDs</li>
+            <li data-en="Usage analytics or telemetry" data-es="Analitica de uso o telemetria">Usage analytics or telemetry</li>
+            <li data-en="Crash reports (no crash reporting SDK is used)" data-es="Reportes de fallos (no se usa ningun SDK de reportes de errores)">Crash reports (no crash reporting SDK is used)</li>
+            <li data-en="Contacts, photos, or any other personal files" data-es="Contactos, fotos o cualquier otro archivo personal">Contacts, photos, or any other personal files</li>
+        </ul>
+
+        <!-- 3. AI Services -->
+        <h2 id="ai-services" data-en="3. AI Services &amp; Third-Party APIs" data-es="3. Servicios de IA y APIs de Terceros">3. AI Services &amp; Third-Party APIs</h2>
+        <p data-en="CheesCoach can connect to third-party AI services to provide educational chess commentary. <strong>This feature is entirely optional</strong> and requires you to provide your own API key." data-es="CheesCoach puede conectarse a servicios de IA de terceros para proporcionar comentarios educativos de ajedrez. <strong>Esta funcion es completamente opcional</strong> y requiere que proporciones tu propia clave API.">CheesCoach can connect to third-party AI services to provide educational chess commentary. <strong>This feature is entirely optional</strong> and requires you to provide your own API key.</p>
+
+        <h3 data-en="Supported AI providers:" data-es="Proveedores de IA compatibles:">Supported AI providers:</h3>
+        <ul>
+            <li><strong>Google Gemini</strong> — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" data-en="Privacy Policy" data-es="Politica de Privacidad">Privacy Policy</a></li>
+            <li><strong>OpenAI</strong> — <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" data-en="Privacy Policy" data-es="Politica de Privacidad">Privacy Policy</a></li>
+            <li><strong>Anthropic (Claude)</strong> — <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer" data-en="Privacy Policy" data-es="Politica de Privacidad">Privacy Policy</a></li>
+            <li><strong>DeepSeek</strong> — <a href="https://www.deepseek.com/privacy" target="_blank" rel="noopener noreferrer" data-en="Privacy Policy" data-es="Politica de Privacidad">Privacy Policy</a></li>
+        </ul>
+
+        <h3 data-en="What data is sent to AI providers:" data-es="Que datos se envian a los proveedores de IA:">What data is sent to AI providers:</h3>
+        <p data-en="When you use the AI coaching feature, the following chess-specific data is sent to your chosen AI provider:" data-es="Cuando usas la funcion de coaching IA, se envian los siguientes datos especificos de ajedrez al proveedor de IA que hayas elegido:">When you use the AI coaching feature, the following chess-specific data is sent to your chosen AI provider:</p>
+        <ul>
+            <li data-en="The current chess position (FEN notation)" data-es="La posicion actual de ajedrez (notacion FEN)">The current chess position (FEN notation)</li>
+            <li data-en="The game move history (PGN notation)" data-es="El historial de movimientos de la partida (notacion PGN)">The game move history (PGN notation)</li>
+            <li data-en="The Stockfish engine evaluation (numeric score)" data-es="La evaluacion del motor Stockfish (puntuacion numerica)">The Stockfish engine evaluation (numeric score)</li>
+            <li data-en="Your configured ELO level (for adjusting explanation complexity)" data-es="Tu nivel ELO configurado (para ajustar la complejidad de la explicacion)">Your configured ELO level (for adjusting explanation complexity)</li>
+        </ul>
+        <p data-en="<strong>No personal information is ever sent to AI providers.</strong> Only chess positions and game data are transmitted. Your API key is sent as an authentication header but is never shared with us." data-es="<strong>Nunca se envia informacion personal a los proveedores de IA.</strong> Solo se transmiten posiciones de ajedrez y datos del juego. Tu clave API se envia como cabecera de autenticacion pero nunca se comparte con nosotros."><strong>No personal information is ever sent to AI providers.</strong> Only chess positions and game data are transmitted. Your API key is sent as an authentication header but is never shared with us.</p>
+
+        <div class="alert alert-info" style="margin-top: var(--space-4);">
+            <span class="alert-icon">&#9432;</span>
+            <div>
+                <p style="margin-bottom: var(--space-2);" data-en="<strong>Important:</strong> Each AI provider has their own privacy policy governing how they handle data sent to their APIs. We encourage you to review the privacy policy of your chosen provider. CheesCoach has no control over how third-party AI providers process the chess data sent to them." data-es="<strong>Importante:</strong> Cada proveedor de IA tiene su propia politica de privacidad que rige como manejan los datos enviados a sus APIs. Te animamos a revisar la politica de privacidad del proveedor que elijas. CheesCoach no tiene control sobre como los proveedores de IA de terceros procesan los datos de ajedrez que se les envian."><strong>Important:</strong> Each AI provider has their own privacy policy governing how they handle data sent to their APIs. We encourage you to review the privacy policy of your chosen provider. CheesCoach has no control over how third-party AI providers process the chess data sent to them.</p>
+            </div>
+        </div>
+
+        <h3 data-en="API key handling:" data-es="Manejo de claves API:">API key handling:</h3>
+        <ul>
+            <li data-en="Your API keys are stored <strong>exclusively on your device</strong>" data-es="Tus claves API se almacenan <strong>exclusivamente en tu dispositivo</strong>">Your API keys are stored <strong>exclusively on your device</strong></li>
+            <li data-en="Keys are encrypted using <strong>AES-256-GCM</strong> via Android's EncryptedSharedPreferences" data-es="Las claves se cifran usando <strong>AES-256-GCM</strong> a traves de EncryptedSharedPreferences de Android">Keys are encrypted using <strong>AES-256-GCM</strong> via Android's EncryptedSharedPreferences</li>
+            <li data-en="Keys are only used to authenticate API requests — they are never logged, transmitted to us, or shared with any other party" data-es="Las claves solo se usan para autenticar solicitudes API — nunca se registran, transmiten a nosotros, ni comparten con ninguna otra parte">Keys are only used to authenticate API requests — they are never logged, transmitted to us, or shared with any other party</li>
+            <li data-en="You can delete your API keys at any time from the app's Settings screen" data-es="Puedes eliminar tus claves API en cualquier momento desde la pantalla de Ajustes de la app">You can delete your API keys at any time from the app's Settings screen</li>
+        </ul>
+
+        <!-- 4. Lichess -->
+        <h2 id="lichess" data-en="4. Lichess Integration" data-es="4. Integracion con Lichess">4. Lichess Integration</h2>
+        <p data-en="CheesCoach offers optional online play through <a href='https://lichess.org' target='_blank' rel='noopener noreferrer'>Lichess.org</a>, a free and open-source chess platform." data-es="CheesCoach ofrece juego en linea opcional a traves de <a href='https://lichess.org' target='_blank' rel='noopener noreferrer'>Lichess.org</a>, una plataforma de ajedrez gratuita y de codigo abierto.">CheesCoach offers optional online play through <a href="https://lichess.org" target="_blank" rel="noopener noreferrer">Lichess.org</a>, a free and open-source chess platform.</p>
+
+        <h3 data-en="Authentication:" data-es="Autenticacion:">Authentication:</h3>
+        <ul>
+            <li data-en="Lichess login uses <strong>OAuth 2.0 with PKCE</strong> (industry-standard secure authentication)" data-es="El inicio de sesion en Lichess usa <strong>OAuth 2.0 con PKCE</strong> (autenticacion segura estandar de la industria)">Lichess login uses <strong>OAuth 2.0 with PKCE</strong> (industry-standard secure authentication)</li>
+            <li data-en="CheesCoach <strong>never sees or stores your Lichess password</strong>" data-es="CheesCoach <strong>nunca ve ni almacena tu contrasena de Lichess</strong>">CheesCoach <strong>never sees or stores your Lichess password</strong></li>
+            <li data-en="The OAuth token is stored encrypted on your device and can be revoked at any time" data-es="El token OAuth se almacena cifrado en tu dispositivo y se puede revocar en cualquier momento">The OAuth token is stored encrypted on your device and can be revoked at any time</li>
+        </ul>
+
+        <h3 data-en="Data exchanged with Lichess:" data-es="Datos intercambiados con Lichess:">Data exchanged with Lichess:</h3>
+        <ul>
+            <li data-en="Your Lichess username and rating (for display in the app)" data-es="Tu nombre de usuario y rating de Lichess (para mostrarlo en la app)">Your Lichess username and rating (for display in the app)</li>
+            <li data-en="Game moves and clock data during online matches" data-es="Movimientos del juego y datos del reloj durante partidas en linea">Game moves and clock data during online matches</li>
+            <li data-en="Game seek parameters (time control, color preference)" data-es="Parametros de busqueda de partida (control de tiempo, preferencia de color)">Game seek parameters (time control, color preference)</li>
+        </ul>
+        <p data-en="For details on how Lichess handles your data, see the <a href='https://lichess.org/privacy' target='_blank' rel='noopener noreferrer'>Lichess Privacy Policy</a>." data-es="Para mas informacion sobre como Lichess maneja tus datos, consulta la <a href='https://lichess.org/privacy' target='_blank' rel='noopener noreferrer'>Politica de Privacidad de Lichess</a>.">For details on how Lichess handles your data, see the <a href="https://lichess.org/privacy" target="_blank" rel="noopener noreferrer">Lichess Privacy Policy</a>.</p>
+
+        <!-- 5. Data Storage -->
+        <h2 id="data-storage" data-en="5. Data Storage &amp; Security" data-es="5. Almacenamiento y Seguridad de Datos">5. Data Storage &amp; Security</h2>
+        <ul>
+            <li data-en="<strong>All data is stored locally</strong> on your Android device" data-es="<strong>Todos los datos se almacenan localmente</strong> en tu dispositivo Android"><strong>All data is stored locally</strong> on your Android device</li>
+            <li data-en="Chess games and analysis are stored in a local SQLite database (Room)" data-es="Las partidas y analisis de ajedrez se almacenan en una base de datos local SQLite (Room)">Chess games and analysis are stored in a local SQLite database (Room)</li>
+            <li data-en="Sensitive data (API keys, OAuth tokens) is encrypted using <strong>AES-256-GCM</strong>" data-es="Los datos sensibles (claves API, tokens OAuth) se cifran usando <strong>AES-256-GCM</strong>">Sensitive data (API keys, OAuth tokens) is encrypted using <strong>AES-256-GCM</strong></li>
+            <li data-en="Preferences are stored in Android's DataStore" data-es="Las preferencias se almacenan en DataStore de Android">Preferences are stored in Android's DataStore</li>
+            <li data-en="The Stockfish chess engine runs <strong>entirely on your device</strong> — no server processing" data-es="El motor de ajedrez Stockfish se ejecuta <strong>completamente en tu dispositivo</strong> — sin procesamiento en servidor">The Stockfish chess engine runs <strong>entirely on your device</strong> — no server processing</li>
+            <li data-en="CheesCoach does <strong>not have any backend servers</strong> — we cannot access your data" data-es="CheesCoach <strong>no tiene ningun servidor backend</strong> — no podemos acceder a tus datos">CheesCoach does <strong>not have any backend servers</strong> — we cannot access your data</li>
+        </ul>
+
+        <!-- 6. Data Sharing -->
+        <h2 id="data-sharing" data-en="6. Data Sharing" data-es="6. Comparticion de Datos">6. Data Sharing</h2>
+        <p data-en="CheesCoach does <strong>not sell, rent, or share</strong> your personal data with any third party. The only data transmitted from the app is:" data-es="CheesCoach <strong>no vende, alquila ni comparte</strong> tus datos personales con ningun tercero. Los unicos datos que se transmiten desde la app son:">CheesCoach does <strong>not sell, rent, or share</strong> your personal data with any third party. The only data transmitted from the app is:</p>
+        <ul>
+            <li data-en="Chess position data sent to AI providers <strong>only when you actively request analysis</strong> (optional feature)" data-es="Datos de posiciones de ajedrez enviados a proveedores de IA <strong>solo cuando solicitas activamente un analisis</strong> (funcion opcional)">Chess position data sent to AI providers <strong>only when you actively request analysis</strong> (optional feature)</li>
+            <li data-en="Game data exchanged with Lichess <strong>only during online play</strong> (optional feature)" data-es="Datos de partida intercambiados con Lichess <strong>solo durante el juego en linea</strong> (funcion opcional)">Game data exchanged with Lichess <strong>only during online play</strong> (optional feature)</li>
+        </ul>
+        <p data-en="The app contains <strong>no ads, no trackers, and no analytics SDKs</strong>." data-es="La aplicacion <strong>no contiene anuncios, rastreadores ni SDKs de analitica</strong>.">The app contains <strong>no ads, no trackers, and no analytics SDKs</strong>.</p>
+
+        <!-- 7. Children -->
+        <h2 id="children" data-en="7. Children's Privacy" data-es="7. Privacidad de Menores">7. Children's Privacy</h2>
+        <p data-en="CheesCoach does not knowingly collect any personal information from children under 13 years of age. Since the app does not collect personal data from any user, it is safe for children to use. However, if a child uses the optional AI coaching or online play features, data will be transmitted to third-party services as described above." data-es="CheesCoach no recopila a sabiendas ninguna informacion personal de menores de 13 anos. Dado que la aplicacion no recopila datos personales de ningun usuario, es segura para que la usen menores. Sin embargo, si un menor usa las funciones opcionales de coaching IA o juego en linea, se transmitiran datos a servicios de terceros como se describe anteriormente.">CheesCoach does not knowingly collect any personal information from children under 13 years of age. Since the app does not collect personal data from any user, it is safe for children to use. However, if a child uses the optional AI coaching or online play features, data will be transmitted to third-party services as described above.</p>
+        <p data-en="Parents or guardians should be aware that the AI coaching feature requires an API key and may incur costs from the AI provider. We recommend parental supervision for this feature." data-es="Los padres o tutores deben ser conscientes de que la funcion de coaching IA requiere una clave API y puede generar costos del proveedor de IA. Recomendamos supervision parental para esta funcion.">Parents or guardians should be aware that the AI coaching feature requires an API key and may incur costs from the AI provider. We recommend parental supervision for this feature.</p>
+
+        <!-- 8. Your Rights -->
+        <h2 id="rights" data-en="8. Your Rights" data-es="8. Tus Derechos">8. Your Rights</h2>
+        <p data-en="Since all your data is stored locally on your device, you have full control:" data-es="Dado que todos tus datos se almacenan localmente en tu dispositivo, tienes control total:">Since all your data is stored locally on your device, you have full control:</p>
+        <ul>
+            <li data-en="<strong>Delete your data:</strong> Clear app data from Android Settings, or uninstall the app" data-es="<strong>Eliminar tus datos:</strong> Borra los datos de la app desde Ajustes de Android, o desinstala la app"><strong>Delete your data:</strong> Clear app data from Android Settings, or uninstall the app</li>
+            <li data-en="<strong>Delete API keys:</strong> Remove them from the Settings screen within the app" data-es="<strong>Eliminar claves API:</strong> Eliminalas desde la pantalla de Ajustes dentro de la app"><strong>Delete API keys:</strong> Remove them from the Settings screen within the app</li>
+            <li data-en="<strong>Revoke Lichess access:</strong> Disconnect from Settings or revoke the token from your Lichess account" data-es="<strong>Revocar acceso a Lichess:</strong> Desconectate desde Ajustes o revoca el token desde tu cuenta de Lichess"><strong>Revoke Lichess access:</strong> Disconnect from Settings or revoke the token from your Lichess account</li>
+            <li data-en="<strong>Export your games:</strong> Games can be exported as PGN files at any time" data-es="<strong>Exportar tus partidas:</strong> Las partidas se pueden exportar como archivos PGN en cualquier momento"><strong>Export your games:</strong> Games can be exported as PGN files at any time</li>
+            <li data-en="<strong>Disable AI features:</strong> Simply don't add an API key — the app works fully offline" data-es="<strong>Desactivar funciones de IA:</strong> Simplemente no agregues una clave API — la app funciona completamente sin conexion"><strong>Disable AI features:</strong> Simply don't add an API key — the app works fully offline</li>
+        </ul>
+
+        <!-- 9. Changes -->
+        <h2 id="changes" data-en="9. Changes to This Policy" data-es="9. Cambios en Esta Politica">9. Changes to This Policy</h2>
+        <p data-en="We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically. Continued use of the app after any changes constitutes acceptance of the updated policy." data-es="Podemos actualizar esta politica de privacidad de vez en cuando. Cualquier cambio se publicara en esta pagina con una fecha de revision actualizada. Te animamos a revisar esta politica periodicamente. El uso continuado de la app despues de cualquier cambio constituye la aceptacion de la politica actualizada.">We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically. Continued use of the app after any changes constitutes acceptance of the updated policy.</p>
+
+        <!-- 10. Contact -->
+        <h2 id="contact" data-en="10. Contact" data-es="10. Contacto">10. Contact</h2>
+        <p data-en="If you have any questions or concerns about this privacy policy, please contact us:" data-es="Si tienes alguna pregunta o inquietud sobre esta politica de privacidad, contactanos:">If you have any questions or concerns about this privacy policy, please contact us:</p>
+        <ul>
+            <li data-en="<strong>Developer:</strong> JuanfranDevs" data-es="<strong>Desarrollador:</strong> JuanfranDevs"><strong>Developer:</strong> JuanfranDevs</li>
+            <li data-en="<strong>GitHub:</strong> <a href='https://github.com/juanfranj' target='_blank' rel='noopener noreferrer'>github.com/juanfranj</a>" data-es="<strong>GitHub:</strong> <a href='https://github.com/juanfranj' target='_blank' rel='noopener noreferrer'>github.com/juanfranj</a>"><strong>GitHub:</strong> <a href="https://github.com/juanfranj" target="_blank" rel="noopener noreferrer">github.com/juanfranj</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <span>CheesCoach by <a href="https://github.com/juanfranj" target="_blank" rel="noopener noreferrer">JuanfranDevs</a></span>
+            <span>&copy; 2026</span>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        // Language toggle
+        function applyLang(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-en]').forEach(function(el) {
+                var t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t;
+            });
+            var btnEn = document.getElementById('btn-en');
+            var btnEs = document.getElementById('btn-es');
+            if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+            if (btnEs) btnEs.classList.toggle('active', lang === 'es');
+        }
+        window.setLang = function(lang) {
+            localStorage.setItem('cheescoach-lang', lang);
+            applyLang(lang);
+        };
+        var saved = localStorage.getItem('cheescoach-lang');
+        if (!saved) saved = (navigator.language || '').startsWith('es') ? 'es' : 'en';
+        applyLang(saved);
+
+        // Navbar scroll
+        var nav = document.querySelector('.navbar');
+        window.addEventListener('scroll', function() {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        }, { passive: true });
+
+        // Hamburger
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function() {
+                var open = navLinks.classList.toggle('open');
+                hamburger.classList.toggle('open', open);
+                hamburger.setAttribute('aria-expanded', open);
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

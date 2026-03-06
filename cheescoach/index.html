@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,10 +40,16 @@
         </a>
 
         <ul class="navbar-links" id="nav-links">
-            <li><a href="#features">Caracteristicas</a></li>
-            <li><a href="#course-banner">Curso</a></li>
-            <li><a href="api-setup.html">IA Providers</a></li>
-            <li><a href="#download">Descargar</a></li>
+            <li><a href="#features" data-en="Features" data-es="Caracteristicas">Features</a></li>
+            <li><a href="#course-banner" data-en="Course" data-es="Curso">Course</a></li>
+            <li><a href="api-setup.html" data-en="AI Providers" data-es="Proveedores IA">AI Providers</a></li>
+            <li><a href="#download" data-en="Download" data-es="Descargar">Download</a></li>
+            <li>
+                <div class="lang-toggle">
+                    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+                    <button id="btn-es" onclick="setLang('es')">ES</button>
+                </div>
+            </li>
         </ul>
 
         <button class="navbar-hamburger" id="hamburger" aria-label="Menu de navegacion" aria-expanded="false">
@@ -68,11 +74,11 @@
 
             <!-- Right: Content -->
             <div class="hero-content animate-fadeInUp delay-200">
-                <h1 class="hero-title">
-                    Tu Coach de Ajedrez con <span class="text-gradient">Inteligencia Artificial</span>
+                <h1 class="hero-title" data-en="Your Chess Coach with <span class=&quot;text-gradient&quot;>Artificial Intelligence</span>" data-es="Tu Coach de Ajedrez con <span class=&quot;text-gradient&quot;>Inteligencia Artificial</span>">
+                    Your Chess Coach with <span class="text-gradient" data-en="Artificial Intelligence" data-es="Inteligencia Artificial">Artificial Intelligence</span>
                 </h1>
-                <p class="hero-subtitle">
-                    Analiza cada jugada con explicaciones en lenguaje natural, adaptadas a tu nivel. Stockfish + IA en tu bolsillo.
+                <p class="hero-subtitle" data-en="Analyze every move with natural language explanations, adapted to your level. Stockfish + AI in your pocket." data-es="Analiza cada jugada con explicaciones en lenguaje natural, adaptadas a tu nivel. Stockfish + IA en tu bolsillo.">
+                    Analyze every move with natural language explanations, adapted to your level. Stockfish + AI in your pocket.
                 </p>
 
                 <div class="hero-badges animate-fadeInUp delay-300">
@@ -80,9 +86,9 @@
                         <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.523 15.342c-.498.139-1.01.208-1.523.208-3.038 0-5.5-2.462-5.5-5.5 0-1.932 1-3.628 2.51-4.608A8.014 8.014 0 004 13c0 4.418 3.582 8 8 8 2.564 0 4.843-1.208 6.308-3.084A6.003 6.003 0 0117.523 15.342zM6.94 3.346l.227-.068c.097-.03.2.014.253.1l.62 1.006a.199.199 0 00.17.094h1.182c.094 0 .176.065.197.156l.026.113a.199.199 0 01-.128.23L8.376 5.4a.199.199 0 00-.126.136l-.316 1.328a.199.199 0 01-.352.067l-.58-.746a.199.199 0 00-.193-.074l-1.078.18a.199.199 0 01-.22-.249l.266-.972a.199.199 0 00-.052-.193L4.846 3.97a.199.199 0 01.116-.336l.88-.078a.199.199 0 00.164-.115l.406-.943c.04-.093.152-.132.24-.084l.288.155z"/></svg>
                         Android
                     </span>
-                    <span class="badge badge-success">
+                    <span class="badge badge-success" data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; width=&quot;14&quot; height=&quot;14&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Free" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; width=&quot;14&quot; height=&quot;14&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Gratis">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>
-                        Gratis
+                        Free
                     </span>
                     <span class="badge badge-gold">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -91,13 +97,13 @@
                 </div>
 
                 <div class="hero-ctas animate-fadeInUp delay-400">
-                    <a href="#download" class="btn btn-primary btn-lg">
+                    <a href="#download" class="btn btn-primary btn-lg" data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><path d=&quot;M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4&quot;/><polyline points=&quot;7 10 12 15 17 10&quot;/><line x1=&quot;12&quot; y1=&quot;15&quot; x2=&quot;12&quot; y2=&quot;3&quot;/></svg> Download Free" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><path d=&quot;M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4&quot;/><polyline points=&quot;7 10 12 15 17 10&quot;/><line x1=&quot;12&quot; y1=&quot;15&quot; x2=&quot;12&quot; y2=&quot;3&quot;/></svg> Descargar Gratis">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Descargar Gratis
+                        Download Free
                     </a>
-                    <a href="curso/index.html" class="btn btn-outline btn-lg">
+                    <a href="curso/index.html" class="btn btn-outline btn-lg" data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><path d=&quot;M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z&quot;/><path d=&quot;M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z&quot;/></svg> Free Course" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><path d=&quot;M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z&quot;/><path d=&quot;M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z&quot;/></svg> Curso Gratuito">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-                        Curso Gratuito
+                        Free Course
                     </a>
                 </div>
             </div>
@@ -110,9 +116,9 @@
 <section class="section gradient-section" id="features">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label">Caracteristicas</div>
-            <h2 class="section-title">Todo lo que necesitas para mejorar</h2>
-            <p class="section-subtitle">Herramientas profesionales de analisis y entrenamiento de ajedrez, potenciadas por inteligencia artificial.</p>
+            <div class="section-label" data-en="Features" data-es="Caracteristicas">Features</div>
+            <h2 class="section-title" data-en="Everything you need to improve" data-es="Todo lo que necesitas para mejorar">Everything you need to improve</h2>
+            <p class="section-subtitle" data-en="Professional chess analysis and training tools, powered by artificial intelligence." data-es="Herramientas profesionales de analisis y entrenamiento de ajedrez, potenciadas por inteligencia artificial.">Professional chess analysis and training tools, powered by artificial intelligence.</p>
         </div>
 
         <div class="grid grid-3 reveal-stagger">
@@ -124,8 +130,8 @@
                         <line x1="9" y1="21" x2="15" y2="21"/>
                     </svg>
                 </div>
-                <h3 class="card-title">Coach IA</h3>
-                <p class="card-text">Explicaciones en lenguaje natural de cada movimiento, basadas en los principios de Capablanca y adaptadas a tu nivel.</p>
+                <h3 class="card-title" data-en="AI Coach" data-es="Coach IA">AI Coach</h3>
+                <p class="card-text" data-en="Natural language explanations of every move, based on Capablanca's principles and adapted to your level." data-es="Explicaciones en lenguaje natural de cada movimiento, basadas en los principios de Capablanca y adaptadas a tu nivel.">Natural language explanations of every move, based on Capablanca's principles and adapted to your level.</p>
             </div>
 
             <!-- 2. Jugar vs Stockfish -->
@@ -135,8 +141,8 @@
                         <path d="M12 2C10.5 2 9 3 9 5c0 1 .5 1.5 1 2H8L6 9h2l-1 3h2l-1 5h2v3h2v-3h2l-1-5h2l-1-3h2l-2-2h-2c.5-.5 1-1 1-2 0-2-1.5-3-3-3z"/>
                     </svg>
                 </div>
-                <h3 class="card-title">Jugar vs Stockfish</h3>
-                <p class="card-text">Motor Stockfish 18 local con ELO ajustable de 1320 a 3190. Sin internet necesario.</p>
+                <h3 class="card-title" data-en="Play vs Stockfish" data-es="Jugar vs Stockfish">Play vs Stockfish</h3>
+                <p class="card-text" data-en="Local Stockfish 18 engine with adjustable ELO from 1320 to 3190. No internet needed." data-es="Motor Stockfish 18 local con ELO ajustable de 1320 a 3190. Sin internet necesario.">Local Stockfish 18 engine with adjustable ELO from 1320 to 3190. No internet needed.</p>
             </div>
 
             <!-- 3. Repasar Partidas -->
@@ -149,8 +155,8 @@
                         <line x1="16" y1="17" x2="8" y2="17"/>
                     </svg>
                 </div>
-                <h3 class="card-title">Repasar Partidas</h3>
-                <p class="card-text">Importa PGN desde portapapeles, archivo o compartir. La IA analiza cada jugada con detalle.</p>
+                <h3 class="card-title" data-en="Review Games" data-es="Repasar Partidas">Review Games</h3>
+                <p class="card-text" data-en="Import PGN from clipboard, file, or share. AI analyzes every move in detail." data-es="Importa PGN desde portapapeles, archivo o compartir. La IA analiza cada jugada con detalle.">Import PGN from clipboard, file, or share. AI analyzes every move in detail.</p>
             </div>
 
             <!-- 4. Puzzles -->
@@ -160,8 +166,8 @@
                         <path d="M20 7h-3V4a1 1 0 00-1-1h-2a1 1 0 00-1 1v1.07A4 4 0 0012 5a4 4 0 00-1 .07V4a1 1 0 00-1-1H8a1 1 0 00-1 1v3H4a1 1 0 00-1 1v2a1 1 0 001 1h1.07A4 4 0 005 12a4 4 0 00.07 1H4a1 1 0 00-1 1v2a1 1 0 001 1h3v3a1 1 0 001 1h2a1 1 0 001-1v-1.07A4 4 0 0012 19a4 4 0 001-.07V20a1 1 0 001 1h2a1 1 0 001-1v-3h3a1 1 0 001-1v-2a1 1 0 00-1-1h-1.07A4 4 0 0019 12a4 4 0 00-.07-1H20a1 1 0 001-1V8a1 1 0 00-1-1z"/>
                     </svg>
                 </div>
-                <h3 class="card-title">Puzzles</h3>
-                <p class="card-text">Entrenamiento tactico con puzzles de Lichess. Rating progresivo y modo Streak para desafiarte.</p>
+                <h3 class="card-title" data-en="Puzzles" data-es="Puzzles">Puzzles</h3>
+                <p class="card-text" data-en="Tactical training with Lichess puzzles. Progressive rating and Streak mode to challenge yourself." data-es="Entrenamiento tactico con puzzles de Lichess. Rating progresivo y modo Streak para desafiarte.">Tactical training with Lichess puzzles. Progressive rating and Streak mode to challenge yourself.</p>
             </div>
 
             <!-- 5. Jugar Online -->
@@ -173,8 +179,8 @@
                         <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
                     </svg>
                 </div>
-                <h3 class="card-title">Jugar Online</h3>
-                <p class="card-text">Integracion con Lichess para partidas online. Bullet, Blitz, Rapid y Classical.</p>
+                <h3 class="card-title" data-en="Play Online" data-es="Jugar Online">Play Online</h3>
+                <p class="card-text" data-en="Lichess integration for online games. Bullet, Blitz, Rapid and Classical." data-es="Integracion con Lichess para partidas online. Bullet, Blitz, Rapid y Classical.">Lichess integration for online games. Bullet, Blitz, Rapid and Classical.</p>
             </div>
 
             <!-- 6. Privacidad Total -->
@@ -185,8 +191,8 @@
                         <path d="M9 12l2 2 4-4"/>
                     </svg>
                 </div>
-                <h3 class="card-title">Privacidad Total</h3>
-                <p class="card-text">API keys cifradas con AES-256. Motor local. Sin login obligatorio. Tus datos son tuyos.</p>
+                <h3 class="card-title" data-en="Total Privacy" data-es="Privacidad Total">Total Privacy</h3>
+                <p class="card-text" data-en="API keys encrypted with AES-256. Local engine. No mandatory login. Your data is yours." data-es="API keys cifradas con AES-256. Motor local. Sin login obligatorio. Tus datos son tuyos.">API keys encrypted with AES-256. Local engine. No mandatory login. Your data is yours.</p>
             </div>
         </div>
     </div>
@@ -197,29 +203,29 @@
 <section class="section" id="how-it-works">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label">Como funciona</div>
-            <h2 class="section-title">Mejora en 3 simples pasos</h2>
+            <div class="section-label" data-en="How it works" data-es="Como funciona">How it works</div>
+            <h2 class="section-title" data-en="Improve in 3 simple steps" data-es="Mejora en 3 simples pasos">Improve in 3 simple steps</h2>
         </div>
 
         <div class="steps reveal" style="max-width: 900px; margin: 0 auto;">
             <div class="step completed">
                 <div class="step-connector"></div>
                 <div class="step-number">1</div>
-                <h3 class="step-title">Juega</h3>
-                <p class="step-text">Elige tu rival: Stockfish local u oponente online en Lichess.</p>
+                <h3 class="step-title" data-en="Play" data-es="Juega">Play</h3>
+                <p class="step-text" data-en="Choose your rival: local Stockfish or online opponent on Lichess." data-es="Elige tu rival: Stockfish local u oponente online en Lichess.">Choose your rival: local Stockfish or online opponent on Lichess.</p>
             </div>
 
             <div class="step active">
                 <div class="step-connector"></div>
                 <div class="step-number">2</div>
-                <h3 class="step-title">Analiza</h3>
-                <p class="step-text">El coach IA explica cada movimiento con principios educativos.</p>
+                <h3 class="step-title" data-en="Analyze" data-es="Analiza">Analyze</h3>
+                <p class="step-text" data-en="The AI coach explains every move with educational principles." data-es="El coach IA explica cada movimiento con principios educativos.">The AI coach explains every move with educational principles.</p>
             </div>
 
             <div class="step">
                 <div class="step-number">3</div>
-                <h3 class="step-title">Mejora</h3>
-                <p class="step-text">Entrena tacticas, repasa errores y sube tu rating.</p>
+                <h3 class="step-title" data-en="Improve" data-es="Mejora">Improve</h3>
+                <p class="step-text" data-en="Train tactics, review mistakes, and raise your rating." data-es="Entrena tacticas, repasa errores y sube tu rating.">Train tactics, review mistakes, and raise your rating.</p>
             </div>
         </div>
     </div>
@@ -230,9 +236,9 @@
 <section class="section gradient-section" id="demo">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label">Prueba ahora</div>
-            <h2 class="section-title">Tablero Interactivo</h2>
-            <p class="section-subtitle">Mueve las piezas blancas. Las negras responden automaticamente.</p>
+            <div class="section-label" data-en="Try now" data-es="Prueba ahora">Try now</div>
+            <h2 class="section-title" data-en="Interactive Board" data-es="Tablero Interactivo">Interactive Board</h2>
+            <p class="section-subtitle" data-en="Move the white pieces. Black responds automatically." data-es="Mueve las piezas blancas. Las negras responden automaticamente.">Move the white pieces. Black responds automatically.</p>
         </div>
 
         <div class="demo-wrapper reveal">
@@ -241,34 +247,34 @@
                     <chess-board id="demo-board" position="start" draggable-pieces></chess-board>
                 </div>
                 <div class="demo-controls">
-                    <p id="demo-status" class="demo-status">Tu turno - Mueve las blancas</p>
-                    <button id="demo-reset" class="btn btn-outline btn-sm">
+                    <p id="demo-status" class="demo-status" data-en="Your turn - Move white" data-es="Tu turno - Mueve las blancas">Your turn - Move white</p>
+                    <button id="demo-reset" class="btn btn-outline btn-sm" data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;16&quot; height=&quot;16&quot;><polyline points=&quot;1 4 1 10 7 10&quot;/><path d=&quot;M3.51 15a9 9 0 102.13-9.36L1 10&quot;/></svg> Reset" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;16&quot; height=&quot;16&quot;><polyline points=&quot;1 4 1 10 7 10&quot;/><path d=&quot;M3.51 15a9 9 0 102.13-9.36L1 10&quot;/></svg> Reiniciar">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
-                        Reiniciar
+                        Reset
                     </button>
                 </div>
             </div>
 
             <div class="demo-info">
-                <h3>Asi funciona CheesCoach</h3>
-                <p>Este es un ejemplo del tablero que encontraras en la app. En CheesCoach, cada movimiento se analiza con Stockfish y se explica con inteligencia artificial.</p>
+                <h3 data-en="How CheesCoach works" data-es="Asi funciona CheesCoach">How CheesCoach works</h3>
+                <p data-en="This is an example of the board you'll find in the app. In CheesCoach, every move is analyzed by Stockfish and explained with artificial intelligence." data-es="Este es un ejemplo del tablero que encontraras en la app. En CheesCoach, cada movimiento se analiza con Stockfish y se explica con inteligencia artificial.">This is an example of the board you'll find in the app. In CheesCoach, every move is analyzed by Stockfish and explained with artificial intelligence.</p>
 
                 <ul class="demo-checklist">
-                    <li>
+                    <li data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Only legal moves" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Solo movimientos legales">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
-                        Solo movimientos legales
+                        Only legal moves
                     </li>
-                    <li>
+                    <li data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Automatic queen promotion" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Promocion automatica a dama">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
-                        Promocion automatica a dama
+                        Automatic queen promotion
                     </li>
-                    <li>
+                    <li data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Checkmate and draw detection" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Deteccion de jaque mate y tablas">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
-                        Deteccion de jaque mate y tablas
+                        Checkmate and draw detection
                     </li>
-                    <li>
+                    <li data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> In the app: AI analysis of every move" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> En la app: analisis IA de cada jugada">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
-                        En la app: analisis IA de cada jugada
+                        In the app: AI analysis of every move
                     </li>
                 </ul>
             </div>
@@ -281,8 +287,8 @@
 <section class="section" id="screenshots">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label">La App</div>
-            <h2 class="section-title">Capturas de pantalla</h2>
+            <div class="section-label" data-en="The App" data-es="La App">The App</div>
+            <h2 class="section-title" data-en="Screenshots" data-es="Capturas de pantalla">Screenshots</h2>
         </div>
 
         <div class="screenshots-carousel reveal">
@@ -293,8 +299,8 @@
                         <div class="screenshot-icon-circle">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
                         </div>
-                        <span class="screenshot-label">Pantalla principal</span>
-                        <span class="screenshot-sublabel">Dashboard y acceso rapido</span>
+                        <span class="screenshot-label" data-en="Main Screen" data-es="Pantalla principal">Main Screen</span>
+                        <span class="screenshot-sublabel" data-en="Dashboard and quick access" data-es="Dashboard y acceso rapido">Dashboard and quick access</span>
                     </div>
                 </div>
 
@@ -304,8 +310,8 @@
                         <div class="screenshot-icon-circle">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M12 2C10.5 2 9 3 9 5c0 1 .5 1.5 1 2H8L6 9h2l-1 3h2l-1 5h2v3h2v-3h2l-1-5h2l-1-3h2l-2-2h-2c.5-.5 1-1 1-2 0-2-1.5-3-3-3z"/></svg>
                         </div>
-                        <span class="screenshot-label">Modo Jugar</span>
-                        <span class="screenshot-sublabel">Partida vs Stockfish</span>
+                        <span class="screenshot-label" data-en="Play Mode" data-es="Modo Jugar">Play Mode</span>
+                        <span class="screenshot-sublabel" data-en="Game vs Stockfish" data-es="Partida vs Stockfish">Game vs Stockfish</span>
                     </div>
                 </div>
 
@@ -315,8 +321,8 @@
                         <div class="screenshot-icon-circle">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
                         </div>
-                        <span class="screenshot-label">Analisis IA</span>
-                        <span class="screenshot-sublabel">Coach + evaluacion</span>
+                        <span class="screenshot-label" data-en="AI Analysis" data-es="Analisis IA">AI Analysis</span>
+                        <span class="screenshot-sublabel" data-en="Coach + evaluation" data-es="Coach + evaluacion">Coach + evaluation</span>
                     </div>
                 </div>
 
@@ -326,8 +332,8 @@
                         <div class="screenshot-icon-circle">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M20 7h-3V4a1 1 0 00-1-1h-2a1 1 0 00-1 1v1.07A4 4 0 0012 5a4 4 0 00-1 .07V4a1 1 0 00-1-1H8a1 1 0 00-1 1v3H4a1 1 0 00-1 1v2a1 1 0 001 1h1.07A4 4 0 005 12a4 4 0 00.07 1H4a1 1 0 00-1 1v2a1 1 0 001 1h3v3a1 1 0 001 1h2a1 1 0 001-1v-1.07A4 4 0 0012 19a4 4 0 001-.07V20a1 1 0 001 1h2a1 1 0 001-1v-3h3a1 1 0 001-1v-2a1 1 0 00-1-1h-1.07A4 4 0 0019 12a4 4 0 00-.07-1H20a1 1 0 001-1V8a1 1 0 00-1-1z"/></svg>
                         </div>
-                        <span class="screenshot-label">Puzzles</span>
-                        <span class="screenshot-sublabel">Entrenamiento tactico</span>
+                        <span class="screenshot-label" data-en="Puzzles" data-es="Puzzles">Puzzles</span>
+                        <span class="screenshot-sublabel" data-en="Tactical training" data-es="Entrenamiento tactico">Tactical training</span>
                     </div>
                 </div>
             </div>
@@ -355,10 +361,10 @@
                     <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
                 </svg>
             </div>
-            <h2>Aprende Ajedrez desde Cero</h2>
-            <p>10 lecciones interactivas con tableros jugables. Desde las reglas basicas hasta tacticas avanzadas.</p>
-            <a href="curso/index.html" class="btn btn-gold btn-lg">
-                Empezar Curso Gratuito
+            <h2 data-en="Learn Chess from Scratch" data-es="Aprende Ajedrez desde Cero">Learn Chess from Scratch</h2>
+            <p data-en="10 interactive lessons with playable boards. From basic rules to advanced tactics." data-es="10 lecciones interactivas con tableros jugables. Desde las reglas basicas hasta tacticas avanzadas.">10 interactive lessons with playable boards. From basic rules to advanced tactics.</p>
+            <a href="curso/index.html" class="btn btn-gold btn-lg" data-en="Start Free Course <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Empezar Curso Gratuito <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
+                Start Free Course
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
         </div>
@@ -370,9 +376,9 @@
 <section class="section gradient-section" id="ai-providers">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label">Inteligencia Artificial</div>
-            <h2 class="section-title">Compatible con 4 proveedores de IA</h2>
-            <p class="section-subtitle">Elige tu proveedor favorito. Trae tu propia API key.</p>
+            <div class="section-label" data-en="Artificial Intelligence" data-es="Inteligencia Artificial">Artificial Intelligence</div>
+            <h2 class="section-title" data-en="Compatible with 4 AI providers" data-es="Compatible con 4 proveedores de IA">Compatible with 4 AI providers</h2>
+            <p class="section-subtitle" data-en="Choose your favorite provider. Bring your own API key." data-es="Elige tu proveedor favorito. Trae tu propia API key.">Choose your favorite provider. Bring your own API key.</p>
         </div>
 
         <div class="grid grid-4 reveal-stagger" style="max-width: 960px; margin: 0 auto;">
@@ -385,8 +391,8 @@
                 </div>
                 <h3 class="card-title">Gemini</h3>
                 <p class="card-text text-xs">Gemini 2.5 Flash</p>
-                <span class="provider-configure">
-                    Configurar
+                <span class="provider-configure" data-en="Configure <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Configurar <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
+                    Configure
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </span>
             </a>
@@ -400,8 +406,8 @@
                 </div>
                 <h3 class="card-title">OpenAI</h3>
                 <p class="card-text text-xs">GPT-5 mini</p>
-                <span class="provider-configure">
-                    Configurar
+                <span class="provider-configure" data-en="Configure <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Configurar <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
+                    Configure
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </span>
             </a>
@@ -416,8 +422,8 @@
                 </div>
                 <h3 class="card-title">Claude</h3>
                 <p class="card-text text-xs">Claude Haiku 4.5</p>
-                <span class="provider-configure">
-                    Configurar
+                <span class="provider-configure" data-en="Configure <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Configurar <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
+                    Configure
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </span>
             </a>
@@ -433,8 +439,8 @@
                 </div>
                 <h3 class="card-title">DeepSeek</h3>
                 <p class="card-text text-xs">DeepSeek Chat</p>
-                <span class="provider-configure">
-                    Configurar
+                <span class="provider-configure" data-en="Configure <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Configurar <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
+                    Configure
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </span>
             </a>
@@ -447,9 +453,9 @@
 <section class="section" id="download">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label">Descargar</div>
-            <h2 class="section-title">Descarga CheesCoach</h2>
-            <p class="section-subtitle">Gratis en Google Play. Codigo abierto en GitHub.</p>
+            <div class="section-label" data-en="Download" data-es="Descargar">Download</div>
+            <h2 class="section-title" data-en="Download CheesCoach" data-es="Descarga CheesCoach">Download CheesCoach</h2>
+            <p class="section-subtitle" data-en="Free on Google Play." data-es="Gratis en Google Play.">Free on Google Play.</p>
         </div>
 
         <div class="download-actions reveal">
@@ -457,13 +463,9 @@
                 <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.03 12l2.668-2.492zM5.864 2.658L16.8 9.99l-2.302 2.302-8.634-8.634z"/></svg>
                 Google Play
             </a>
-            <a href="#" class="btn btn-outline btn-lg" aria-label="Ver codigo en GitHub">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-            </a>
         </div>
 
-        <p class="text-center text-muted text-sm mt-6 reveal">Requiere Android 7.0 (API 24) o superior</p>
+        <p class="text-center text-muted text-sm mt-6 reveal" data-en="Requires Android 7.0 (API 24) or higher" data-es="Requiere Android 7.0 (API 24) o superior">Requires Android 7.0 (API 24) or higher</p>
     </div>
 </section>
 
@@ -476,20 +478,20 @@
                 <img src="app_icon_chesscoach.png" alt="CheesCoach" width="36" height="36">
                 <span>CheesCoach</span>
             </a>
-            <p>Coach de ajedrez con inteligencia artificial. Analiza, aprende y mejora tu juego.</p>
+            <p data-en="Chess coach with artificial intelligence. Analyze, learn and improve your game." data-es="Coach de ajedrez con inteligencia artificial. Analiza, aprende y mejora tu juego.">Chess coach with artificial intelligence. Analyze, learn and improve your game.</p>
         </div>
 
         <div>
-            <h4 class="footer-heading">Producto</h4>
+            <h4 class="footer-heading" data-en="Product" data-es="Producto">Product</h4>
             <ul class="footer-links">
-                <li><a href="#features">Caracteristicas</a></li>
-                <li><a href="curso/index.html">Curso</a></li>
-                <li><a href="#download">Descargar</a></li>
+                <li><a href="#features" data-en="Features" data-es="Caracteristicas">Features</a></li>
+                <li><a href="curso/index.html" data-en="Course" data-es="Curso">Course</a></li>
+                <li><a href="#download" data-en="Download" data-es="Descargar">Download</a></li>
             </ul>
         </div>
 
         <div>
-            <h4 class="footer-heading">Recursos</h4>
+            <h4 class="footer-heading" data-en="Resources" data-es="Recursos">Resources</h4>
             <ul class="footer-links">
                 <li><a href="gemini-setup.html">Gemini</a></li>
                 <li><a href="openai-setup.html">OpenAI</a></li>
@@ -499,22 +501,46 @@
         </div>
 
         <div>
-            <h4 class="footer-heading">Proyecto</h4>
+            <h4 class="footer-heading" data-en="Project" data-es="Proyecto">Project</h4>
             <ul class="footer-links">
-                <li><a href="#">Licencia</a></li>
-                <li><a href="#">Privacidad</a></li>
+                <li><a href="#" data-en="License" data-es="Licencia">License</a></li>
+                <li><a href="privacy-policy.html" data-en="Privacy" data-es="Privacidad">Privacy</a></li>
             </ul>
         </div>
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; 2026 CheesCoach. Hecho con &#9823; y IA.</p>
-        <p>Desarrollado por JuanfranDevs</p>
+        <p data-en="&copy; 2026 CheesCoach. Made with &#9823; and AI." data-es="&copy; 2026 CheesCoach. Hecho con &#9823; y IA.">&copy; 2026 CheesCoach. Made with &#9823; and AI.</p>
+        <p><span data-en="Developed by" data-es="Desarrollado por">Developed by</span> JuanfranDevs</p>
     </div>
 </footer>
 
 
 <!-- ========== SCRIPTS ========== -->
+<!-- Language toggle (must be before other scripts) -->
+<script>
+(function() {
+    function applyLang(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+            var t = el.getAttribute('data-' + lang);
+            if (t) el.innerHTML = t;
+        });
+        var btnEn = document.getElementById('btn-en');
+        var btnEs = document.getElementById('btn-es');
+        if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+        if (btnEs) btnEs.classList.toggle('active', lang === 'es');
+    }
+    window.setLang = function(lang) {
+        localStorage.setItem('cheescoach-lang', lang);
+        applyLang(lang);
+    };
+    var saved = localStorage.getItem('cheescoach-lang');
+    if (!saved) saved = (navigator.language || '').startsWith('es') ? 'es' : 'en';
+    applyLang(saved);
+})();
+</script>
+
 <!-- Chess board web component -->
 <script type="module" src="https://unpkg.com/chessboard-element@1.2.0?module"></script>
 
