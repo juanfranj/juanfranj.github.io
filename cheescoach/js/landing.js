@@ -133,14 +133,21 @@
                     setupBoard();
                 })
                 .catch(function (err) {
-                    console.warn('chess.js no disponible:', err);
+                    console.warn('chess.js not available:', err);
                     showFallbackMessage();
                 });
         }
 
+        function getLang() {
+            return document.documentElement.lang || 'en';
+        }
+
         function showFallbackMessage() {
             if (statusEl) {
-                statusEl.textContent = 'Abre desde un servidor web para el tablero interactivo';
+                var lang = getLang();
+                statusEl.textContent = lang === 'es'
+                    ? 'Abre desde un servidor web para el tablero interactivo'
+                    : 'Open from a web server for the interactive board';
                 var mutedColor = getComputedStyle(document.documentElement).getPropertyValue('--text-muted').trim() || '#5a6d8a';
                 statusEl.style.color = mutedColor;
             }
@@ -205,6 +212,8 @@
         function updateStatus() {
             if (!statusEl || !game) return;
 
+            var lang = getLang();
+
             // Read CSS custom property values from computed styles
             var styles = getComputedStyle(document.documentElement);
             var colorSuccess = styles.getPropertyValue('--success').trim() || '#34d399';
@@ -214,22 +223,36 @@
             var colorMuted = styles.getPropertyValue('--text-secondary').trim() || '#8b9dc3';
 
             if (game.isCheckmate()) {
-                var winner = game.turn() === 'w' ? 'Negras' : 'Blancas';
-                statusEl.textContent = 'Jaque mate - ' + winner + ' ganan';
+                var winner = game.turn() === 'w'
+                    ? (lang === 'es' ? 'Negras' : 'Black')
+                    : (lang === 'es' ? 'Blancas' : 'White');
+                statusEl.textContent = lang === 'es'
+                    ? 'Jaque mate - ' + winner + ' ganan'
+                    : 'Checkmate - ' + winner + ' wins';
                 statusEl.style.color = colorSuccess;
             } else if (game.isDraw() || game.isStalemate()) {
-                statusEl.textContent = game.isStalemate() ? 'Ahogado - Tablas' : 'Tablas';
+                if (game.isStalemate()) {
+                    statusEl.textContent = lang === 'es' ? 'Ahogado - Tablas' : 'Stalemate - Draw';
+                } else {
+                    statusEl.textContent = lang === 'es' ? 'Tablas' : 'Draw';
+                }
                 statusEl.style.color = colorWarning;
             } else if (game.inCheck()) {
-                var turn = game.turn() === 'w' ? 'Blancas' : 'Negras';
-                statusEl.textContent = 'Jaque - Turno de ' + turn;
+                var turn = game.turn() === 'w'
+                    ? (lang === 'es' ? 'Blancas' : 'White')
+                    : (lang === 'es' ? 'Negras' : 'Black');
+                statusEl.textContent = lang === 'es'
+                    ? 'Jaque - Turno de ' + turn
+                    : 'Check - ' + turn + "'s turn";
                 statusEl.style.color = colorError;
             } else {
                 if (game.turn() === 'w') {
-                    statusEl.textContent = 'Tu turno - Mueve las blancas';
+                    statusEl.textContent = lang === 'es'
+                        ? 'Tu turno - Mueve las blancas'
+                        : 'Your turn - Move white';
                     statusEl.style.color = colorAccent;
                 } else {
-                    statusEl.textContent = 'Pensando...';
+                    statusEl.textContent = lang === 'es' ? 'Pensando...' : 'Thinking...';
                     statusEl.style.color = colorMuted;
                 }
             }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,9 +41,15 @@
         </a>
 
         <ul class="navbar-links" id="navLinks">
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="index.html" class="active">Curso</a></li>
-            <li><a href="../api-setup.html">API Setup</a></li>
+            <li><a href="../index.html" data-en="Home" data-es="Inicio">Home</a></li>
+            <li><a href="index.html" class="active" data-en="Course" data-es="Curso">Course</a></li>
+            <li><a href="../api-setup.html" data-en="API Setup" data-es="API Setup">API Setup</a></li>
+            <li>
+                <div class="lang-toggle">
+                    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+                    <button id="btn-es" onclick="setLang('es')">ES</button>
+                </div>
+            </li>
         </ul>
 
         <button class="navbar-hamburger" id="hamburgerBtn" aria-label="Menu de navegacion" aria-expanded="false">
@@ -59,21 +65,21 @@
 <section class="course-hero">
     <div class="course-hero-inner">
         <div class="section-label reveal">
-            <span>Curso Gratuito</span>
+            <span data-en="Chess Course" data-es="Curso de Ajedrez">Chess Course</span>
         </div>
 
-        <h1 class="course-hero-title reveal">
-            Curso de Ajedrez para <span class="highlight">Principiantes</span>
+        <h1 class="course-hero-title reveal" data-en="Chess Course for <span class='highlight'>Beginners</span>" data-es="Curso de Ajedrez para <span class='highlight'>Principiantes</span>">
+            Chess Course for <span class="highlight">Beginners</span>
         </h1>
 
-        <p class="course-hero-subtitle reveal">
-            10 lecciones interactivas con tableros jugables &middot; 100% gratis
+        <p class="course-hero-subtitle reveal" data-en="10 interactive lessons with playable boards &middot; 100% free" data-es="10 lecciones interactivas con tableros jugables &middot; 100% gratis">
+            10 interactive lessons with playable boards &middot; 100% free
         </p>
 
         <!-- Progress Bar -->
         <div class="course-progress reveal" id="progressSection">
             <div class="course-progress-header">
-                <span class="course-progress-label">Tu progreso</span>
+                <span class="course-progress-label" data-en="Your progress" data-es="Tu progreso">Your progress</span>
                 <span class="course-progress-count" id="progressCount">0 / 10</span>
             </div>
             <div class="course-progress-track">
@@ -98,13 +104,13 @@
 <section class="course-cta reveal">
     <div class="course-cta-card">
         <span class="course-cta-icon" aria-hidden="true">&#9823;</span>
-        <h2 class="course-cta-title">&#191;Listo para mejorar tu juego?</h2>
-        <p class="course-cta-text">
-            Descarga la app y juega contra Stockfish con un coach de IA que te explica cada jugada en lenguaje natural.
+        <h2 class="course-cta-title" data-en="Ready to improve your game?" data-es="&#191;Listo para mejorar tu juego?">Ready to improve your game?</h2>
+        <p class="course-cta-text" data-en="Download the app and play against Stockfish with an AI coach that explains every move in natural language." data-es="Descarga la app y juega contra Stockfish con un coach de IA que te explica cada jugada en lenguaje natural.">
+            Download the app and play against Stockfish with an AI coach that explains every move in natural language.
         </p>
         <a href="../index.html#download" class="btn btn-gold btn-lg">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Descargar CheesCoach
+            <span data-en="Download CheesCoach" data-es="Descargar CheesCoach">Download CheesCoach</span>
         </a>
     </div>
 </section>
@@ -118,28 +124,28 @@
                 <img src="../app_icon_chesscoach.png" alt="CheesCoach" width="36" height="36">
                 <span>CheesCoach</span>
             </a>
-            <p>Tu coach de ajedrez con inteligencia artificial. Analiza, aprende y mejora tu juego.</p>
+            <p data-en="Chess coach with artificial intelligence. Analyze, learn and improve your game." data-es="Coach de ajedrez con inteligencia artificial. Analiza, aprende y mejora tu juego.">Chess coach with artificial intelligence. Analyze, learn and improve your game.</p>
         </div>
 
         <div>
-            <h4 class="footer-heading">Producto</h4>
+            <h4 class="footer-heading" data-en="Product" data-es="Producto">Product</h4>
             <ul class="footer-links">
-                <li><a href="../index.html#features">Caracteristicas</a></li>
-                <li><a href="../index.html#download">Descargar</a></li>
-                <li><a href="../api-setup.html">API Setup</a></li>
+                <li><a href="../index.html#features" data-en="Features" data-es="Caracteristicas">Features</a></li>
+                <li><a href="../index.html#download" data-en="Download" data-es="Descargar">Download</a></li>
+                <li><a href="../api-setup.html" data-en="API Setup" data-es="API Setup">API Setup</a></li>
             </ul>
         </div>
 
         <div>
-            <h4 class="footer-heading">Aprender</h4>
+            <h4 class="footer-heading" data-en="Learn" data-es="Aprender">Learn</h4>
             <ul class="footer-links">
-                <li><a href="index.html">Curso de Ajedrez</a></li>
-                <li><a href="leccion-01-tablero.html">Primera Leccion</a></li>
+                <li><a href="index.html" data-en="Chess Course" data-es="Curso de Ajedrez">Chess Course</a></li>
+                <li><a href="leccion-01-tablero.html" data-en="First Lesson" data-es="Primera Leccion">First Lesson</a></li>
             </ul>
         </div>
 
         <div>
-            <h4 class="footer-heading">Proyecto</h4>
+            <h4 class="footer-heading" data-en="Project" data-es="Proyecto">Project</h4>
             <ul class="footer-links">
                 <li><a href="https://github.com/juanfrandevs/cheescoach" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
@@ -148,7 +154,7 @@
 
     <div class="footer-bottom">
         <span>&copy; 2026 CheesCoach &mdash; JuanfranDevs</span>
-        <span>Hecho con &#9829; para la comunidad de ajedrez</span>
+        <span data-en="Made with &#9823; and AI." data-es="Hecho con &#9823; e IA.">Made with &#9823; and AI.</span>
     </div>
 </footer>
 
@@ -163,71 +169,71 @@
             {
                 num: 1,
                 icon: '\u265F',
-                title: 'El Tablero y las Piezas',
-                description: 'Conoce el campo de batalla',
+                title: { en: 'The Board and Pieces', es: 'El Tablero y las Piezas' },
+                description: { en: 'Know the battlefield', es: 'Conoce el campo de batalla' },
                 href: 'leccion-01-tablero.html'
             },
             {
                 num: 2,
                 icon: '\u265E',
-                title: 'C\u00f3mo Mueve Cada Pieza',
-                description: 'Aprende el movimiento de todas las piezas',
+                title: { en: 'How Each Piece Moves', es: 'C\u00f3mo Mueve Cada Pieza' },
+                description: { en: 'Learn every piece\'s movement', es: 'Aprende el movimiento de todas las piezas' },
                 href: 'leccion-02-movimientos.html'
             },
             {
                 num: 3,
                 icon: '\u265C',
-                title: 'Reglas Especiales',
-                description: 'Enroque, captura al paso y coronaci\u00f3n',
+                title: { en: 'Special Rules', es: 'Reglas Especiales' },
+                description: { en: 'Castling, en passant and promotion', es: 'Enroque, captura al paso y coronaci\u00f3n' },
                 href: 'leccion-03-reglas.html'
             },
             {
                 num: 4,
                 icon: '\u265A',
-                title: 'Jaque y Mate',
-                description: 'El objetivo del juego',
+                title: { en: 'Check and Checkmate', es: 'Jaque y Mate' },
+                description: { en: 'The goal of the game', es: 'El objetivo del juego' },
                 href: 'leccion-04-jaque-mate.html'
             },
             {
                 num: 5,
                 icon: '\u2696',
-                title: 'Valor de las Piezas',
-                description: 'Econom\u00eda del ajedrez seg\u00fan Capablanca',
+                title: { en: 'Piece Values', es: 'Valor de las Piezas' },
+                description: { en: 'Chess economy by Capablanca', es: 'Econom\u00eda del ajedrez seg\u00fan Capablanca' },
                 href: 'leccion-05-valor-piezas.html'
             },
             {
                 num: 6,
                 icon: '\uD83C\uDFAF',
-                title: 'Principios de Apertura',
-                description: 'Control del centro y desarrollo',
+                title: { en: 'Opening Principles', es: 'Principios de Apertura' },
+                description: { en: 'Center control and development', es: 'Control del centro y desarrollo' },
                 href: 'leccion-06-apertura.html'
             },
             {
                 num: 7,
                 icon: '\u2694',
-                title: 'T\u00e1cticas B\u00e1sicas',
-                description: 'Horquillas, clavadas y enfiladas',
+                title: { en: 'Basic Tactics', es: 'T\u00e1cticas B\u00e1sicas' },
+                description: { en: 'Forks, pins and skewers', es: 'Horquillas, clavadas y enfiladas' },
                 href: 'leccion-07-tacticas.html'
             },
             {
                 num: 8,
                 icon: '\uD83C\uDFF0',
-                title: 'Estrategia en el Medio Juego',
-                description: 'Coordinaci\u00f3n de piezas',
+                title: { en: 'Middlegame Strategy', es: 'Estrategia en el Medio Juego' },
+                description: { en: 'Piece coordination', es: 'Coordinaci\u00f3n de piezas' },
                 href: 'leccion-08-medio-juego.html'
             },
             {
                 num: 9,
                 icon: '\uD83D\uDC51',
-                title: 'Finales B\u00e1sicos',
-                description: 'T\u00e9cnicas de mate esenciales',
+                title: { en: 'Basic Endgames', es: 'Finales B\u00e1sicos' },
+                description: { en: 'Essential mating techniques', es: 'T\u00e9cnicas de mate esenciales' },
                 href: 'leccion-09-finales.html'
             },
             {
                 num: 10,
                 icon: '\uD83C\uDF93',
-                title: 'Pr\u00e1ctica y Siguientes Pasos',
-                description: 'Aplica lo aprendido',
+                title: { en: 'Practice and Next Steps', es: 'Pr\u00e1ctica y Siguientes Pasos' },
+                description: { en: 'Apply what you\'ve learned', es: 'Aplica lo aprendido' },
                 href: 'leccion-10-practica.html'
             }
         ];
@@ -251,6 +257,11 @@
             return { completedLessons: [], currentLesson: 1 };
         }
 
+        // ---- Get current language ----
+        function getLang() {
+            return document.documentElement.lang || 'en';
+        }
+
         // ---- Update progress bar ----
         function updateProgressBar(completedCount) {
             var percent = Math.round((completedCount / LESSONS.length) * 100);
@@ -264,7 +275,11 @@
                 });
             }
             if (count) {
-                count.textContent = completedCount + ' / ' + LESSONS.length;
+                var lang = getLang();
+                var progressText = lang === 'es'
+                    ? completedCount + ' de ' + LESSONS.length + ' completadas'
+                    : completedCount + ' of ' + LESSONS.length + ' completed';
+                count.textContent = progressText;
             }
         }
 
@@ -283,6 +298,7 @@
             var progress = getProgress();
             var completed = progress.completedLessons;
             var firstIncomplete = getFirstIncomplete(completed);
+            var lang = getLang();
 
             updateProgressBar(completed.length);
 
@@ -296,6 +312,9 @@
                 var isCurrent = (lesson.num === firstIncomplete) && !isCompleted;
                 var isLocked = !isCompleted && !isCurrent && lesson.num > firstIncomplete;
 
+                var titleText = lesson.title[lang] || lesson.title.en;
+                var descText = lesson.description[lang] || lesson.description.en;
+
                 // Create card element
                 var card;
                 if (isLocked) {
@@ -306,7 +325,8 @@
                 }
 
                 card.className = 'lesson-card reveal';
-                card.setAttribute('aria-label', 'Lecci\u00f3n ' + lesson.num + ': ' + lesson.title);
+                var ariaPrefix = lang === 'es' ? 'Lecci\u00f3n ' : 'Lesson ';
+                card.setAttribute('aria-label', ariaPrefix + lesson.num + ': ' + titleText);
 
                 if (isCompleted) {
                     card.classList.add('completed');
@@ -325,28 +345,39 @@
                 // Status badge
                 var statusBadge = '';
                 if (isCompleted) {
-                    statusBadge = '<span class="lesson-card-status status-completed">Completada</span>';
+                    statusBadge = '<span class="lesson-card-status status-completed" data-en="Completed" data-es="Completada">' + (lang === 'es' ? 'Completada' : 'Completed') + '</span>';
                 } else if (isCurrent) {
-                    statusBadge = '<span class="lesson-card-status status-current">Actual</span>';
+                    statusBadge = '<span class="lesson-card-status status-current" data-en="Current" data-es="Actual">' + (lang === 'es' ? 'Actual' : 'Current') + '</span>';
                 } else if (isLocked) {
                     statusBadge = '<span class="lesson-card-status status-locked" aria-hidden="true">\uD83D\uDD12</span>';
                 }
 
                 // Arrow text
-                var arrowText = isCompleted ? 'Repasar' : (isCurrent ? 'Empezar' : 'Ir');
+                var arrowText;
+                if (isCompleted) {
+                    arrowText = lang === 'es' ? 'Repasar' : 'Review';
+                } else if (isCurrent) {
+                    arrowText = lang === 'es' ? 'Empezar' : 'Start';
+                } else {
+                    arrowText = lang === 'es' ? 'Ir' : 'Go';
+                }
+
+                var arrowSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+                var arrowEnText = isCompleted ? 'Review' : (isCurrent ? 'Start' : 'Go');
+                var arrowEsText = isCompleted ? 'Repasar' : (isCurrent ? 'Empezar' : 'Ir');
 
                 card.innerHTML =
                     '<span class="lesson-card-number">' + numberContent + '</span>' +
                     statusBadge +
                     '<div class="lesson-card-body">' +
                         '<div class="lesson-card-icon" aria-hidden="true">' + lesson.icon + '</div>' +
-                        '<h3 class="lesson-card-title">' + lesson.title + '</h3>' +
-                        '<p class="lesson-card-description">' + lesson.description + '</p>' +
+                        '<h3 class="lesson-card-title" data-en="' + lesson.title.en.replace(/"/g, '&quot;') + '" data-es="' + lesson.title.es.replace(/"/g, '&quot;') + '">' + titleText + '</h3>' +
+                        '<p class="lesson-card-description" data-en="' + lesson.description.en.replace(/"/g, '&quot;') + '" data-es="' + lesson.description.es.replace(/"/g, '&quot;') + '">' + descText + '</p>' +
                     '</div>' +
                     '<div class="lesson-card-footer">' +
                         '<span class="lesson-card-arrow">' +
-                            arrowText +
-                            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
+                            '<span data-en="' + arrowEnText + '" data-es="' + arrowEsText + '">' + arrowText + '</span>' +
+                            arrowSvg +
                         '</span>' +
                     '</div>';
 
@@ -417,12 +448,55 @@
             });
         }
 
+        // ---- Language toggle ----
+        function applyLang(lang, skipLessons) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-en]').forEach(function(el) {
+                var t = el.getAttribute('data-' + lang);
+                if (t) el.innerHTML = t;
+            });
+            var btnEn = document.getElementById('btn-en');
+            var btnEs = document.getElementById('btn-es');
+            if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+            if (btnEs) btnEs.classList.toggle('active', lang === 'es');
+
+            // Update progress text (dynamic, no data attributes)
+            var progress = getProgress();
+            updateProgressBar(progress.completedLessons.length);
+
+            // Re-render lessons with new language (cards need full rebuild for aria-label)
+            if (!skipLessons) {
+                var grid = document.getElementById('lessonsGrid');
+                if (grid) {
+                    grid.innerHTML = '';
+                    renderLessons();
+                    initScrollReveal();
+                }
+            }
+        }
+
+        window.setLang = function(lang) {
+            localStorage.setItem('cheescoach-lang', lang);
+            applyLang(lang);
+        };
+
         // ---- Initialize ----
         document.addEventListener('DOMContentLoaded', function() {
+            // Detect saved or browser language
+            var saved = localStorage.getItem('cheescoach-lang');
+            if (!saved) saved = (navigator.language || '').startsWith('es') ? 'es' : 'en';
+
+            // Set lang before rendering so lessons use the correct language
+            document.documentElement.lang = saved;
+
             renderLessons();
             initNavbarScroll();
             initHamburger();
             initScrollReveal();
+
+            // Apply language to static HTML elements (hero, footer, etc.)
+            // Skip lesson re-render since they were just rendered above
+            applyLang(saved, true);
         });
     })();
 </script>

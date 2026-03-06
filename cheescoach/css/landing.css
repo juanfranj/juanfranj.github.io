@@ -226,6 +226,27 @@
 .screenshot-card {
     flex: 0 0 280px;
     scroll-snap-align: center;
+    text-align: center;
+    transition: transform var(--transition);
+}
+
+.screenshot-card:hover {
+    transform: translateY(-4px);
+}
+
+.screenshot-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+}
+
+.screenshot-card:hover .screenshot-img {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-glow-blue);
 }
 
 .screenshot-placeholder {
@@ -490,6 +511,7 @@
         flex: 0 0 240px;
     }
 
+    .screenshot-img,
     .screenshot-placeholder {
         height: 420px;
     }
@@ -536,6 +558,7 @@
         flex: 0 0 220px;
     }
 
+    .screenshot-img,
     .screenshot-placeholder {
         height: 380px;
     }
