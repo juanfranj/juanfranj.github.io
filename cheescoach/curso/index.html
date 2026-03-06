@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Ajedrez para Principiantes - CheesCoach</title>
+    <meta name="description" content="Curso gratuito de ajedrez para principiantes. 10 lecciones interactivas con tableros jugables. Desde las reglas basicas hasta tacticas avanzadas.">
+    <meta name="author" content="JuanfranDevs">
+    <meta name="theme-color" content="#060a13">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Curso de Ajedrez - CheesCoach">
+    <meta property="og:description" content="10 lecciones interactivas de ajedrez para principiantes. Tableros jugables, ejercicios practicos. 100% gratis.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../app_icon_chesscoach.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../app_icon_chesscoach.png">
+
+    <!-- Shared Design System -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+
+    <!-- Course-specific styles -->
+    <link rel="stylesheet" href="css/course.css">
+</head>
+<body class="chess-pattern-bg">
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" role="navigation" aria-label="Navegacion del curso">
+    <div class="navbar-inner">
+        <a href="../index.html" class="navbar-logo">
+            <img src="../app_icon_chesscoach.png" alt="CheesCoach" width="36" height="36">
+            <span>CheesCoach</span>
+        </a>
+
+        <ul class="navbar-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="index.html" class="active">Curso</a></li>
+            <li><a href="../api-setup.html">API Setup</a></li>
+        </ul>
+
+        <button class="navbar-hamburger" id="hamburgerBtn" aria-label="Menu de navegacion" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+
+<!-- ========== HERO ========== -->
+<section class="course-hero">
+    <div class="course-hero-inner">
+        <div class="section-label reveal">
+            <span>Curso Gratuito</span>
+        </div>
+
+        <h1 class="course-hero-title reveal">
+            Curso de Ajedrez para <span class="highlight">Principiantes</span>
+        </h1>
+
+        <p class="course-hero-subtitle reveal">
+            10 lecciones interactivas con tableros jugables &middot; 100% gratis
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="course-progress reveal" id="progressSection">
+            <div class="course-progress-header">
+                <span class="course-progress-label">Tu progreso</span>
+                <span class="course-progress-count" id="progressCount">0 / 10</span>
+            </div>
+            <div class="course-progress-track">
+                <div class="course-progress-fill" id="progressBar" style="width: 0%" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== LESSONS GRID ========== -->
+<section class="lessons-section" aria-label="Lecciones del curso">
+    <div class="container">
+        <div class="grid grid-3 reveal-stagger" id="lessonsGrid">
+            <!-- Rendered by JavaScript -->
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== CTA SECTION ========== -->
+<section class="course-cta reveal">
+    <div class="course-cta-card">
+        <span class="course-cta-icon" aria-hidden="true">&#9823;</span>
+        <h2 class="course-cta-title">&#191;Listo para mejorar tu juego?</h2>
+        <p class="course-cta-text">
+            Descarga la app y juega contra Stockfish con un coach de IA que te explica cada jugada en lenguaje natural.
+        </p>
+        <a href="../index.html#download" class="btn btn-gold btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Descargar CheesCoach
+        </a>
+    </div>
+</section>
+
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../app_icon_chesscoach.png" alt="CheesCoach" width="36" height="36">
+                <span>CheesCoach</span>
+            </a>
+            <p>Tu coach de ajedrez con inteligencia artificial. Analiza, aprende y mejora tu juego.</p>
+        </div>
+
+        <div>
+            <h4 class="footer-heading">Producto</h4>
+            <ul class="footer-links">
+                <li><a href="../index.html#features">Caracteristicas</a></li>
+                <li><a href="../index.html#download">Descargar</a></li>
+                <li><a href="../api-setup.html">API Setup</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="footer-heading">Aprender</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Curso de Ajedrez</a></li>
+                <li><a href="leccion-01-tablero.html">Primera Leccion</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="footer-heading">Proyecto</h4>
+            <ul class="footer-links">
+                <li><a href="https://github.com/juanfrandevs/cheescoach" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>&copy; 2026 CheesCoach &mdash; JuanfranDevs</span>
+        <span>Hecho con &#9829; para la comunidad de ajedrez</span>
+    </div>
+</footer>
+
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+    (function() {
+        'use strict';
+
+        // ---- Lesson definitions ----
+        var LESSONS = [
+            {
+                num: 1,
+                icon: '\u265F',
+                title: 'El Tablero y las Piezas',
+                description: 'Conoce el campo de batalla',
+                href: 'leccion-01-tablero.html'
+            },
+            {
+                num: 2,
+                icon: '\u265E',
+                title: 'C\u00f3mo Mueve Cada Pieza',
+                description: 'Aprende el movimiento de todas las piezas',
+                href: 'leccion-02-movimientos.html'
+            },
+            {
+                num: 3,
+                icon: '\u265C',
+                title: 'Reglas Especiales',
+                description: 'Enroque, captura al paso y coronaci\u00f3n',
+                href: 'leccion-03-reglas.html'
+            },
+            {
+                num: 4,
+                icon: '\u265A',
+                title: 'Jaque y Mate',
+                description: 'El objetivo del juego',
+                href: 'leccion-04-jaque-mate.html'
+            },
+            {
+                num: 5,
+                icon: '\u2696',
+                title: 'Valor de las Piezas',
+                description: 'Econom\u00eda del ajedrez seg\u00fan Capablanca',
+                href: 'leccion-05-valor-piezas.html'
+            },
+            {
+                num: 6,
+                icon: '\uD83C\uDFAF',
+                title: 'Principios de Apertura',
+                description: 'Control del centro y desarrollo',
+                href: 'leccion-06-apertura.html'
+            },
+            {
+                num: 7,
+                icon: '\u2694',
+                title: 'T\u00e1cticas B\u00e1sicas',
+                description: 'Horquillas, clavadas y enfiladas',
+                href: 'leccion-07-tacticas.html'
+            },
+            {
+                num: 8,
+                icon: '\uD83C\uDFF0',
+                title: 'Estrategia en el Medio Juego',
+                description: 'Coordinaci\u00f3n de piezas',
+                href: 'leccion-08-medio-juego.html'
+            },
+            {
+                num: 9,
+                icon: '\uD83D\uDC51',
+                title: 'Finales B\u00e1sicos',
+                description: 'T\u00e9cnicas de mate esenciales',
+                href: 'leccion-09-finales.html'
+            },
+            {
+                num: 10,
+                icon: '\uD83C\uDF93',
+                title: 'Pr\u00e1ctica y Siguientes Pasos',
+                description: 'Aplica lo aprendido',
+                href: 'leccion-10-practica.html'
+            }
+        ];
+
+        var STORAGE_KEY = 'cheescoach-course-progress';
+
+        // ---- Read progress from localStorage ----
+        function getProgress() {
+            try {
+                var raw = localStorage.getItem(STORAGE_KEY);
+                if (raw) {
+                    var data = JSON.parse(raw);
+                    return {
+                        completedLessons: Array.isArray(data.completedLessons) ? data.completedLessons : [],
+                        currentLesson: typeof data.currentLesson === 'number' ? data.currentLesson : 1
+                    };
+                }
+            } catch (e) {
+                // Corrupted data, return defaults
+            }
+            return { completedLessons: [], currentLesson: 1 };
+        }
+
+        // ---- Update progress bar ----
+        function updateProgressBar(completedCount) {
+            var percent = Math.round((completedCount / LESSONS.length) * 100);
+            var bar = document.getElementById('progressBar');
+            var count = document.getElementById('progressCount');
+
+            if (bar) {
+                requestAnimationFrame(function() {
+                    bar.style.width = percent + '%';
+                    bar.setAttribute('aria-valuenow', percent);
+                });
+            }
+            if (count) {
+                count.textContent = completedCount + ' / ' + LESSONS.length;
+            }
+        }
+
+        // ---- Determine the first incomplete lesson ----
+        function getFirstIncomplete(completedLessons) {
+            for (var i = 1; i <= LESSONS.length; i++) {
+                if (completedLessons.indexOf(i) === -1) {
+                    return i;
+                }
+            }
+            return LESSONS.length; // All completed
+        }
+
+        // ---- Render lesson cards ----
+        function renderLessons() {
+            var progress = getProgress();
+            var completed = progress.completedLessons;
+            var firstIncomplete = getFirstIncomplete(completed);
+
+            updateProgressBar(completed.length);
+
+            var grid = document.getElementById('lessonsGrid');
+            if (!grid) return;
+
+            var fragment = document.createDocumentFragment();
+
+            LESSONS.forEach(function(lesson) {
+                var isCompleted = completed.indexOf(lesson.num) !== -1;
+                var isCurrent = (lesson.num === firstIncomplete) && !isCompleted;
+                var isLocked = !isCompleted && !isCurrent && lesson.num > firstIncomplete;
+
+                // Create card element
+                var card;
+                if (isLocked) {
+                    card = document.createElement('div');
+                } else {
+                    card = document.createElement('a');
+                    card.href = lesson.href;
+                }
+
+                card.className = 'lesson-card reveal';
+                card.setAttribute('aria-label', 'Lecci\u00f3n ' + lesson.num + ': ' + lesson.title);
+
+                if (isCompleted) {
+                    card.classList.add('completed');
+                } else if (isCurrent) {
+                    card.classList.add('current');
+                } else if (isLocked) {
+                    card.classList.add('locked');
+                    card.setAttribute('aria-disabled', 'true');
+                }
+
+                // Number badge content
+                var numberContent = isCompleted
+                    ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+                    : lesson.num;
+
+                // Status badge
+                var statusBadge = '';
+                if (isCompleted) {
+                    statusBadge = '<span class="lesson-card-status status-completed">Completada</span>';
+                } else if (isCurrent) {
+                    statusBadge = '<span class="lesson-card-status status-current">Actual</span>';
+                } else if (isLocked) {
+                    statusBadge = '<span class="lesson-card-status status-locked" aria-hidden="true">\uD83D\uDD12</span>';
+                }
+
+                // Arrow text
+                var arrowText = isCompleted ? 'Repasar' : (isCurrent ? 'Empezar' : 'Ir');
+
+                card.innerHTML =
+                    '<span class="lesson-card-number">' + numberContent + '</span>' +
+                    statusBadge +
+                    '<div class="lesson-card-body">' +
+                        '<div class="lesson-card-icon" aria-hidden="true">' + lesson.icon + '</div>' +
+                        '<h3 class="lesson-card-title">' + lesson.title + '</h3>' +
+                        '<p class="lesson-card-description">' + lesson.description + '</p>' +
+                    '</div>' +
+                    '<div class="lesson-card-footer">' +
+                        '<span class="lesson-card-arrow">' +
+                            arrowText +
+                            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
+                        '</span>' +
+                    '</div>';
+
+                fragment.appendChild(card);
+            });
+
+            grid.appendChild(fragment);
+        }
+
+        // ---- Navbar scroll effect ----
+        function initNavbarScroll() {
+            var navbar = document.querySelector('.navbar');
+            if (!navbar) return;
+
+            var onScroll = function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            };
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        }
+
+        // ---- Hamburger menu toggle ----
+        function initHamburger() {
+            var btn = document.getElementById('hamburgerBtn');
+            var links = document.getElementById('navLinks');
+            if (!btn || !links) return;
+
+            btn.addEventListener('click', function() {
+                var isOpen = btn.classList.toggle('open');
+                links.classList.toggle('open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            // Close on link click
+            links.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    btn.classList.remove('open');
+                    links.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // ---- Scroll reveal animation ----
+        function initScrollReveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            if (!reveals.length) return;
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            reveals.forEach(function(el) {
+                observer.observe(el);
+            });
+        }
+
+        // ---- Initialize ----
+        document.addEventListener('DOMContentLoaded', function() {
+            renderLessons();
+            initNavbarScroll();
+            initHamburger();
+            initScrollReveal();
+        });
+    })();
+</script>
+
+</body>
+</html>

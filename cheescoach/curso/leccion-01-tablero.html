@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leccion 1: El Tablero y las Piezas - CheesCoach</title>
+    <link rel="icon" type="image/png" href="../app_icon_chesscoach.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="css/course.css">
+</head>
+<body class="chess-pattern-bg">
+    <nav class="navbar" role="navigation" aria-label="Navegacion de leccion">
+        <div class="navbar-inner">
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                Volver al curso
+            </a>
+            <span class="text-secondary text-sm">Leccion <strong>1</strong> de 10</span>
+            <button class="navbar-hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div id="lesson-app" data-lesson-id="1"></div>
+
+    <script type="module" src="https://unpkg.com/chessboard-element@1.2.0?module"></script>
+    <script type="module">
+        import { LessonPageController } from './js/chess-lesson.js';
+        import { COURSE_DATA } from './js/course-data.js';
+
+        const lessonId = parseInt(document.getElementById('lesson-app').dataset.lessonId);
+        const controller = new LessonPageController({
+            containerId: 'lesson-app',
+            courseData: COURSE_DATA,
+            lessonId: lessonId,
+            courseIndexUrl: 'index.html',
+            landingUrl: '../index.html'
+        });
+        controller.init();
+    </script>
+</body>
+</html>

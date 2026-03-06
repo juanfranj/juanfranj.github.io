@@ -6,792 +6,306 @@
     <title>OpenAI API Key Setup - CheesCoach</title>
     <meta name="description" content="Step-by-step guide to create an OpenAI API key for CheesCoach chess coaching app.">
     <meta name="author" content="JuanfranDevs">
-
-    <!-- Open Graph -->
     <meta property="og:title" content="OpenAI API Key Setup - CheesCoach">
     <meta property="og:description" content="Step-by-step guide to create an OpenAI API key for CheesCoach">
     <meta property="og:type" content="article">
+    <link rel="icon" type="image/png" href="app_icon_chesscoach.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
-            line-height: 1.7;
-            min-height: 100vh;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        a {
-            color: #10b981;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        a:hover {
-            color: #34d399;
-        }
-
-        /* ── Layout ── */
-        .container {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 0 1.25rem 4rem;
-        }
-
-        /* ── Top Bar ── */
-        .top-bar {
+        .setup-step {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem 0;
-            margin-bottom: 0.5rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #94a3b8;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: #10b981;
-        }
-
-        .back-link svg {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /* ── Language Toggle ── */
-        .lang-toggle {
-            display: flex;
-            background: #1e293b;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #334155;
-        }
-
-        .lang-btn {
-            background: none;
-            border: none;
-            color: #94a3b8;
-            padding: 0.35rem 0.85rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .lang-btn.active {
-            background: #10b981;
-            color: #0f172a;
-        }
-
-        .lang-btn:hover:not(.active) {
-            color: #e2e8f0;
-        }
-
-        /* ── Hero ── */
-        .hero {
-            text-align: center;
-            padding: 2rem 0 2.5rem;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            border-radius: 50px;
-            padding: 0.4rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #10b981;
-            margin-bottom: 1.25rem;
-        }
-
-        .hero-badge .dot {
-            width: 8px;
-            height: 8px;
-            background: #10b981;
-            border-radius: 50%;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #f8fafc;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            color: #94a3b8;
-            max-width: 520px;
-            margin: 0 auto;
-        }
-
-        /* ── Info Cards ── */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .info-card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 1.25rem;
-            text-align: center;
-        }
-
-        .info-card .icon {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .info-card h3 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #f8fafc;
-            margin-bottom: 0.25rem;
-        }
-
-        .info-card p {
-            font-size: 0.78rem;
-            color: #94a3b8;
-        }
-
-        /* ── Section Title ── */
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #f8fafc;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid #1e293b;
-        }
-
-        /* ── Step Cards ── */
-        .step-card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 14px;
-            padding: 1.75rem;
-            margin-bottom: 1.25rem;
+            gap: var(--space-5);
             position: relative;
-            transition: border-color 0.3s;
         }
-
-        .step-card:hover {
-            border-color: rgba(16, 185, 129, 0.3);
+        .setup-step + .setup-step {
+            margin-top: var(--space-6);
         }
-
-        .step-card.warning {
-            border-color: rgba(245, 158, 11, 0.4);
-            background: linear-gradient(135deg, #1e293b 0%, rgba(245, 158, 11, 0.05) 100%);
-        }
-
-        .step-number {
-            display: inline-flex;
+        .setup-step-number {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--openai-accent), #059669);
+            border-radius: var(--radius-md);
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: #0f172a;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.85rem;
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
             font-weight: 800;
-            border-radius: 8px;
-            margin-bottom: 0.85rem;
+            color: white;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
-
-        .step-card h3 {
-            font-size: 1.1rem;
+        .setup-step-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .setup-step-title {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
             font-weight: 700;
-            color: #f8fafc;
-            margin-bottom: 0.6rem;
+            margin-bottom: var(--space-2);
         }
-
-        .step-card p {
-            font-size: 0.92rem;
-            color: #cbd5e1;
-            margin-bottom: 0.5rem;
+        .setup-step-desc {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
         }
-
-        .step-card p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* ── Warning Callout ── */
-        .callout {
-            display: flex;
-            gap: 0.75rem;
-            background: rgba(245, 158, 11, 0.08);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 10px;
-            padding: 1rem 1.25rem;
-            margin-top: 0.75rem;
-        }
-
-        .callout .callout-icon {
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            margin-top: 0.1rem;
-        }
-
-        .callout .callout-text {
-            font-size: 0.88rem;
-            color: #fbbf24;
+        .setup-step-desc a {
+            color: var(--accent-bright);
             font-weight: 500;
-            line-height: 1.55;
         }
-
-        .callout.info {
-            background: rgba(16, 185, 129, 0.06);
-            border-color: rgba(16, 185, 129, 0.25);
-        }
-
-        .callout.info .callout-text {
-            color: #34d399;
-        }
-
-        /* ── Key Format ── */
-        .key-format {
-            display: inline-block;
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 6px;
-            padding: 0.2rem 0.55rem;
-            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-            font-size: 0.82rem;
-            color: #10b981;
-        }
-
-        /* ── Pricing Table ── */
-        .pricing-section {
-            margin-top: 2.5rem;
-        }
-
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-            background: #1e293b;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #334155;
-        }
-
-        .pricing-table th {
-            background: rgba(16, 185, 129, 0.1);
-            color: #10b981;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.9rem 1.25rem;
-            text-align: left;
-            border-bottom: 1px solid #334155;
-        }
-
-        .pricing-table td {
-            padding: 0.85rem 1.25rem;
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
-        }
-
-        .pricing-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .pricing-table .model-name {
-            font-weight: 600;
-            color: #f8fafc;
-        }
-
-        .pricing-table .recommended {
-            display: inline-block;
+        .hero-provider-icon {
+            width: 72px;
+            height: 72px;
             background: rgba(16, 185, 129, 0.15);
-            color: #10b981;
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }
-
-        /* ── Notes Section ── */
-        .notes-section {
-            margin-top: 2.5rem;
-        }
-
-        .notes-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .notes-list li {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 10px;
-            padding: 1rem 1.25rem;
-            margin-bottom: 0.75rem;
+            border: 2px solid var(--openai-accent);
+            border-radius: var(--radius-lg);
             display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            font-size: 0.9rem;
-            color: #cbd5e1;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-6);
         }
-
-        .notes-list li .note-icon {
-            flex-shrink: 0;
-            font-size: 1.1rem;
-            margin-top: 0.05rem;
-        }
-
-        /* ── Footer ── */
-        .footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #1e293b;
-            color: #64748b;
-            font-size: 0.8rem;
-        }
-
-        .footer a {
-            color: #10b981;
-        }
-
-        /* ── Bilingual Visibility ── */
-        [data-es] {
-            display: none;
-        }
-
-        body.lang-es [data-en] {
-            display: none;
-        }
-
-        body.lang-es [data-es] {
-            display: unset;
-        }
-
-        /* For block elements that use flex/grid */
-        body.lang-es .info-grid [data-en],
-        body.lang-es .step-card [data-en],
-        body.lang-es .notes-list [data-en] {
-            display: none;
-        }
-
-        body.lang-es .info-grid [data-es],
-        body.lang-es .step-card [data-es],
-        body.lang-es .notes-list [data-es] {
-            display: unset;
-        }
-
-        /* Block-level bilingual elements */
-        .bilingual-block[data-es] {
-            display: none;
-        }
-
-        body.lang-es .bilingual-block[data-en] {
-            display: none;
-        }
-
-        body.lang-es .bilingual-block[data-es] {
-            display: block;
-        }
-
-        /* Flex bilingual elements (like callout, li) */
-        .bilingual-flex[data-es] {
-            display: none;
-        }
-
-        body.lang-es .bilingual-flex[data-en] {
-            display: none;
-        }
-
-        body.lang-es .bilingual-flex[data-es] {
-            display: flex;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.6rem;
+        @media (max-width: 640px) {
+            .setup-step {
+                flex-direction: column;
+                gap: var(--space-3);
             }
-
-            .hero p {
-                font-size: 0.92rem;
-            }
-
-            .step-card {
-                padding: 1.25rem;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-table th,
-            .pricing-table td {
-                padding: 0.65rem 0.85rem;
-                font-size: 0.82rem;
+            .setup-step-number {
+                width: 38px;
+                height: 38px;
+                font-size: var(--text-base);
             }
         }
     </style>
 </head>
-<body>
+<body class="chess-pattern-bg">
 
-    <div class="container">
-
-        <!-- ── Top Bar ── -->
-        <div class="top-bar">
-            <a href="api-setup.html" class="back-link">
-                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                <span data-en>Back to guides</span>
-                <span data-es>Volver a las guias</span>
+    <!-- Top bar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="api-setup.html" class="back-link" style="margin-bottom: 0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span data-en="Back to guides" data-es="Volver a las guias">Back to guides</span>
             </a>
             <div class="lang-toggle">
-                <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+                <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+                <button id="btn-es" onclick="setLang('es')">ES</button>
             </div>
         </div>
+    </nav>
 
-        <!-- ── Hero ── -->
-        <section class="hero">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                <span data-en>AI Provider Setup</span>
-                <span data-es>Configuracion del proveedor IA</span>
+    <!-- Hero -->
+    <section class="section gradient-hero" style="padding-top: 8rem; padding-bottom: var(--space-12);">
+        <div class="container container-md text-center">
+            <div class="hero-provider-icon reveal">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--openai-accent)"><path d="M22.2 8.7C21.8 7.2 20.8 5.9 19.5 5.1C17.6 3.8 15.1 3.6 13 4.5C11.9 3.4 10.3 2.8 8.7 2.9C7 3 5.5 3.8 4.5 5.1C2.7 6.7 2.1 9.2 2.8 11.4C1.7 12.5 1.1 14.1 1.2 15.7C1.4 17.4 2.2 18.9 3.5 19.8C5.4 21.1 7.9 21.3 10 20.4C11.1 21.5 12.7 22.1 14.3 22C16 21.9 17.5 21.1 18.5 19.8C20.3 18.2 20.9 15.7 20.2 13.5C21.3 12.4 21.9 10.8 21.8 9.2L22.2 8.7Z"/></svg>
             </div>
-            <h1>
-                <span data-en>OpenAI API Key Setup</span>
-                <span data-es>Configuracion de API Key de OpenAI</span>
-            </h1>
-            <p>
-                <span data-en>Follow these steps to get your OpenAI API key and start using GPT-5 mini in CheesCoach for intelligent chess coaching.</span>
-                <span data-es>Sigue estos pasos para obtener tu API key de OpenAI y comenzar a usar GPT-5 mini en CheesCoach para coaching inteligente de ajedrez.</span>
-            </p>
+            <div class="badge mb-6 reveal" style="border-color: rgba(16, 185, 129, 0.3); color: var(--openai-accent); background: rgba(16, 185, 129, 0.1);" data-en="AI Provider Setup" data-es="Configuracion del proveedor IA">AI Provider Setup</div>
+            <h1 class="reveal" data-en="OpenAI API Key Setup" data-es="Configuracion de API Key de OpenAI">OpenAI API Key Setup</h1>
+            <p class="section-subtitle mt-4 reveal" data-en="Follow these steps to get your OpenAI API key and start using GPT-5 mini in CheesCoach for intelligent chess coaching." data-es="Sigue estos pasos para obtener tu API key de OpenAI y comenzar a usar GPT-5 mini en CheesCoach para coaching inteligente de ajedrez.">Follow these steps to get your OpenAI API key and start using GPT-5 mini in CheesCoach for intelligent chess coaching.</p>
+        </div>
+    </section>
+
+    <div class="container container-md">
+
+        <!-- What you'll get -->
+        <section class="section" style="padding-top: var(--space-8);">
+            <h2 class="font-display mb-6 reveal" data-en="What you'll get" data-es="Lo que obtendras">What you'll get</h2>
+            <div class="grid grid-3 reveal-stagger">
+                <div class="card reveal text-center">
+                    <div class="card-icon mx-auto" style="background: rgba(16, 185, 129, 0.15); color: var(--openai-accent);">&#129302;</div>
+                    <div class="card-title" data-en="GPT-5 mini" data-es="GPT-5 mini">GPT-5 mini</div>
+                    <div class="card-text" data-en="Great quality, affordable pricing" data-es="Gran calidad, precio accesible">Great quality, affordable pricing</div>
+                </div>
+                <div class="card reveal text-center">
+                    <div class="card-icon mx-auto" style="background: rgba(16, 185, 129, 0.15); color: var(--openai-accent);">&#128241;</div>
+                    <div class="card-title" data-en="Phone Verification" data-es="Verificacion telefonica">Phone Verification</div>
+                    <div class="card-text" data-en="SMS verification required" data-es="Verificacion por SMS requerida">SMS verification required</div>
+                </div>
+                <div class="card reveal text-center">
+                    <div class="card-icon mx-auto" style="background: rgba(16, 185, 129, 0.15); color: var(--openai-accent);">&#128179;</div>
+                    <div class="card-title" data-en="Credit Card" data-es="Tarjeta de credito">Credit Card</div>
+                    <div class="card-text" data-en="Needed for API usage" data-es="Necesaria para uso de la API">Needed for API usage</div>
+                </div>
+            </div>
         </section>
 
-        <!-- ── What you'll get ── -->
-        <div class="info-grid">
-            <div class="info-card">
-                <div class="icon">&#129302;</div>
-                <h3>
-                    <span data-en>GPT-5 mini</span>
-                    <span data-es>GPT-5 mini</span>
-                </h3>
-                <p>
-                    <span data-en>Great quality, affordable pricing</span>
-                    <span data-es>Gran calidad, precio accesible</span>
-                </p>
+        <!-- Step-by-step guide -->
+        <section class="section">
+            <h2 class="font-display mb-8 reveal" data-en="Step-by-step guide" data-es="Guia paso a paso">Step-by-step guide</h2>
+
+            <div class="reveal">
+                <div class="setup-step">
+                    <div class="setup-step-number">1</div>
+                    <div class="setup-step-content">
+                        <div class="setup-step-title" data-en="Create an account" data-es="Crea una cuenta">Create an account</div>
+                        <p class="setup-step-desc" data-en='Visit <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer">platform.openai.com</a> and click <strong>"Sign up"</strong>. You can use email, Google, Microsoft, or Apple.' data-es='Visita <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer">platform.openai.com</a> y haz clic en <strong>"Sign up"</strong>. Puedes usar email, Google, Microsoft o Apple.'>Visit <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer">platform.openai.com</a> and click <strong>"Sign up"</strong>. You can use email, Google, Microsoft, or Apple.</p>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="setup-step-number">2</div>
+                    <div class="setup-step-content">
+                        <div class="setup-step-title" data-en="Verify your email" data-es="Verifica tu email">Verify your email</div>
+                        <p class="setup-step-desc" data-en="Check your inbox and click the verification link sent by OpenAI." data-es="Revisa tu bandeja de entrada y haz clic en el enlace de verificacion enviado por OpenAI.">Check your inbox and click the verification link sent by OpenAI.</p>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="setup-step-number">3</div>
+                    <div class="setup-step-content">
+                        <div class="setup-step-title" data-en="Verify your phone number" data-es="Verifica tu numero de telefono">Verify your phone number</div>
+                        <p class="setup-step-desc" data-en="OpenAI requires SMS verification. Enter your phone number and the code you receive via text message." data-es="OpenAI requiere verificacion por SMS. Introduce tu numero de telefono y el codigo que recibas por mensaje de texto.">OpenAI requires SMS verification. Enter your phone number and the code you receive via text message.</p>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="setup-step-number">4</div>
+                    <div class="setup-step-content">
+                        <div class="setup-step-title" data-en="Set up billing" data-es="Configura la facturacion">Set up billing</div>
+                        <p class="setup-step-desc" data-en='Go to <strong>Settings &rarr; Billing &rarr; Add payment method</strong>. You need to add credits (minimum ~$5) to use the API.' data-es='Ve a <strong>Settings &rarr; Billing &rarr; Add payment method</strong>. Necesitas agregar creditos (minimo ~$5) para usar la API.'>Go to <strong>Settings &rarr; Billing &rarr; Add payment method</strong>. You need to add credits (minimum ~$5) to use the API.</p>
+                        <div class="alert alert-info mt-4">
+                            <span class="alert-icon">&#128161;</span>
+                            <span data-en="You can skip this initially, but the API won't work without credits loaded into your account." data-es="Puedes omitir esto inicialmente, pero la API no funcionara sin creditos cargados en tu cuenta.">You can skip this initially, but the API won't work without credits loaded into your account.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="setup-step-number">5</div>
+                    <div class="setup-step-content">
+                        <div class="setup-step-title" data-en="Navigate to API Keys" data-es="Navega a API Keys">Navigate to API Keys</div>
+                        <p class="setup-step-desc" data-en='In the left sidebar, click <strong>"API Keys"</strong> or go directly to <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a>.' data-es='En la barra lateral izquierda, haz clic en <strong>"API Keys"</strong> o ve directamente a <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a>.'>In the left sidebar, click <strong>"API Keys"</strong> or go directly to <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a>.</p>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="setup-step-number">6</div>
+                    <div class="setup-step-content">
+                        <div class="setup-step-title" data-en="Create a new secret key" data-es="Crea una nueva clave secreta">Create a new secret key</div>
+                        <p class="setup-step-desc" data-en='Click <strong>"Create new secret key"</strong>. Give it a descriptive name like <strong>"CheesCoach"</strong>.' data-es='Haz clic en <strong>"Create new secret key"</strong>. Dale un nombre descriptivo como <strong>"CheesCoach"</strong>.'>Click <strong>"Create new secret key"</strong>. Give it a descriptive name like <strong>"CheesCoach"</strong>.</p>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="setup-step-number">7</div>
+                    <div class="setup-step-content">
+                        <div class="setup-step-title" data-en="Copy your key immediately!" data-es="Copia tu clave inmediatamente!">Copy your key immediately!</div>
+                        <p class="setup-step-desc" data-en='Your API key (starts with <code class="code-inline">sk-...</code>) is displayed. Copy it right away.' data-es='Tu API key (comienza con <code class="code-inline">sk-...</code>) se muestra en pantalla. Copiala de inmediato.'>Your API key (starts with <code class="code-inline">sk-...</code>) is displayed. Copy it right away.</p>
+                        <div class="alert alert-error mt-4">
+                            <span class="alert-icon">&#9888;&#65039;</span>
+                            <span data-en="<strong>IMPORTANT:</strong> The key is only shown <strong>ONCE</strong>. If you close the dialog without copying it, you'll need to create a new one. There is no way to view it again." data-es="<strong>IMPORTANTE:</strong> La clave solo se muestra <strong>UNA VEZ</strong>. Si cierras el dialogo sin copiarla, tendras que crear una nueva. No hay forma de verla de nuevo."><strong>IMPORTANT:</strong> The key is only shown <strong>ONCE</strong>. If you close the dialog without copying it, you'll need to create a new one. There is no way to view it again.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="setup-step">
+                    <div class="setup-step-number">8</div>
+                    <div class="setup-step-content">
+                        <div class="setup-step-title" data-en="Paste in CheesCoach" data-es="Pega la clave en CheesCoach">Paste in CheesCoach</div>
+                        <p class="setup-step-desc" data-en='Open <strong>CheesCoach &rarr; Settings &rarr; AI section &rarr; Select "OpenAI GPT-5 mini" &rarr; Configure &rarr; Paste your API key</strong>.' data-es='Abre <strong>CheesCoach &rarr; Ajustes &rarr; Seccion IA &rarr; Selecciona "OpenAI GPT-5 mini" &rarr; Configurar &rarr; Pega tu API key</strong>.'>Open <strong>CheesCoach &rarr; Settings &rarr; AI section &rarr; Select "OpenAI GPT-5 mini" &rarr; Configure &rarr; Paste your API key</strong>.</p>
+                        <div class="alert alert-success mt-4">
+                            <span class="alert-icon">&#9989;</span>
+                            <span data-en="Your key is stored securely on your device using AES-256-GCM encryption. It is never sent to our servers." data-es="Tu clave se almacena de forma segura en tu dispositivo usando cifrado AES-256-GCM. Nunca se envia a nuestros servidores.">Your key is stored securely on your device using AES-256-GCM encryption. It is never sent to our servers.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="info-card">
-                <div class="icon">&#128241;</div>
-                <h3>
-                    <span data-en>Phone Verification</span>
-                    <span data-es>Verificacion telefonica</span>
-                </h3>
-                <p>
-                    <span data-en>SMS verification required</span>
-                    <span data-es>Verificacion por SMS requerida</span>
-                </p>
-            </div>
-            <div class="info-card">
-                <div class="icon">&#128179;</div>
-                <h3>
-                    <span data-en>Credit Card</span>
-                    <span data-es>Tarjeta de credito</span>
-                </h3>
-                <p>
-                    <span data-en>Needed for API usage</span>
-                    <span data-es>Necesaria para uso de la API</span>
-                </p>
-            </div>
-        </div>
-
-        <!-- ── Step-by-step Guide ── -->
-        <h2 class="section-title">
-            <span data-en>Step-by-step guide</span>
-            <span data-es>Guia paso a paso</span>
-        </h2>
-
-        <!-- Step 1 -->
-        <div class="step-card">
-            <div class="step-number">1</div>
-            <h3>
-                <span data-en>Create an account</span>
-                <span data-es>Crea una cuenta</span>
-            </h3>
-            <p>
-                <span data-en>Visit <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer">platform.openai.com</a> and click <strong>"Sign up"</strong>. You can use email, Google, Microsoft, or Apple.</span>
-                <span data-es>Visita <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer">platform.openai.com</a> y haz clic en <strong>"Sign up"</strong>. Puedes usar email, Google, Microsoft o Apple.</span>
-            </p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="step-card">
-            <div class="step-number">2</div>
-            <h3>
-                <span data-en>Verify your email</span>
-                <span data-es>Verifica tu email</span>
-            </h3>
-            <p>
-                <span data-en>Check your inbox and click the verification link sent by OpenAI.</span>
-                <span data-es>Revisa tu bandeja de entrada y haz clic en el enlace de verificacion enviado por OpenAI.</span>
-            </p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step-card">
-            <div class="step-number">3</div>
-            <h3>
-                <span data-en>Verify your phone number</span>
-                <span data-es>Verifica tu numero de telefono</span>
-            </h3>
-            <p>
-                <span data-en>OpenAI requires SMS verification. Enter your phone number and the code you receive via text message.</span>
-                <span data-es>OpenAI requiere verificacion por SMS. Introduce tu numero de telefono y el codigo que recibas por mensaje de texto.</span>
-            </p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="step-card">
-            <div class="step-number">4</div>
-            <h3>
-                <span data-en>Set up billing</span>
-                <span data-es>Configura la facturacion</span>
-            </h3>
-            <p>
-                <span data-en>Go to <strong>Settings &rarr; Billing &rarr; Add payment method</strong>. You need to add credits (minimum ~$5) to use the API.</span>
-                <span data-es>Ve a <strong>Settings &rarr; Billing &rarr; Add payment method</strong>. Necesitas agregar creditos (minimo ~$5) para usar la API.</span>
-            </p>
-            <div class="callout info">
-                <span class="callout-icon">&#128161;</span>
-                <span class="callout-text">
-                    <span data-en>You can skip this initially, but the API won't work without credits loaded into your account.</span>
-                    <span data-es>Puedes omitir esto inicialmente, pero la API no funcionara sin creditos cargados en tu cuenta.</span>
-                </span>
-            </div>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="step-card">
-            <div class="step-number">5</div>
-            <h3>
-                <span data-en>Navigate to API Keys</span>
-                <span data-es>Navega a API Keys</span>
-            </h3>
-            <p>
-                <span data-en>In the left sidebar, click <strong>"API Keys"</strong> or go directly to <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a></span>
-                <span data-es>En la barra lateral izquierda, haz clic en <strong>"API Keys"</strong> o ve directamente a <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a></span>
-            </p>
-        </div>
-
-        <!-- Step 6 -->
-        <div class="step-card">
-            <div class="step-number">6</div>
-            <h3>
-                <span data-en>Create a new secret key</span>
-                <span data-es>Crea una nueva clave secreta</span>
-            </h3>
-            <p>
-                <span data-en>Click <strong>"Create new secret key"</strong>. Give it a descriptive name like <strong>"CheesCoach"</strong>.</span>
-                <span data-es>Haz clic en <strong>"Create new secret key"</strong>. Dale un nombre descriptivo como <strong>"CheesCoach"</strong>.</span>
-            </p>
-        </div>
-
-        <!-- Step 7 (WARNING) -->
-        <div class="step-card warning">
-            <div class="step-number">7</div>
-            <h3>
-                <span data-en>Copy your key immediately!</span>
-                <span data-es>Copia tu clave inmediatamente!</span>
-            </h3>
-            <p>
-                <span data-en>Your API key (starts with <span class="key-format">sk-...</span>) is displayed. Copy it right away.</span>
-                <span data-es>Tu API key (comienza con <span class="key-format">sk-...</span>) se muestra en pantalla. Copiala de inmediato.</span>
-            </p>
-            <div class="callout">
-                <span class="callout-icon">&#9888;&#65039;</span>
-                <span class="callout-text">
-                    <span data-en><strong>IMPORTANT:</strong> The key is only shown <strong>ONCE</strong>. If you close the dialog without copying it, you'll need to create a new one. There is no way to view it again.</span>
-                    <span data-es><strong>IMPORTANTE:</strong> La clave solo se muestra <strong>UNA VEZ</strong>. Si cierras el dialogo sin copiarla, tendras que crear una nueva. No hay forma de verla de nuevo.</span>
-                </span>
-            </div>
-        </div>
-
-        <!-- Step 8 -->
-        <div class="step-card">
-            <div class="step-number">8</div>
-            <h3>
-                <span data-en>Paste in CheesCoach</span>
-                <span data-es>Pega la clave en CheesCoach</span>
-            </h3>
-            <p>
-                <span data-en>Open <strong>CheesCoach &rarr; Settings &rarr; AI section &rarr; Select "OpenAI GPT-5 mini" &rarr; Configure &rarr; Paste your API key</strong></span>
-                <span data-es>Abre <strong>CheesCoach &rarr; Ajustes &rarr; Seccion IA &rarr; Selecciona "OpenAI GPT-5 mini" &rarr; Configurar &rarr; Pega tu API key</strong></span>
-            </p>
-            <div class="callout info">
-                <span class="callout-icon">&#9989;</span>
-                <span class="callout-text">
-                    <span data-en>Your key is stored securely on your device using AES-256-GCM encryption. It is never sent to our servers.</span>
-                    <span data-es>Tu clave se almacena de forma segura en tu dispositivo usando cifrado AES-256-GCM. Nunca se envia a nuestros servidores.</span>
-                </span>
-            </div>
-        </div>
-
-        <!-- ── Pricing ── -->
-        <section class="pricing-section">
-            <h2 class="section-title">
-                <span data-en>Pricing</span>
-                <span data-es>Precios</span>
-            </h2>
-
-            <table class="pricing-table">
-                <thead>
-                    <tr>
-                        <th>
-                            <span data-en>Model</span>
-                            <span data-es>Modelo</span>
-                        </th>
-                        <th>
-                            <span data-en>Input (1M tokens)</span>
-                            <span data-es>Entrada (1M tokens)</span>
-                        </th>
-                        <th>
-                            <span data-en>Output (1M tokens)</span>
-                            <span data-es>Salida (1M tokens)</span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <span class="model-name">GPT-5 mini</span>
-                            <span class="recommended">
-                                <span data-en>Recommended</span>
-                                <span data-es>Recomendado</span>
-                            </span>
-                        </td>
-                        <td>$0.15</td>
-                        <td>$0.60</td>
-                    </tr>
-                    <tr>
-                        <td><span class="model-name">GPT-5</span></td>
-                        <td>$2.50</td>
-                        <td>$10.00</td>
-                    </tr>
-                </tbody>
-            </table>
         </section>
 
-        <!-- ── Important Notes ── -->
-        <section class="notes-section">
-            <h2 class="section-title">
-                <span data-en>Important notes</span>
-                <span data-es>Notas importantes</span>
-            </h2>
-
-            <ul class="notes-list">
-                <li class="bilingual-flex" data-en>
-                    <span class="note-icon">&#128176;</span>
-                    <span>Set a <strong>spending limit</strong> in <strong>Settings &rarr; Billing &rarr; Usage limits</strong> to avoid unexpected charges. We recommend starting with $5-10/month.</span>
-                </li>
-                <li class="bilingual-flex" data-es>
-                    <span class="note-icon">&#128176;</span>
-                    <span>Configura un <strong>limite de gasto</strong> en <strong>Settings &rarr; Billing &rarr; Usage limits</strong> para evitar cargos inesperados. Recomendamos empezar con $5-10/mes.</span>
-                </li>
-
-                <li class="bilingual-flex" data-en>
-                    <span class="note-icon">&#128275;</span>
-                    <span>The API key is <strong>separate</strong> from a ChatGPT Plus subscription. Having ChatGPT Plus does not give you API access; you need to add credits separately.</span>
-                </li>
-                <li class="bilingual-flex" data-es>
-                    <span class="note-icon">&#128275;</span>
-                    <span>La API key es <strong>independiente</strong> de una suscripcion a ChatGPT Plus. Tener ChatGPT Plus no te da acceso a la API; necesitas agregar creditos por separado.</span>
-                </li>
-
-                <li class="bilingual-flex" data-en>
-                    <span class="note-icon">&#128200;</span>
-                    <span><strong>Rate limits</strong> increase as you spend more (Tier system). New accounts start at Tier 1. For CheesCoach usage, Tier 1 is more than sufficient.</span>
-                </li>
-                <li class="bilingual-flex" data-es>
-                    <span class="note-icon">&#128200;</span>
-                    <span>Los <strong>limites de uso</strong> aumentan a medida que gastas mas (sistema de Tiers). Las cuentas nuevas comienzan en Tier 1. Para el uso de CheesCoach, el Tier 1 es mas que suficiente.</span>
-                </li>
-            </ul>
+        <!-- Pricing -->
+        <section class="section">
+            <h2 class="font-display mb-6 reveal" data-en="Pricing" data-es="Precios">Pricing</h2>
+            <div class="reveal">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th data-en="Model" data-es="Modelo">Model</th>
+                            <th data-en="Input (1M tokens)" data-es="Entrada (1M tokens)">Input (1M tokens)</th>
+                            <th data-en="Output (1M tokens)" data-es="Salida (1M tokens)">Output (1M tokens)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="recommended">
+                            <td>
+                                <strong>GPT-5 mini</strong>
+                                <span class="badge badge-success" style="margin-left: var(--space-2);" data-en="Recommended" data-es="Recomendado">Recommended</span>
+                            </td>
+                            <td>$0.15</td>
+                            <td>$0.60</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GPT-5</strong></td>
+                            <td>$2.50</td>
+                            <td>$10.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <!-- ── Footer ── -->
-        <div class="footer">
-            <p>
-                <span data-en>CheesCoach by <a href="https://juanfranj.github.io" target="_blank" rel="noopener noreferrer">JuanfranDevs</a></span>
-                <span data-es>CheesCoach por <a href="https://juanfranj.github.io" target="_blank" rel="noopener noreferrer">JuanfranDevs</a></span>
-            </p>
-        </div>
+        <!-- Important notes -->
+        <section class="section">
+            <h2 class="font-display mb-6 reveal" data-en="Important notes" data-es="Notas importantes">Important notes</h2>
+            <div class="flex flex-col gap-3 reveal">
+                <div class="alert alert-warning">
+                    <span class="alert-icon">&#128176;</span>
+                    <span data-en="Set a <strong>spending limit</strong> in <strong>Settings &rarr; Billing &rarr; Usage limits</strong> to avoid unexpected charges. We recommend starting with $5-10/month." data-es="Configura un <strong>limite de gasto</strong> en <strong>Settings &rarr; Billing &rarr; Usage limits</strong> para evitar cargos inesperados. Recomendamos empezar con $5-10/mes.">Set a <strong>spending limit</strong> in <strong>Settings &rarr; Billing &rarr; Usage limits</strong> to avoid unexpected charges. We recommend starting with $5-10/month.</span>
+                </div>
+                <div class="alert alert-info">
+                    <span class="alert-icon">&#128275;</span>
+                    <span data-en="The API key is <strong>separate</strong> from a ChatGPT Plus subscription. Having ChatGPT Plus does not give you API access; you need to add credits separately." data-es="La API key es <strong>independiente</strong> de una suscripcion a ChatGPT Plus. Tener ChatGPT Plus no te da acceso a la API; necesitas agregar creditos por separado.">The API key is <strong>separate</strong> from a ChatGPT Plus subscription. Having ChatGPT Plus does not give you API access; you need to add credits separately.</span>
+                </div>
+                <div class="alert alert-info">
+                    <span class="alert-icon">&#128200;</span>
+                    <span data-en="<strong>Rate limits</strong> increase as you spend more (Tier system). New accounts start at Tier 1. For CheesCoach usage, Tier 1 is more than sufficient." data-es="Los <strong>limites de uso</strong> aumentan a medida que gastas mas (sistema de Tiers). Las cuentas nuevas comienzan en Tier 1. Para el uso de CheesCoach, el Tier 1 es mas que suficiente."><strong>Rate limits</strong> increase as you spend more (Tier system). New accounts start at Tier 1. For CheesCoach usage, Tier 1 is more than sufficient.</span>
+                </div>
+            </div>
+        </section>
 
     </div>
 
-    <!-- ── Language Toggle Script ── -->
-    <script>
-        function setLang(lang) {
-            document.body.classList.toggle('lang-es', lang === 'es');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-            document.documentElement.lang = lang;
-            localStorage.setItem('cheescoach-lang', lang);
-        }
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <span><span data-en="CheesCoach by" data-es="CheesCoach por">CheesCoach by</span> <a href="https://github.com/juanfranj" target="_blank" rel="noopener noreferrer">JuanfranDevs</a></span>
+            <span>&copy; 2026</span>
+        </div>
+    </footer>
 
-        // Restore saved language
-        (function() {
-            var saved = localStorage.getItem('cheescoach-lang');
-            if (saved === 'es') {
-                setLang('es');
-            }
-        })();
+    <script>
+    (function() {
+        function applyLang(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-en]').forEach(function(el) {
+                var t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t;
+            });
+            var be = document.getElementById('btn-en'), bs = document.getElementById('btn-es');
+            if (be) be.classList.toggle('active', lang === 'en');
+            if (bs) bs.classList.toggle('active', lang === 'es');
+        }
+        window.setLang = function(lang) {
+            try { localStorage.setItem('cheescoach-lang', lang); } catch(e) {}
+            applyLang(lang);
+        };
+        var saved = null;
+        try { saved = localStorage.getItem('cheescoach-lang'); } catch(e) {}
+        applyLang(saved === 'es' ? 'es' : 'en');
+
+        var navbar = document.querySelector('.navbar');
+        if (navbar) window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+
+        var reveals = document.querySelectorAll('.reveal');
+        if (reveals.length && 'IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+            }, { threshold: 0.1 });
+            reveals.forEach(function(el) { observer.observe(el); });
+        } else { reveals.forEach(function(el) { el.classList.add('visible'); }); }
+    })();
     </script>
 
 </body>

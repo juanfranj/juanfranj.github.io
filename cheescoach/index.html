@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheesCoach - Tu Coach de Ajedrez con Inteligencia Artificial</title>
+    <meta name="description" content="Analiza cada jugada con explicaciones en lenguaje natural, adaptadas a tu nivel. Stockfish + IA en tu bolsillo. App Android gratuita.">
+    <meta name="author" content="JuanfranDevs">
+    <meta name="theme-color" content="#0c1220">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="CheesCoach - Coach de Ajedrez con IA">
+    <meta property="og:description" content="Analiza cada jugada con explicaciones en lenguaje natural. Stockfish + IA en tu bolsillo.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="app_icon_chesscoach.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app_icon_chesscoach.png">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <!-- Page-specific -->
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" role="navigation" aria-label="Navegacion principal">
+    <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">
+            <img src="app_icon_chesscoach.png" alt="CheesCoach" width="36" height="36">
+            <span>CheesCoach</span>
+        </a>
+
+        <ul class="navbar-links" id="nav-links">
+            <li><a href="#features">Caracteristicas</a></li>
+            <li><a href="#course-banner">Curso</a></li>
+            <li><a href="api-setup.html">IA Providers</a></li>
+            <li><a href="#download">Descargar</a></li>
+        </ul>
+
+        <button class="navbar-hamburger" id="hamburger" aria-label="Menu de navegacion" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+
+<!-- ========== HERO ========== -->
+<section class="hero gradient-hero chess-pattern-bg" id="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <!-- Left: App Icon -->
+            <div class="hero-icon-wrapper animate-fadeInUp">
+                <div class="hero-icon-glow">
+                    <img src="app_icon_chesscoach.png" alt="CheesCoach App Icon" width="120" height="120" class="hero-icon-img">
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="hero-content animate-fadeInUp delay-200">
+                <h1 class="hero-title">
+                    Tu Coach de Ajedrez con <span class="text-gradient">Inteligencia Artificial</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Analiza cada jugada con explicaciones en lenguaje natural, adaptadas a tu nivel. Stockfish + IA en tu bolsillo.
+                </p>
+
+                <div class="hero-badges animate-fadeInUp delay-300">
+                    <span class="badge badge-accent">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.523 15.342c-.498.139-1.01.208-1.523.208-3.038 0-5.5-2.462-5.5-5.5 0-1.932 1-3.628 2.51-4.608A8.014 8.014 0 004 13c0 4.418 3.582 8 8 8 2.564 0 4.843-1.208 6.308-3.084A6.003 6.003 0 0117.523 15.342zM6.94 3.346l.227-.068c.097-.03.2.014.253.1l.62 1.006a.199.199 0 00.17.094h1.182c.094 0 .176.065.197.156l.026.113a.199.199 0 01-.128.23L8.376 5.4a.199.199 0 00-.126.136l-.316 1.328a.199.199 0 01-.352.067l-.58-.746a.199.199 0 00-.193-.074l-1.078.18a.199.199 0 01-.22-.249l.266-.972a.199.199 0 00-.052-.193L4.846 3.97a.199.199 0 01.116-.336l.88-.078a.199.199 0 00.164-.115l.406-.943c.04-.093.152-.132.24-.084l.288.155z"/></svg>
+                        Android
+                    </span>
+                    <span class="badge badge-success">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>
+                        Gratis
+                    </span>
+                    <span class="badge badge-gold">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Offline
+                    </span>
+                </div>
+
+                <div class="hero-ctas animate-fadeInUp delay-400">
+                    <a href="#download" class="btn btn-primary btn-lg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Descargar Gratis
+                    </a>
+                    <a href="curso/index.html" class="btn btn-outline btn-lg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                        Curso Gratuito
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== FEATURES ========== -->
+<section class="section gradient-section" id="features">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">Caracteristicas</div>
+            <h2 class="section-title">Todo lo que necesitas para mejorar</h2>
+            <p class="section-subtitle">Herramientas profesionales de analisis y entrenamiento de ajedrez, potenciadas por inteligencia artificial.</p>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger">
+            <!-- 1. Coach IA -->
+            <div class="card reveal">
+                <div class="card-icon gold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                        <path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 01-1 1H9a1 1 0 01-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/>
+                        <line x1="9" y1="21" x2="15" y2="21"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Coach IA</h3>
+                <p class="card-text">Explicaciones en lenguaje natural de cada movimiento, basadas en los principios de Capablanca y adaptadas a tu nivel.</p>
+            </div>
+
+            <!-- 2. Jugar vs Stockfish -->
+            <div class="card reveal">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                        <path d="M12 2C10.5 2 9 3 9 5c0 1 .5 1.5 1 2H8L6 9h2l-1 3h2l-1 5h2v3h2v-3h2l-1-5h2l-1-3h2l-2-2h-2c.5-.5 1-1 1-2 0-2-1.5-3-3-3z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Jugar vs Stockfish</h3>
+                <p class="card-text">Motor Stockfish 18 local con ELO ajustable de 1320 a 3190. Sin internet necesario.</p>
+            </div>
+
+            <!-- 3. Repasar Partidas -->
+            <div class="card reveal">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Repasar Partidas</h3>
+                <p class="card-text">Importa PGN desde portapapeles, archivo o compartir. La IA analiza cada jugada con detalle.</p>
+            </div>
+
+            <!-- 4. Puzzles -->
+            <div class="card reveal">
+                <div class="card-icon gold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                        <path d="M20 7h-3V4a1 1 0 00-1-1h-2a1 1 0 00-1 1v1.07A4 4 0 0012 5a4 4 0 00-1 .07V4a1 1 0 00-1-1H8a1 1 0 00-1 1v3H4a1 1 0 00-1 1v2a1 1 0 001 1h1.07A4 4 0 005 12a4 4 0 00.07 1H4a1 1 0 00-1 1v2a1 1 0 001 1h3v3a1 1 0 001 1h2a1 1 0 001-1v-1.07A4 4 0 0012 19a4 4 0 001-.07V20a1 1 0 001 1h2a1 1 0 001-1v-3h3a1 1 0 001-1v-2a1 1 0 00-1-1h-1.07A4 4 0 0019 12a4 4 0 00-.07-1H20a1 1 0 001-1V8a1 1 0 00-1-1z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Puzzles</h3>
+                <p class="card-text">Entrenamiento tactico con puzzles de Lichess. Rating progresivo y modo Streak para desafiarte.</p>
+            </div>
+
+            <!-- 5. Jugar Online -->
+            <div class="card reveal">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Jugar Online</h3>
+                <p class="card-text">Integracion con Lichess para partidas online. Bullet, Blitz, Rapid y Classical.</p>
+            </div>
+
+            <!-- 6. Privacidad Total -->
+            <div class="card reveal">
+                <div class="card-icon gold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Privacidad Total</h3>
+                <p class="card-text">API keys cifradas con AES-256. Motor local. Sin login obligatorio. Tus datos son tuyos.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="section" id="how-it-works">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">Como funciona</div>
+            <h2 class="section-title">Mejora en 3 simples pasos</h2>
+        </div>
+
+        <div class="steps reveal" style="max-width: 900px; margin: 0 auto;">
+            <div class="step completed">
+                <div class="step-connector"></div>
+                <div class="step-number">1</div>
+                <h3 class="step-title">Juega</h3>
+                <p class="step-text">Elige tu rival: Stockfish local u oponente online en Lichess.</p>
+            </div>
+
+            <div class="step active">
+                <div class="step-connector"></div>
+                <div class="step-number">2</div>
+                <h3 class="step-title">Analiza</h3>
+                <p class="step-text">El coach IA explica cada movimiento con principios educativos.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Mejora</h3>
+                <p class="step-text">Entrena tacticas, repasa errores y sube tu rating.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== INTERACTIVE DEMO ========== -->
+<section class="section gradient-section" id="demo">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">Prueba ahora</div>
+            <h2 class="section-title">Tablero Interactivo</h2>
+            <p class="section-subtitle">Mueve las piezas blancas. Las negras responden automaticamente.</p>
+        </div>
+
+        <div class="demo-wrapper reveal">
+            <div class="demo-board-area">
+                <div class="demo-board-container">
+                    <chess-board id="demo-board" position="start" draggable-pieces></chess-board>
+                </div>
+                <div class="demo-controls">
+                    <p id="demo-status" class="demo-status">Tu turno - Mueve las blancas</p>
+                    <button id="demo-reset" class="btn btn-outline btn-sm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                        Reiniciar
+                    </button>
+                </div>
+            </div>
+
+            <div class="demo-info">
+                <h3>Asi funciona CheesCoach</h3>
+                <p>Este es un ejemplo del tablero que encontraras en la app. En CheesCoach, cada movimiento se analiza con Stockfish y se explica con inteligencia artificial.</p>
+
+                <ul class="demo-checklist">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+                        Solo movimientos legales
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+                        Promocion automatica a dama
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+                        Deteccion de jaque mate y tablas
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+                        En la app: analisis IA de cada jugada
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== SCREENSHOTS ========== -->
+<section class="section" id="screenshots">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">La App</div>
+            <h2 class="section-title">Capturas de pantalla</h2>
+        </div>
+
+        <div class="screenshots-carousel reveal">
+            <div class="screenshots-track" id="screenshots-track">
+                <!-- 1. Pantalla principal -->
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder screenshot-gradient-1">
+                        <div class="screenshot-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        </div>
+                        <span class="screenshot-label">Pantalla principal</span>
+                        <span class="screenshot-sublabel">Dashboard y acceso rapido</span>
+                    </div>
+                </div>
+
+                <!-- 2. Modo Jugar -->
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder screenshot-gradient-2">
+                        <div class="screenshot-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M12 2C10.5 2 9 3 9 5c0 1 .5 1.5 1 2H8L6 9h2l-1 3h2l-1 5h2v3h2v-3h2l-1-5h2l-1-3h2l-2-2h-2c.5-.5 1-1 1-2 0-2-1.5-3-3-3z"/></svg>
+                        </div>
+                        <span class="screenshot-label">Modo Jugar</span>
+                        <span class="screenshot-sublabel">Partida vs Stockfish</span>
+                    </div>
+                </div>
+
+                <!-- 3. Analisis de partida -->
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder screenshot-gradient-3">
+                        <div class="screenshot-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        </div>
+                        <span class="screenshot-label">Analisis IA</span>
+                        <span class="screenshot-sublabel">Coach + evaluacion</span>
+                    </div>
+                </div>
+
+                <!-- 4. Puzzles -->
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder screenshot-gradient-4">
+                        <div class="screenshot-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M20 7h-3V4a1 1 0 00-1-1h-2a1 1 0 00-1 1v1.07A4 4 0 0012 5a4 4 0 00-1 .07V4a1 1 0 00-1-1H8a1 1 0 00-1 1v3H4a1 1 0 00-1 1v2a1 1 0 001 1h1.07A4 4 0 005 12a4 4 0 00.07 1H4a1 1 0 00-1 1v2a1 1 0 001 1h3v3a1 1 0 001 1h2a1 1 0 001-1v-1.07A4 4 0 0012 19a4 4 0 001-.07V20a1 1 0 001 1h2a1 1 0 001-1v-3h3a1 1 0 001-1v-2a1 1 0 00-1-1h-1.07A4 4 0 0019 12a4 4 0 00-.07-1H20a1 1 0 001-1V8a1 1 0 00-1-1z"/></svg>
+                        </div>
+                        <span class="screenshot-label">Puzzles</span>
+                        <span class="screenshot-sublabel">Entrenamiento tactico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screenshots-nav">
+                <button class="btn btn-icon btn-outline" id="scroll-left" aria-label="Anterior">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button class="btn btn-icon btn-outline" id="scroll-right" aria-label="Siguiente">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="9 6 15 12 9 18"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== COURSE BANNER ========== -->
+<section class="section" id="course-banner">
+    <div class="container">
+        <div class="course-banner-card reveal">
+            <div class="course-banner-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+                    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+                    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+                </svg>
+            </div>
+            <h2>Aprende Ajedrez desde Cero</h2>
+            <p>10 lecciones interactivas con tableros jugables. Desde las reglas basicas hasta tacticas avanzadas.</p>
+            <a href="curso/index.html" class="btn btn-gold btn-lg">
+                Empezar Curso Gratuito
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== AI PROVIDERS ========== -->
+<section class="section gradient-section" id="ai-providers">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">Inteligencia Artificial</div>
+            <h2 class="section-title">Compatible con 4 proveedores de IA</h2>
+            <p class="section-subtitle">Elige tu proveedor favorito. Trae tu propia API key.</p>
+        </div>
+
+        <div class="grid grid-4 reveal-stagger" style="max-width: 960px; margin: 0 auto;">
+            <!-- Gemini -->
+            <a href="gemini-setup.html" class="card provider-card-link reveal" data-provider="gemini">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M12 2C12 2 14.5 7 17.5 9.5C20 11.5 22 12 22 12C22 12 20 12.5 17.5 14.5C14.5 17 12 22 12 22C12 22 9.5 17 6.5 14.5C4 12.5 2 12 2 12C2 12 4 11.5 6.5 9.5C9.5 7 12 2 12 2Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Gemini</h3>
+                <p class="card-text text-xs">Gemini 2.5 Flash</p>
+                <span class="provider-configure">
+                    Configurar
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+            </a>
+
+            <!-- OpenAI -->
+            <a href="openai-setup.html" class="card provider-card-link reveal" data-provider="openai">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M22.2 8.7C21.8 7.2 20.8 5.9 19.5 5.1C17.6 3.8 15.1 3.6 13 4.5C11.9 3.4 10.3 2.8 8.7 2.9C7 3 5.5 3.8 4.5 5.1C2.7 6.7 2.1 9.2 2.8 11.4C1.7 12.5 1.1 14.1 1.2 15.7C1.4 17.4 2.2 18.9 3.5 19.8C5.4 21.1 7.9 21.3 10 20.4C11.1 21.5 12.7 22.1 14.3 22C16 21.9 17.5 21.1 18.5 19.8C20.3 18.2 20.9 15.7 20.2 13.5C21.3 12.4 21.9 10.8 21.8 9.2L22.2 8.7Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">OpenAI</h3>
+                <p class="card-text text-xs">GPT-5 mini</p>
+                <span class="provider-configure">
+                    Configurar
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+            </a>
+
+            <!-- Claude -->
+            <a href="claude-setup.html" class="card provider-card-link reveal" data-provider="claude">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" fill="currentColor" opacity="0.9"/>
+                        <path d="M12 6L7 9V15L12 18L17 15V9L12 6Z" fill="var(--bg-primary)"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Claude</h3>
+                <p class="card-text text-xs">Claude Haiku 4.5</p>
+                <span class="provider-configure">
+                    Configurar
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+            </a>
+
+            <!-- DeepSeek -->
+            <a href="deepseek-setup.html" class="card provider-card-link reveal" data-provider="deepseek">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M12 7V12L15.5 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">DeepSeek</h3>
+                <p class="card-text text-xs">DeepSeek Chat</p>
+                <span class="provider-configure">
+                    Configurar
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== DOWNLOAD ========== -->
+<section class="section" id="download">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">Descargar</div>
+            <h2 class="section-title">Descarga CheesCoach</h2>
+            <p class="section-subtitle">Gratis en Google Play. Codigo abierto en GitHub.</p>
+        </div>
+
+        <div class="download-actions reveal">
+            <a href="#" class="btn btn-primary btn-lg" aria-label="Descargar en Google Play">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.03 12l2.668-2.492zM5.864 2.658L16.8 9.99l-2.302 2.302-8.634-8.634z"/></svg>
+                Google Play
+            </a>
+            <a href="#" class="btn btn-outline btn-lg" aria-label="Ver codigo en GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+            </a>
+        </div>
+
+        <p class="text-center text-muted text-sm mt-6 reveal">Requiere Android 7.0 (API 24) o superior</p>
+    </div>
+</section>
+
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="index.html" class="navbar-logo">
+                <img src="app_icon_chesscoach.png" alt="CheesCoach" width="36" height="36">
+                <span>CheesCoach</span>
+            </a>
+            <p>Coach de ajedrez con inteligencia artificial. Analiza, aprende y mejora tu juego.</p>
+        </div>
+
+        <div>
+            <h4 class="footer-heading">Producto</h4>
+            <ul class="footer-links">
+                <li><a href="#features">Caracteristicas</a></li>
+                <li><a href="curso/index.html">Curso</a></li>
+                <li><a href="#download">Descargar</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="footer-heading">Recursos</h4>
+            <ul class="footer-links">
+                <li><a href="gemini-setup.html">Gemini</a></li>
+                <li><a href="openai-setup.html">OpenAI</a></li>
+                <li><a href="claude-setup.html">Claude</a></li>
+                <li><a href="deepseek-setup.html">DeepSeek</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="footer-heading">Proyecto</h4>
+            <ul class="footer-links">
+                <li><a href="#">Licencia</a></li>
+                <li><a href="#">Privacidad</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 CheesCoach. Hecho con &#9823; y IA.</p>
+        <p>Desarrollado por JuanfranDevs</p>
+    </div>
+</footer>
+
+
+<!-- ========== SCRIPTS ========== -->
+<!-- Chess board web component -->
+<script type="module" src="https://unpkg.com/chessboard-element@1.2.0?module"></script>
+
+<!-- Landing page interactivity (IIFE, works from file://) -->
+<script src="js/landing.js"></script>
+
+</body>
+</html>

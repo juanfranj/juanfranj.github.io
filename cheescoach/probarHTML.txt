@@ -1,0 +1,8 @@
+
+
+  Desde la terminal de VS Code en wsl:
+
+  cd "documentos/cheescoach"
+  python3 -m http.server 8000
+
+  Y abre http://localhost:8000 en el navegador.
