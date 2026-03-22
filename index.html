@@ -380,6 +380,8 @@
         .app-card:nth-child(2) { animation-delay: 0.2s; --accent: var(--neon-magenta); }
         .app-card:nth-child(3) { animation-delay: 0.3s; --accent: var(--neon-green); }
         .app-card:nth-child(4) { animation-delay: 0.4s; --accent: var(--neon-orange); }
+        .app-card:nth-child(5) { animation-delay: 0.5s; --accent: var(--neon-cyan); }
+        .app-card:nth-child(6) { animation-delay: 0.6s; --accent: var(--neon-magenta); }
 
         @keyframes cardAppear {
             from {
@@ -1014,10 +1016,38 @@
             <div class="section-header">
                 <div class="section-icon">🕹️</div>
                 <h2 class="section-title">Juegos</h2>
-                <span class="section-count">×4</span>
+                <span class="section-count">×5</span>
             </div>
 
             <div class="apps-grid">
+                <!-- CheesCoach -->
+                <a href="https://play.google.com/store/apps/details?id=com.app.cheescoach"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="app-card glitch-hover">
+                    <div class="corner-marker tl"></div>
+                    <div class="corner-marker tr"></div>
+                    <div class="corner-marker bl"></div>
+                    <div class="corner-marker br"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <img src="images/app_icon_chesscoach.png" alt="CheesCoach" class="app-icon">
+                            <div class="app-meta">
+                                <span class="featured-tag">★ Nuevo</span>
+                                <h3 class="app-name">CheesCoach</h3>
+                                <p class="app-category">Educativo • Ajedrez</p>
+                            </div>
+                        </div>
+                        <p class="app-description">Aprende ajedrez con IA. Curso interactivo, puzzles, análisis de partidas y entrenamiento con Stockfish.</p>
+                        <span class="app-cta">
+                            Play Store
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
                 <!-- Multiplication Race -->
                 <a href="https://play.google.com/store/apps/details?id=com.games.runnermultiplication"
                    target="_blank"
@@ -1031,7 +1061,6 @@
                         <div class="card-header">
                             <img src="images/app_icon_multiplicatiorace.webp" alt="Multiplication Race" class="app-icon">
                             <div class="app-meta">
-                                <span class="featured-tag">★ Nuevo</span>
                                 <h3 class="app-name">Multiplication Race</h3>
                                 <p class="app-category">Educativo • Carreras</p>
                             </div>
