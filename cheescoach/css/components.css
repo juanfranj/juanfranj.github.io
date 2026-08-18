@@ -789,6 +789,7 @@
 .card[data-provider="openai"] { --provider-color: var(--openai-accent); }
 .card[data-provider="claude"] { --provider-color: var(--claude-accent); }
 .card[data-provider="deepseek"] { --provider-color: var(--deepseek-accent); }
+.card[data-provider="qwen"] { --provider-color: var(--qwen-accent); }
 
 .card[data-provider]:hover {
     border-color: var(--provider-color);
