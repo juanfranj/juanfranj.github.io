@@ -143,7 +143,7 @@
                 <p class="card-text mt-4" data-en="You only need to set up ONE provider. Choose whichever suits you best. Your key is stored encrypted on your device and never shared." data-es="Solo necesitas configurar UN proveedor. Elige el que mejor se adapte a ti. Tu clave se almacena cifrada en tu dispositivo y nunca se comparte.">You only need to set up ONE provider. Choose whichever suits you best. Your key is stored encrypted on your device and never shared.</p>
                 <div class="alert alert-info mt-4">
                     <span class="alert-icon">&#128161;</span>
-                    <span data-en="New to AI APIs? Start with <strong>Google Gemini</strong> &mdash; it is the easiest to set up and the only one with a real free tier, so you can try the coach without a card. Once you are paying, <strong>Qwen</strong> and <strong>DeepSeek</strong> cost noticeably less." data-es="Nuevo en APIs de IA? Empieza con <strong>Google Gemini</strong>: es la mas facil de configurar y la unica con plan gratuito de verdad, asi que puedes probar el coach sin tarjeta. Cuando ya pagues, <strong>Qwen</strong> y <strong>DeepSeek</strong> salen bastante mas baratos.">New to AI APIs? Start with <strong>Google Gemini</strong> &mdash; it is the easiest to set up and the only one with a real free tier, so you can try the coach without a card. Once you are paying, <strong>Qwen</strong> and <strong>DeepSeek</strong> cost noticeably less.</span>
+                    <span data-en="Not sure which to pick? Go with <strong>OpenAI</strong> if you already have a ChatGPT account &mdash; for this kind of use it costs less than Gemini. Or go with <strong>DeepSeek</strong>, the best value of the lot: the same quality of explanations for even less. If you would rather not add a card at all, <strong>Gemini</strong> is the only one with a real free tier." data-es="No sabes cual elegir? Ve con <strong>OpenAI</strong> si ya tienes cuenta de ChatGPT: para este uso sale mas barato que Gemini. O con <strong>DeepSeek</strong>, la mejor relacion calidad-precio: la misma calidad de explicaciones por aun menos. Y si prefieres no poner tarjeta, <strong>Gemini</strong> es el unico con plan gratuito de verdad.">Not sure which to pick? Go with <strong>OpenAI</strong> if you already have a ChatGPT account &mdash; for this kind of use it costs less than Gemini. Or go with <strong>DeepSeek</strong>, the best value of the lot: the same quality of explanations for even less. If you would rather not add a card at all, <strong>Gemini</strong> is the only one with a real free tier.</span>
                 </div>
             </div>
 
@@ -156,6 +156,54 @@
             </div>
 
             <div class="grid grid-2 reveal-stagger">
+
+                <!-- OpenAI -->
+                <div class="card reveal" data-provider="openai">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="card-icon" style="margin-bottom: 0;">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.2 8.7C21.8 7.2 20.8 5.9 19.5 5.1C17.6 3.8 15.1 3.6 13 4.5C11.9 3.4 10.3 2.8 8.7 2.9C7 3 5.5 3.8 4.5 5.1C2.7 6.7 2.1 9.2 2.8 11.4C1.7 12.5 1.1 14.1 1.2 15.7C1.4 17.4 2.2 18.9 3.5 19.8C5.4 21.1 7.9 21.3 10 20.4C11.1 21.5 12.7 22.1 14.3 22C16 21.9 17.5 21.1 18.5 19.8C20.3 18.2 20.9 15.7 20.2 13.5C21.3 12.4 21.9 10.8 21.8 9.2L22.2 8.7Z"/></svg>
+                            </div>
+                            <div>
+                                <div class="card-title" style="margin-bottom: 0;">OpenAI</div>
+                                <div class="text-xs text-muted">GPT-5.6 Luna</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-gold" data-en="Recommended" data-es="Recomendado">Recommended</span>
+                    </div>
+                    <p class="card-text mb-4" data-en="The company behind ChatGPT &mdash; the account most people already have. GPT-5.6 Luna gives excellent chess explanations and, for this kind of use, costs less than Gemini." data-es="La empresa detras de ChatGPT: la cuenta que casi todo el mundo ya tiene. GPT-5.6 Luna da explicaciones de ajedrez excelentes y, para este uso, cuesta menos que Gemini.">The company behind ChatGPT &mdash; the account most people already have. GPT-5.6 Luna gives excellent chess explanations and, for this kind of use, costs less than Gemini.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-muted" data-en="~$0.32 per 1,000 analyses" data-es="~$0.32 por 1000 analisis">~$0.32 per 1,000 analyses</span>
+                        <a href="openai-setup.html" class="btn btn-sm btn-provider">
+                            <span data-en="View guide" data-es="Ver guia">View guide</span>
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- DeepSeek -->
+                <div class="card reveal" data-provider="deepseek">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="card-icon" style="margin-bottom: 0;">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <div>
+                                <div class="card-title" style="margin-bottom: 0;">DeepSeek</div>
+                                <div class="text-xs text-muted">DeepSeek Chat</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-gold" data-en="Best Value" data-es="Mejor precio-calidad">Best Value</span>
+                    </div>
+                    <p class="card-text mb-4" data-en="The best value of the lot. The same quality of explanations as the big names for a fraction of the price. If you plan to lean on the coach a lot, this is the one." data-es="La mejor relacion calidad-precio de la lista. La misma calidad de explicaciones que los grandes por una fraccion del precio. Si vas a apoyarte mucho en el coach, este es el tuyo.">The best value of the lot. The same quality of explanations as the big names for a fraction of the price. If you plan to lean on the coach a lot, this is the one.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-muted" data-en="~$0.27 per 1,000 analyses" data-es="~$0.27 por 1000 analisis">~$0.27 per 1,000 analyses</span>
+                        <a href="deepseek-setup.html" class="btn btn-sm btn-provider">
+                            <span data-en="View guide" data-es="Ver guia">View guide</span>
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Gemini -->
                 <div class="card reveal" data-provider="gemini">
@@ -171,9 +219,9 @@
                         </div>
                         <span class="badge badge-success" data-en="Popular" data-es="Popular">Popular</span>
                     </div>
-                    <p class="card-text mb-4" data-en="Google's fast AI model. Very affordable &mdash; normal chess coaching costs just a few cents per month." data-es="El modelo rapido de IA de Google. Muy asequible &mdash; el coaching de ajedrez normal cuesta solo unos centimos al mes.">Google's fast AI model. Very affordable &mdash; normal chess coaching costs just a few cents per month.</p>
+                    <p class="card-text mb-4" data-en="Google's fast AI model, and the only provider with a real free tier &mdash; the way to try the coach without adding a card. Paid, it costs a little more than OpenAI or DeepSeek." data-es="El modelo rapido de IA de Google, y el unico proveedor con plan gratuito de verdad: la forma de probar el coach sin poner tarjeta. Pagando, cuesta algo mas que OpenAI o DeepSeek.">Google's fast AI model, and the only provider with a real free tier &mdash; the way to try the coach without adding a card. Paid, it costs a little more than OpenAI or DeepSeek.</p>
                     <div class="flex items-center justify-between">
-                        <span class="text-xs text-muted" data-en="~&euro;0.01 per game" data-es="~0,01&euro; por partida">~&euro;0.01 per game</span>
+                        <span class="text-xs text-muted" data-en="~$0.56 per 1,000 analyses" data-es="~$0.56 por 1000 analisis">~$0.56 per 1,000 analyses</span>
                         <a href="gemini-setup.html" class="btn btn-sm btn-provider">
                             <span data-en="View guide" data-es="Ver guia">View guide</span>
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
@@ -197,54 +245,8 @@
                     </div>
                     <p class="card-text mb-4" data-en="Anthropic's lightweight yet capable model. Excellent at producing clear, educational chess explanations with nuanced analysis." data-es="El modelo ligero pero capaz de Anthropic. Excelente para producir explicaciones de ajedrez claras y educativas con analisis matizado.">Anthropic's lightweight yet capable model. Excellent at producing clear, educational chess explanations with nuanced analysis.</p>
                     <div class="flex items-center justify-between">
-                        <span class="text-xs text-muted" data-en="~$0.001 per analysis" data-es="~$0.001 por analisis">~$0.001 per analysis</span>
+                        <span class="text-xs text-muted" data-en="~$1.48 per 1,000 analyses" data-es="~$1.48 por 1000 analisis">~$1.48 per 1,000 analyses</span>
                         <a href="claude-setup.html" class="btn btn-sm btn-provider">
-                            <span data-en="View guide" data-es="Ver guia">View guide</span>
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- DeepSeek -->
-                <div class="card reveal" data-provider="deepseek">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <div class="card-icon" style="margin-bottom: 0;">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                            </div>
-                            <div>
-                                <div class="card-title" style="margin-bottom: 0;">DeepSeek</div>
-                                <div class="text-xs text-muted">DeepSeek Chat</div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="card-text mb-4" data-en="Chinese AI lab offering extremely competitive pricing. Great value for high-volume analysis at a very low cost per request." data-es="Laboratorio chino de IA que ofrece precios extremadamente competitivos. Gran valor para analisis de alto volumen a un costo muy bajo por solicitud.">Chinese AI lab offering extremely competitive pricing. Great value for high-volume analysis at a very low cost per request.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-muted" data-en="~$0.0003 per analysis" data-es="~$0.0003 por analisis">~$0.0003 per analysis</span>
-                        <a href="deepseek-setup.html" class="btn btn-sm btn-provider">
-                            <span data-en="View guide" data-es="Ver guia">View guide</span>
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- OpenAI -->
-                <div class="card reveal" data-provider="openai">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <div class="card-icon" style="margin-bottom: 0;">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.2 8.7C21.8 7.2 20.8 5.9 19.5 5.1C17.6 3.8 15.1 3.6 13 4.5C11.9 3.4 10.3 2.8 8.7 2.9C7 3 5.5 3.8 4.5 5.1C2.7 6.7 2.1 9.2 2.8 11.4C1.7 12.5 1.1 14.1 1.2 15.7C1.4 17.4 2.2 18.9 3.5 19.8C5.4 21.1 7.9 21.3 10 20.4C11.1 21.5 12.7 22.1 14.3 22C16 21.9 17.5 21.1 18.5 19.8C20.3 18.2 20.9 15.7 20.2 13.5C21.3 12.4 21.9 10.8 21.8 9.2L22.2 8.7Z"/></svg>
-                            </div>
-                            <div>
-                                <div class="card-title" style="margin-bottom: 0;">OpenAI</div>
-                                <div class="text-xs text-muted">GPT-5.6 Luna</div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="card-text mb-4" data-en="The widely-known AI provider behind ChatGPT. Reliable and well-documented, with solid chess analysis capabilities." data-es="El conocido proveedor de IA detras de ChatGPT. Fiable y bien documentado, con solidas capacidades de analisis de ajedrez.">The widely-known AI provider behind ChatGPT. Reliable and well-documented, with solid chess analysis capabilities.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-muted" data-en="~$0.001 per analysis" data-es="~$0.001 por analisis">~$0.001 per analysis</span>
-                        <a href="openai-setup.html" class="btn btn-sm btn-provider">
                             <span data-en="View guide" data-es="Ver guia">View guide</span>
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
                         </a>
@@ -267,7 +269,7 @@
                     </div>
                     <p class="card-text mb-4" data-en="Alibaba's models, served from Alibaba Cloud Model Studio. Qwen 3.7 Flash is by far the cheapest way to run the AI coach." data-es="Los modelos de Alibaba, servidos desde Alibaba Cloud Model Studio. Qwen 3.7 Flash es con diferencia la forma mas barata de usar el coach de IA.">Alibaba's models, served from Alibaba Cloud Model Studio. Qwen 3.7 Flash is by far the cheapest way to run the AI coach.</p>
                     <div class="flex items-center justify-between">
-                        <span class="text-xs text-muted" data-en="~$0.00005 per analysis" data-es="~$0.00005 por analisis">~$0.00005 per analysis</span>
+                        <span class="text-xs text-muted" data-en="~$0.04 per 1,000 analyses" data-es="~$0.04 por 1000 analisis">~$0.04 per 1,000 analyses</span>
                         <a href="qwen-setup.html" class="btn btn-sm btn-provider">
                             <span data-en="View guide" data-es="Ver guia">View guide</span>
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M2 8a.75.75 0 01.75-.75h8.69L8.22 4.03a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 01-1.06-1.06l3.22-3.22H2.75A.75.75 0 012 8z" clip-rule="evenodd"/></svg>
@@ -301,41 +303,41 @@
                                 <thead>
                                     <tr>
                                         <th data-en="Provider" data-es="Proveedor">Provider</th>
-                                        <th data-en="Price" data-es="Precio">Price</th>
+                                        <th data-en="Price per 1,000 analyses" data-es="Precio por 1000 analisis">Price per 1,000 analyses</th>
                                         <th data-en="Quality" data-es="Calidad">Quality</th>
                                         <th data-en="Best for" data-es="Ideal para">Best for</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td><strong>OpenAI</strong></td>
+                                        <td data-en="~$0.32 / 1,000" data-es="~$0.32 / 1000">~$0.32 / 1,000</td>
+                                        <td>&#9733;&#9733;&#9733;&#9733;</td>
+                                        <td data-en="Most people &mdash; cheap, and you likely have the account" data-es="La mayoria: barato y ya sueles tener la cuenta">Most people &mdash; cheap, and you likely have the account</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>DeepSeek</strong></td>
+                                        <td data-en="~$0.27 / 1,000" data-es="~$0.27 / 1000">~$0.27 / 1,000</td>
+                                        <td>&#9733;&#9733;&#9733;&#9734;</td>
+                                        <td data-en="Best value, and heavy usage" data-es="Mejor precio-calidad y uso intensivo">Best value, and heavy usage</td>
+                                    </tr>
+                                    <tr>
                                         <td><strong>Gemini</strong></td>
-                                        <td data-en="Low &mdash; free tier" data-es="Bajo &mdash; con plan gratuito">Low &mdash; free tier</td>
+                                        <td data-en="~$0.56 / 1,000 &mdash; free tier" data-es="~$0.56 / 1000 &mdash; con plan gratuito">~$0.56 / 1,000 &mdash; free tier</td>
                                         <td>&#9733;&#9733;&#9733;&#9734;</td>
                                         <td data-en="Getting started without a card" data-es="Empezar sin tarjeta">Getting started without a card</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Claude</strong></td>
-                                        <td data-en="Highest" data-es="El mas alto">Highest</td>
+                                        <td data-en="~$1.48 / 1,000" data-es="~$1.48 / 1000">~$1.48 / 1,000</td>
                                         <td>&#9733;&#9733;&#9733;&#9733;</td>
                                         <td data-en="Best explanations" data-es="Mejores explicaciones">Best explanations</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>DeepSeek</strong></td>
-                                        <td data-en="Very low" data-es="Muy bajo">Very low</td>
-                                        <td>&#9733;&#9733;&#9733;&#9734;</td>
-                                        <td data-en="Heavy usage" data-es="Uso intensivo">Heavy usage</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>OpenAI</strong></td>
-                                        <td data-en="Very low" data-es="Muy bajo">Very low</td>
-                                        <td>&#9733;&#9733;&#9733;&#9733;</td>
-                                        <td data-en="Best answers in our testing" data-es="Mejores respuestas en nuestras pruebas">Best answers in our testing</td>
-                                    </tr>
-                                    <tr>
                                         <td><strong>Qwen</strong></td>
-                                        <td data-en="Lowest" data-es="El mas bajo">Lowest</td>
+                                        <td data-en="~$0.04 / 1,000" data-es="~$0.04 / 1000">~$0.04 / 1,000</td>
                                         <td>&#9733;&#9733;&#9733;&#9734;</td>
-                                        <td data-en="Spending the least" data-es="Gastar lo minimo">Spending the least</td>
+                                        <td data-en="Spending the absolute minimum" data-es="Gastar lo minimo posible">Spending the absolute minimum</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -362,7 +364,7 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p data-en="Very little. Each chess analysis request uses a small amount of tokens. With Gemini's free tier, you can analyze hundreds of positions per day at no cost. With paid providers, a typical game review costs less than $0.01." data-es="Muy poco. Cada solicitud de analisis de ajedrez usa una pequena cantidad de tokens. Con el plan gratuito de Gemini, puedes analizar cientos de posiciones por dia sin costo. Con proveedores de pago, una revision tipica de partida cuesta menos de $0.01.">Very little. Each chess analysis request uses a small amount of tokens. With Gemini's free tier, you can analyze hundreds of positions per day at no cost. With paid providers, a typical game review costs less than $0.01.</p>
+                            <p data-en="Very little. Measured on real usage, one analysis sends about 900 tokens and gets about 115 back, so 1,000 analyses come to roughly $0.27 with DeepSeek, $0.32 with OpenAI and $0.56 with Gemini. Even Claude, the most expensive, is about $1.48. And Gemini's free tier lets you analyse hundreds of positions a day at no cost at all." data-es="Muy poco. Medido sobre uso real, un analisis envia unos 900 tokens y recibe unos 115, asi que 1000 analisis salen por unos $0.27 con DeepSeek, $0.32 con OpenAI y $0.56 con Gemini. Incluso Claude, el mas caro, ronda los $1.48. Y el plan gratuito de Gemini te deja analizar cientos de posiciones al dia sin coste alguno.">Very little. Measured on real usage, one analysis sends about 900 tokens and gets about 115 back, so 1,000 analyses come to roughly $0.27 with DeepSeek, $0.32 with OpenAI and $0.56 with Gemini. Even Claude, the most expensive, is about $1.48. And Gemini's free tier lets you analyse hundreds of positions a day at no cost at all.</p>
                         </div>
                     </div>
                 </div>
