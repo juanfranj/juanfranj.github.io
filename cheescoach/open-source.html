@@ -160,7 +160,7 @@ llvm-strip arm64-v8a/lc0   # → liblc0.so</code></pre>
         <h2>3. Other components &amp; attributions</h2>
         <ul>
             <li><strong>kchesslib</strong> (<code>io.github.cvb941:kchesslib</code>) — Apache-2.0. A Kotlin Multiplatform port of <a href="https://github.com/bhlangonijr/chesslib">bhlangonijr/chesslib</a>.</li>
-            <li><strong>Chess piece graphics</strong> — by Cburnett, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. The original SVGs were <em>adapted</em> into Android vector drawables (format conversion); the adapted pieces remain under CC BY-SA 3.0.</li>
+            <li><strong>Chess piece graphics</strong> — by <a href="https://en.wikipedia.org/wiki/User:Cburnett">Colin M.L. Burnett</a>, multi-licensed by their author (GFDL / CC BY-SA 3.0 / BSD-3-Clause / GPLv2+). CheesCoach uses them under the <strong>BSD-3-Clause</strong> option. The original SVGs were <em>adapted</em> into Android vector drawables (format conversion and recolouring); the required notice is reproduced in section 4.</li>
             <li><strong>OpenBLAS</strong> v0.3.27 — <a href="https://github.com/OpenMathLib/OpenBLAS/blob/v0.3.27/LICENSE">BSD-3-Clause</a> (see section 1, statically linked into <code>liblc0.so</code>).</li>
             <li><strong>Fonts</strong> — Lato, Playfair Display and JetBrains Mono, all under the <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a>. The full OFL texts are distributed with the app source under <code>documentos/licenses/fonts/</code>.</li>
             <li><strong>iOS engines</strong> (informational, non-GPL): <a href="https://github.com/Witek902/Caissa">Caissa</a> (MIT), <a href="https://github.com/CSSLab/maia2">Maia-2</a> (MIT, CSSLab) and <a href="https://github.com/microsoft/onnxruntime">ONNX Runtime</a> (MIT).</li>
@@ -171,9 +171,37 @@ llvm-strip arm64-v8a/lc0   # → liblc0.so</code></pre>
             <li>GNU GPL v3.0 — <a href="https://www.gnu.org/licenses/gpl-3.0.txt">gnu.org/licenses/gpl-3.0.txt</a></li>
             <li>BSD-3-Clause (OpenBLAS) — <a href="https://github.com/OpenMathLib/OpenBLAS/blob/v0.3.27/LICENSE">OpenBLAS LICENSE</a></li>
             <li>Apache License 2.0 (kchesslib) — <a href="https://www.apache.org/licenses/LICENSE-2.0.txt">apache.org/licenses/LICENSE-2.0.txt</a></li>
-            <li>CC BY-SA 3.0 (pieces) — <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">creativecommons.org/licenses/by-sa/3.0/legalcode</a></li>
+            <li>BSD-3-Clause (pieces) — reproduced in full below</li>
             <li>SIL OFL 1.1 (fonts) — <a href="https://openfontlicense.org/open-font-license-official-text/">openfontlicense.org</a></li>
         </ul>
+
+        <h3>BSD-3-Clause notice — chess piece graphics</h3>
+        <pre style="white-space: pre-wrap;">Copyright (c) 2006, Colin M.L. Burnett
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.</pre>
 
         <h2>Contact</h2>
         <p>For any question about these licenses or to request the Corresponding Source
