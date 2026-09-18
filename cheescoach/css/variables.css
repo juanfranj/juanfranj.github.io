@@ -12,27 +12,27 @@
 
 :root {
     /* === Backgrounds === */
-    --bg-deepest: #060a13;
-    --bg-primary: #0c1220;
-    --bg-secondary: #141d2f;
-    --bg-card: #182036;
-    --bg-card-hover: #1e2a48;
-    --bg-glass: rgba(18, 28, 50, 0.6);
-    --bg-glass-hover: rgba(24, 36, 64, 0.7);
+    --bg-deepest: #050b12;
+    --bg-primary: #08121f;
+    --bg-secondary: #0f2033;
+    --bg-card: #11263d;
+    --bg-card-hover: #17304b;
+    --bg-glass: rgba(15, 32, 51, 0.72);
+    --bg-glass-hover: rgba(22, 46, 72, 0.82);
 
     /* === Accent — Chess Blue === */
-    --accent: #4f8ff7;
-    --accent-bright: #6ea8ff;
-    --accent-dim: #2563eb;
-    --accent-glow: rgba(79, 143, 247, 0.15);
-    --accent-glow-strong: rgba(79, 143, 247, 0.3);
+    --accent: #6caeff;
+    --accent-bright: #9bc8ff;
+    --accent-dim: #347bd4;
+    --accent-glow: rgba(108, 174, 255, 0.14);
+    --accent-glow-strong: rgba(108, 174, 255, 0.27);
 
     /* === Gold — Chess Premium === */
-    --gold: #d4a843;
-    --gold-bright: #e8c46a;
-    --gold-dim: #b8922e;
-    --gold-glow: rgba(212, 168, 67, 0.15);
-    --gold-glow-strong: rgba(212, 168, 67, 0.3);
+    --gold: #e1b85b;
+    --gold-bright: #f1d083;
+    --gold-dim: #b9882f;
+    --gold-glow: rgba(225, 184, 91, 0.14);
+    --gold-glow-strong: rgba(225, 184, 91, 0.28);
 
     /* === Semantic === */
     --success: #34d399;
@@ -51,10 +51,10 @@
     --qwen-accent: #a855f7;
 
     /* === Text === */
-    --text-primary: #edf2f7;
-    --text-secondary: #8b9dc3;
-    --text-muted: #5a6d8a;
-    --text-inverse: #0c1220;
+    --text-primary: #f5f8fc;
+    --text-secondary: #b1c1d3;
+    --text-muted: #7389a0;
+    --text-inverse: #07111d;
 
     /* === Borders === */
     --border: rgba(79, 143, 247, 0.12);
@@ -158,6 +158,17 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 12% 8%, rgba(108, 174, 255, 0.08), transparent 32rem),
+        radial-gradient(circle at 88% 36%, rgba(225, 184, 91, 0.055), transparent 28rem);
 }
 
 h1, h2, h3, h4, h5, h6 {

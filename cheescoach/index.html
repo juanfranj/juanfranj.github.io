@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CheesCoach - Tu Coach de Ajedrez con Inteligencia Artificial</title>
-    <meta name="description" content="Analiza cada jugada con explicaciones en lenguaje natural, adaptadas a tu nivel. Stockfish + IA en tu bolsillo. App Android gratuita.">
+    <title>CheesCoach — Entiende cada jugada</title>
+    <meta name="description" content="Juega, analiza y mejora con un coach de ajedrez con IA. Stockfish, puzzles y explicaciones claras en iPhone, iPad y Android.">
     <meta name="author" content="JuanfranDevs">
-    <meta name="theme-color" content="#0c1220">
+    <meta name="theme-color" content="#08121f">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="CheesCoach - Coach de Ajedrez con IA">
-    <meta property="og:description" content="Analiza cada jugada con explicaciones en lenguaje natural. Stockfish + IA en tu bolsillo.">
+    <meta property="og:title" content="CheesCoach — Entiende cada jugada">
+    <meta property="og:description" content="Tu coach de ajedrez con IA para jugar, analizar y entrenar desde cualquier dispositivo.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="app_icon_chesscoach.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="app_icon_chesscoach.png">
@@ -40,9 +40,9 @@
         </a>
 
         <ul class="navbar-links" id="nav-links">
-            <li><a href="#features" data-en="Features" data-es="Caracteristicas">Features</a></li>
-            <li><a href="#course-banner" data-en="Course" data-es="Curso">Course</a></li>
-            <li><a href="api-setup.html" data-en="AI Providers" data-es="Proveedores IA">AI Providers</a></li>
+            <li><a href="#features" data-en="Why CheesCoach" data-es="Por qué CheesCoach">Why CheesCoach</a></li>
+            <li><a href="#screenshots" data-en="Inside the app" data-es="Dentro de la app">Inside the app</a></li>
+            <li><a href="api-setup.html" data-en="AI setup" data-es="Configurar IA">AI setup</a></li>
             <li><a href="#download" data-en="Download" data-es="Descargar">Download</a></li>
             <li>
                 <div class="lang-toggle">
@@ -62,50 +62,42 @@
 
 
 <!-- ========== HERO ========== -->
-<section class="hero gradient-hero chess-pattern-bg" id="hero">
+<section class="hero" id="hero">
     <div class="container">
         <div class="hero-grid">
-            <!-- Left: App Icon -->
-            <div class="hero-icon-wrapper animate-fadeInUp">
-                <div class="hero-icon-glow">
-                    <img src="app_icon_chesscoach.png" alt="CheesCoach App Icon" width="120" height="120" class="hero-icon-img">
+            <div class="hero-content animate-fadeInUp">
+                <div class="hero-brandline">
+                    <img src="app_icon_chesscoach.png" alt="" width="44" height="44">
+                    <span data-en="Chess is hard. Understanding it shouldn't be." data-es="El ajedrez es difícil. Entenderlo no debería serlo.">Chess is hard. Understanding it shouldn't be.</span>
                 </div>
+                <h1 class="hero-title" data-en="Don't just see the best move. Understand it." data-es="No te limites a ver la mejor jugada. Entiéndela.">
+                    Don't just see the best move. Understand it.
+                </h1>
+                <p class="hero-subtitle" data-en="Play against Stockfish or real opponents, then turn every game into a lesson with clear AI explanations adapted to your level." data-es="Juega contra Stockfish o rivales reales y convierte cada partida en una lección con explicaciones claras de IA adaptadas a tu nivel.">
+                    Play against Stockfish or real opponents, then turn every game into a lesson with clear AI explanations adapted to your level.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#download" class="btn btn-primary btn-lg" data-en="Get CheesCoach" data-es="Descargar CheesCoach">Get CheesCoach</a>
+                    <a href="#demo" class="btn btn-outline btn-lg" data-en="Try the board" data-es="Probar el tablero">Try the board</a>
+                </div>
+                <p class="hero-note" data-en="Free to start · iPhone, iPad and Android · No ads" data-es="Empieza gratis · iPhone, iPad y Android · Sin anuncios">Free to start · iPhone, iPad and Android · No ads</p>
             </div>
 
-            <!-- Right: Content -->
-            <div class="hero-content animate-fadeInUp delay-200">
-                <h1 class="hero-title" data-en="Your Chess Coach with <span class=&quot;text-gradient&quot;>Artificial Intelligence</span>" data-es="Tu Coach de Ajedrez con <span class=&quot;text-gradient&quot;>Inteligencia Artificial</span>">
-                    Your Chess Coach with <span class="text-gradient" data-en="Artificial Intelligence" data-es="Inteligencia Artificial">Artificial Intelligence</span>
-                </h1>
-                <p class="hero-subtitle" data-en="Analyze every move with natural language explanations, adapted to your level. Stockfish + AI in your pocket." data-es="Analiza cada jugada con explicaciones en lenguaje natural, adaptadas a tu nivel. Stockfish + IA en tu bolsillo.">
-                    Analyze every move with natural language explanations, adapted to your level. Stockfish + AI in your pocket.
-                </p>
-
-                <div class="hero-badges animate-fadeInUp delay-300">
-                    <span class="badge badge-accent">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.523 15.342c-.498.139-1.01.208-1.523.208-3.038 0-5.5-2.462-5.5-5.5 0-1.932 1-3.628 2.51-4.608A8.014 8.014 0 004 13c0 4.418 3.582 8 8 8 2.564 0 4.843-1.208 6.308-3.084A6.003 6.003 0 0117.523 15.342zM6.94 3.346l.227-.068c.097-.03.2.014.253.1l.62 1.006a.199.199 0 00.17.094h1.182c.094 0 .176.065.197.156l.026.113a.199.199 0 01-.128.23L8.376 5.4a.199.199 0 00-.126.136l-.316 1.328a.199.199 0 01-.352.067l-.58-.746a.199.199 0 00-.193-.074l-1.078.18a.199.199 0 01-.22-.249l.266-.972a.199.199 0 00-.052-.193L4.846 3.97a.199.199 0 01.116-.336l.88-.078a.199.199 0 00.164-.115l.406-.943c.04-.093.152-.132.24-.084l.288.155z"/></svg>
-                        Android
-                    </span>
-                    <span class="badge badge-success" data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; width=&quot;14&quot; height=&quot;14&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Free" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; width=&quot;14&quot; height=&quot;14&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Gratis">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>
-                        Free
-                    </span>
-                    <span class="badge badge-gold">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        Offline
-                    </span>
+            <div class="hero-visual animate-fadeInUp delay-200" aria-label="CheesCoach game analysis preview">
+                <div class="analysis-window">
+                    <div class="analysis-topbar"><span></span><span></span><span></span><strong>CheesCoach</strong></div>
+                    <div class="analysis-body">
+                        <div class="position-preview">
+                            <img src="images/review-screenshot.png" alt="CheesCoach analyzing a chess game" width="340" height="680">
+                        </div>
+                        <div class="coach-note">
+                            <div class="move-grade"><span>♘f5</span><strong data-en="Great move" data-es="Gran jugada">Great move</strong></div>
+                            <p data-en="The knight attacks the queen and opens the diagonal towards the king. You gain time without losing control of the center." data-es="El caballo ataca la dama y abre la diagonal hacia el rey. Ganas un tiempo sin perder el control del centro.">The knight attacks the queen and opens the diagonal towards the king. You gain time without losing control of the center.</p>
+                            <div class="evaluation"><span data-en="Position" data-es="Posición">Position</span><strong>+1.4</strong></div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="hero-ctas animate-fadeInUp delay-400">
-                    <a href="#download" class="btn btn-primary btn-lg" data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><path d=&quot;M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4&quot;/><polyline points=&quot;7 10 12 15 17 10&quot;/><line x1=&quot;12&quot; y1=&quot;15&quot; x2=&quot;12&quot; y2=&quot;3&quot;/></svg> Download Free" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><path d=&quot;M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4&quot;/><polyline points=&quot;7 10 12 15 17 10&quot;/><line x1=&quot;12&quot; y1=&quot;15&quot; x2=&quot;12&quot; y2=&quot;3&quot;/></svg> Descargar Gratis">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download Free
-                    </a>
-                    <a href="curso/index.html" class="btn btn-outline btn-lg" data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><path d=&quot;M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z&quot;/><path d=&quot;M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z&quot;/></svg> Free Course" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><path d=&quot;M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z&quot;/><path d=&quot;M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z&quot;/></svg> Curso Gratuito">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-                        Free Course
-                    </a>
-                </div>
+                <span class="visual-caption" data-en="Stockfish finds the move. Your coach explains the idea." data-es="Stockfish encuentra la jugada. Tu coach explica la idea.">Stockfish finds the move. Your coach explains the idea.</span>
             </div>
         </div>
     </div>
@@ -116,9 +108,9 @@
 <section class="section gradient-section" id="features">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label" data-en="Features" data-es="Caracteristicas">Features</div>
-            <h2 class="section-title" data-en="Everything you need to improve" data-es="Todo lo que necesitas para mejorar">Everything you need to improve</h2>
-            <p class="section-subtitle" data-en="Professional chess analysis and training tools, powered by artificial intelligence." data-es="Herramientas profesionales de analisis y entrenamiento de ajedrez, potenciadas por inteligencia artificial.">Professional chess analysis and training tools, powered by artificial intelligence.</p>
+            <div class="section-label" data-en="A coach, not another engine" data-es="Un coach, no otro motor">A coach, not another engine</div>
+            <h2 class="section-title" data-en="Train the way you actually play" data-es="Entrena como realmente juegas">Train the way you actually play</h2>
+            <p class="section-subtitle" data-en="One place to play, understand your mistakes and turn them into better decisions." data-es="Un solo lugar para jugar, entender tus errores y convertirlos en mejores decisiones.">One place to play, understand your mistakes and turn them into better decisions.</p>
         </div>
 
         <div class="grid grid-3 reveal-stagger">
@@ -203,8 +195,8 @@
 <section class="section" id="how-it-works">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label" data-en="How it works" data-es="Como funciona">How it works</div>
-            <h2 class="section-title" data-en="Improve in 3 simple steps" data-es="Mejora en 3 simples pasos">Improve in 3 simple steps</h2>
+            <div class="section-label" data-en="Your improvement loop" data-es="Tu ciclo de mejora">Your improvement loop</div>
+            <h2 class="section-title" data-en="Play. Understand. Try again." data-es="Juega. Entiende. Vuelve a intentarlo.">Play. Understand. Try again.</h2>
         </div>
 
         <div class="steps reveal" style="max-width: 900px; margin: 0 auto;">
@@ -236,9 +228,9 @@
 <section class="section gradient-section" id="demo">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label" data-en="Try now" data-es="Prueba ahora">Try now</div>
-            <h2 class="section-title" data-en="Interactive Board" data-es="Tablero Interactivo">Interactive Board</h2>
-            <p class="section-subtitle" data-en="Move the white pieces. Black responds automatically." data-es="Mueve las piezas blancas. Las negras responden automaticamente.">Move the white pieces. Black responds automatically.</p>
+            <div class="section-label" data-en="Make a move" data-es="Haz una jugada">Make a move</div>
+            <h2 class="section-title" data-en="Chess starts on the board" data-es="El ajedrez empieza en el tablero">Chess starts on the board</h2>
+            <p class="section-subtitle" data-en="Move the white pieces. Black will answer automatically." data-es="Mueve las piezas blancas. Las negras responderán automáticamente.">Move the white pieces. Black will answer automatically.</p>
         </div>
 
         <div class="demo-wrapper reveal">
@@ -287,8 +279,8 @@
 <section class="section" id="screenshots">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label" data-en="The App" data-es="La App">The App</div>
-            <h2 class="section-title" data-en="Screenshots" data-es="Capturas de pantalla">Screenshots</h2>
+            <div class="section-label" data-en="Inside CheesCoach" data-es="Dentro de CheesCoach">Inside CheesCoach</div>
+            <h2 class="section-title" data-en="Every tool stays close to the board" data-es="Todas las herramientas, cerca del tablero">Every tool stays close to the board</h2>
         </div>
 
         <div class="screenshots-carousel reveal">
@@ -330,27 +322,6 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="9 6 15 12 9 18"/></svg>
                 </button>
             </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ========== COURSE BANNER ========== -->
-<section class="section" id="course-banner">
-    <div class="container">
-        <div class="course-banner-card reveal">
-            <div class="course-banner-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
-                    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
-                    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
-                </svg>
-            </div>
-            <h2 data-en="Learn Chess from Scratch" data-es="Aprende Ajedrez desde Cero">Learn Chess from Scratch</h2>
-            <p data-en="10 interactive lessons with playable boards. From basic rules to advanced tactics." data-es="10 lecciones interactivas con tableros jugables. Desde las reglas basicas hasta tacticas avanzadas.">10 interactive lessons with playable boards. From basic rules to advanced tactics.</p>
-            <a href="curso/index.html" class="btn btn-gold btn-lg" data-en="Start Free Course <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Empezar Curso Gratuito <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;20&quot; height=&quot;20&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
-                Start Free Course
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
         </div>
     </div>
 </section>
@@ -453,19 +424,23 @@
 <section class="section" id="download">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-label" data-en="Download" data-es="Descargar">Download</div>
-            <h2 class="section-title" data-en="Download CheesCoach" data-es="Descarga CheesCoach">Download CheesCoach</h2>
-            <p class="section-subtitle" data-en="Free on Google Play." data-es="Gratis en Google Play.">Free on Google Play.</p>
+            <div class="section-label" data-en="Your next game starts here" data-es="Tu próxima partida empieza aquí">Your next game starts here</div>
+            <h2 class="section-title" data-en="Take your coach with you" data-es="Lleva tu coach contigo">Take your coach with you</h2>
+            <p class="section-subtitle" data-en="Start free on iPhone, iPad or Android. No ads and no subscription required." data-es="Empieza gratis en iPhone, iPad o Android. Sin anuncios y sin suscripción obligatoria.">Start free on iPhone, iPad or Android. No ads and no subscription required.</p>
         </div>
 
         <div class="download-actions reveal">
-            <a href="#" class="btn btn-primary btn-lg" aria-label="Descargar en Google Play">
+            <a href="https://play.google.com/store/apps/details?id=com.app.cheescoach" class="store-button" aria-label="Get it on Google Play" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.03 12l2.668-2.492zM5.864 2.658L16.8 9.99l-2.302 2.302-8.634-8.634z"/></svg>
-                Google Play
+                <span><small data-en="Get it on" data-es="Disponible en">Get it on</small>Google Play</span>
+            </a>
+            <a href="https://apps.apple.com/app/id6790447113" class="store-button" aria-label="Download on the App Store" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M17.05 12.54c-.02-2.16 1.76-3.21 1.84-3.26a3.96 3.96 0 00-3.12-1.69c-1.31-.14-2.59.79-3.26.79-.68 0-1.72-.77-2.83-.75a4.15 4.15 0 00-3.5 2.13c-1.51 2.61-.38 6.45 1.06 8.56.72 1.03 1.56 2.18 2.67 2.14 1.08-.04 1.49-.69 2.8-.69 1.3 0 1.68.69 2.81.66 1.17-.02 1.9-1.04 2.59-2.08a8.5 8.5 0 001.18-2.4 3.75 3.75 0 01-2.24-3.41zM14.91 6.2a3.8 3.8 0 00.87-2.73 3.88 3.88 0 00-2.52 1.3 3.64 3.64 0 00-.9 2.63 3.2 3.2 0 002.55-1.2z"/></svg>
+                <span><small data-en="Download on the" data-es="Descárgala en el">Download on the</small>App Store</span>
             </a>
         </div>
 
-        <p class="text-center text-muted text-sm mt-6 reveal" data-en="Requires Android 7.0 (API 24) or higher" data-es="Requiere Android 7.0 (API 24) o superior">Requires Android 7.0 (API 24) or higher</p>
+        <p class="text-center text-muted text-sm mt-6 reveal" data-en="Your progress follows you across devices when you sign in." data-es="Tu progreso te acompaña entre dispositivos cuando inicias sesión.">Your progress follows you across devices when you sign in.</p>
     </div>
 </section>
 
@@ -484,8 +459,8 @@
         <div>
             <h4 class="footer-heading" data-en="Product" data-es="Producto">Product</h4>
             <ul class="footer-links">
-                <li><a href="#features" data-en="Features" data-es="Caracteristicas">Features</a></li>
-                <li><a href="curso/index.html" data-en="Course" data-es="Curso">Course</a></li>
+                <li><a href="#features" data-en="Why CheesCoach" data-es="Por qué CheesCoach">Why CheesCoach</a></li>
+                <li><a href="#screenshots" data-en="Inside the app" data-es="Dentro de la app">Inside the app</a></li>
                 <li><a href="#download" data-en="Download" data-es="Descargar">Download</a></li>
             </ul>
         </div>
@@ -504,7 +479,7 @@
         <div>
             <h4 class="footer-heading" data-en="Project" data-es="Proyecto">Project</h4>
             <ul class="footer-links">
-                <li><a href="#" data-en="License" data-es="Licencia">License</a></li>
+                <li><a href="open-source.html" data-en="Open source" data-es="Código abierto">Open source</a></li>
                 <li><a href="privacy-policy.html" data-en="Privacy" data-es="Privacidad">Privacy</a></li>
             </ul>
         </div>
