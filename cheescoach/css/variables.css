@@ -73,7 +73,7 @@
     /* === Text === */
     --text-primary: #EDEFF6;
     --text-secondary: #A2AEC6;
-    --text-muted: #6C7A96;
+    --text-muted: #78859E;
     --text-inverse: #080D1A;
 
     /* === Light band (mirrors the app's light surface) === */
@@ -171,7 +171,7 @@
 /* === Base === */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 88px;
+    scroll-padding-top: 84px;  /* 69px navbar + 15px of air */
 }
 
 body {
@@ -235,6 +235,9 @@ img {
     border-radius: 4px;
 }
 
+.band-paper :focus-visible,
+.gap-band :focus-visible { outline-color: var(--accent-dim); }
+
 code, pre { font-family: var(--font-mono); }
 
 /* === Chess grid backdrop === */
@@ -286,7 +289,9 @@ code, pre { font-family: var(--font-mono); }
     html { scroll-behavior: auto; }
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
     }
 }

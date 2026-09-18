@@ -11,13 +11,23 @@
     <meta property="og:title" content="CheesCoach — the chess app that explains your moves">
     <meta property="og:description" content="Stockfish does the calculating. An AI coach turns it into a sentence you can use in your next game.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="app_icon_chesscoach.png">
+    <meta property="og:url" content="https://juanfranj.github.io/cheescoach/">
+    <meta property="og:image" content="https://juanfranj.github.io/cheescoach/images/og-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CheesCoach — the chess app that explains your moves">
+    <meta name="twitter:description" content="Stockfish does the calculating. An AI coach turns it into a sentence you can use in your next game.">
+    <meta name="twitter:image" content="https://juanfranj.github.io/cheescoach/images/og-card.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&amp;family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&amp;family=JetBrains+Mono:wght@500;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Lato:wght@400;700&amp;family=JetBrains+Mono:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="app_icon_chesscoach.png">
+    <link rel="icon" type="image/webp" href="images/app/icon.webp">
+    <link rel="apple-touch-icon" href="app_icon_chesscoach.png">
 
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/components.css">
@@ -26,8 +36,10 @@
 </head>
 <body>
 
+<a class="skip-link" href="#content" data-en="Skip to content" data-es="Saltar al contenido">Skip to content</a>
+
 <!-- ========== NAVBAR ========== -->
-<nav class="navbar" role="navigation" aria-label="Main navigation">
+<nav class="navbar" role="navigation" aria-label="Main navigation" data-en-label="Main navigation" data-es-label="Navegación principal">
     <div class="navbar-inner">
         <a href="index.html" class="navbar-logo">
             <img src="images/app/icon.webp" alt="" width="36" height="36">
@@ -36,7 +48,7 @@
 
         <ul class="navbar-links" id="nav-links">
             <li><a href="#coach" data-en="The coach" data-es="El coach">The coach</a></li>
-            <li><a href="#openings" data-en="Labs" data-es="Laboratorios">Labs</a></li>
+            <li><a href="#labs" data-en="Labs" data-es="Laboratorios">Labs</a></li>
             <li><a href="#courses" data-en="Courses" data-es="Cursos">Courses</a></li>
             <li><a href="#play" data-en="Play" data-es="Jugar">Play</a></li>
             <li><a href="api-setup.html" data-en="AI setup" data-es="Configurar IA">AI setup</a></li>
@@ -48,12 +60,14 @@
             </li>
         </ul>
 
-        <button class="navbar-hamburger" id="hamburger" aria-label="Navigation menu" aria-expanded="false">
+        <button class="navbar-hamburger" id="hamburger" aria-controls="nav-links" aria-expanded="false" aria-label="Navigation menu" data-en-label="Navigation menu" data-es-label="Menú de navegación">
             <span></span><span></span><span></span>
         </button>
     </div>
 </nav>
 
+
+<main id="content">
 
 <!-- ========== HERO ========== -->
 <header class="hero" id="hero">
@@ -87,7 +101,7 @@
                     <span class="annotation-eval">+0.3 &rarr; +2.4</span>
                 </div>
                 <span class="annotation-verdict" data-en="Blunder" data-es="Error grave">Blunder</span>
-                <div class="annotation-board" role="img" aria-label="Chess position after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5, with the black knight on d5 marked as the blunder">
+                <div class="annotation-board" role="img" aria-label="Chess position after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5, with the black knight on d5 marked as the blunder" data-en-label="Chess position after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5, with the black knight on d5 marked as the blunder" data-es-label="Posición después de 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5, con el caballo negro de d5 marcado como el error grave">
                         <span class="l">♜</span>
                         <span class="d"></span>
                         <span class="l">♝</span>
@@ -204,15 +218,15 @@
 
         <div class="review-grid">
             <div>
-                <div class="phone"><img src="images/screens/review-report.webp" alt="Game review showing accuracy for both players, an evaluation graph split into opening, middlegame and endgame, and the engine's best move on the board" width="840" height="1708" loading="lazy"></div>
+                <div class="phone"><img src="images/screens/review-report.webp" alt="Game review showing accuracy for both players, an evaluation graph split into opening, middlegame and endgame, and the engine's best move on the board" data-en-alt="Game review showing accuracy for both players, an evaluation graph split into opening, middlegame and endgame, and the engine's best move on the board" data-es-alt="Repaso de partida con la precisión de los dos jugadores, la gráfica de evaluación dividida en apertura, medio juego y final, y la mejor jugada del motor sobre el tablero" width="840" height="1708" loading="lazy"></div>
                 <p class="phone-caption" data-en="Accuracy, mistakes and where the game turned" data-es="Precisión, errores y dónde giró la partida">Accuracy, mistakes and where the game turned</p>
             </div>
             <div>
-                <div class="phone"><img src="images/screens/review-coach.webp" alt="The coach commenting a single move, with the evaluation beside it" width="840" height="1708" loading="lazy"></div>
+                <div class="phone"><img src="images/screens/review-coach.webp" alt="The coach commenting a single move, with the evaluation beside it" data-en-alt="The coach commenting a single move, with the evaluation beside it" data-es-alt="El coach comentando una jugada, con la evaluación al lado" width="840" height="1708" loading="lazy"></div>
                 <p class="phone-caption" data-en="A comment on every move you step through" data-es="Un comentario en cada jugada que recorres">A comment on every move you step through</p>
             </div>
             <div>
-                <div class="phone"><img src="images/screens/my-games.webp" alt="Saved games list with filters for wins, losses, draws and Lichess imports" width="840" height="1708" loading="lazy"></div>
+                <div class="phone"><img src="images/screens/my-games.webp" alt="Saved games list with filters for wins, losses, draws and Lichess imports" data-en-alt="Saved games list with filters for wins, losses, draws and Lichess imports" data-es-alt="Lista de partidas guardadas con filtros de victorias, derrotas, tablas e importadas de Lichess" width="840" height="1708" loading="lazy"></div>
                 <p class="phone-caption" data-en="Your games, plus everything you import" data-es="Tus partidas, más todo lo que importes">Your games, plus everything you import</p>
             </div>
         </div>
@@ -233,7 +247,7 @@
                 <p class="premium-tag" style="margin-top: var(--space-6);" data-en="The three labs are Premium. The Italian Game in the opening trainer, and the first middlegame exercise, are free." data-es="Los tres laboratorios son Premium. La Italiana en el entrenador de aperturas y el primer ejercicio de medio juego son gratis.">The three labs are Premium. The Italian Game in the opening trainer, and the first middlegame exercise, are free.</p>
             </div>
             <div>
-                <div class="phone phone-crop" style="max-width: 17rem; margin-left: auto;"><img src="images/screens/lab-hub.webp" alt="The Practice Lab screen with three cards: Opening Lab, Endgame Lab and Middlegame Lab" width="840" height="1708" loading="lazy"></div>
+                <div class="phone phone-crop" style="max-width: 17rem; margin-left: auto;"><img src="images/screens/lab-hub.webp" alt="The Practice Lab screen with three cards: Opening Lab, Endgame Lab and Middlegame Lab" data-en-alt="The Practice Lab screen with three cards: Opening Lab, Endgame Lab and Middlegame Lab" data-es-alt="La pantalla del Laboratorio con tres tarjetas: aperturas, finales y medio juego" width="840" height="1708" loading="lazy"></div>
             </div>
         </div>
     </div>
@@ -257,12 +271,12 @@
 
                 <div class="act-halves">
                     <div class="half">
-                        <h4 data-en="Opening Trainer" data-es="Entrenador de aperturas">Opening Trainer</h4>
+                        <h3 data-en="Opening Trainer" data-es="Entrenador de aperturas">Opening Trainer</h3>
                         <p data-en="The moves of your repertoire, drilled until you stop thinking about them." data-es="Las jugadas de tu repertorio, repasadas hasta que dejas de pensarlas.">The moves of your repertoire, drilled until you stop thinking about them.</p>
                         <span class="half-count" data-en="Spaced repetition, three stars per line" data-es="Repetición espaciada, tres estrellas por línea">Spaced repetition, three stars per line</span>
                     </div>
                     <div class="half">
-                        <h4 data-en="Practise" data-es="Practicar">Practise</h4>
+                        <h3 data-en="Practise" data-es="Practicar">Practise</h3>
                         <p data-en="Play the line for real against a rival that moves like a club player." data-es="Juega la línea de verdad contra un rival que se mueve como un jugador de club.">Play the line for real against a rival that moves like a club player.</p>
                         <span class="half-count" data-en="Maia networks by strength" data-es="Redes Maia por nivel">Maia networks by strength</span>
                     </div>
@@ -271,11 +285,11 @@
 
             <div class="act-shots">
                 <div>
-                    <div class="phone"><img src="images/screens/opening-trainer.webp" alt="Opening Trainer with a repertoire of openings for White and for Black, each with a star rating and a due-for-review marker" width="840" height="1708" loading="lazy"></div>
+                    <div class="phone"><img src="images/screens/opening-trainer.webp" alt="Opening Trainer with a repertoire of openings for White and for Black, each with a star rating and a due-for-review marker" data-en-alt="Opening Trainer with a repertoire of openings for White and for Black, each with a star rating and a due-for-review marker" data-es-alt="El Entrenador de aperturas con un repertorio de blancas y de negras, cada una con sus estrellas y un aviso de repaso pendiente" width="840" height="1708" loading="lazy"></div>
                     <p class="phone-caption" data-en="Your repertoire, by colour" data-es="Tu repertorio, por color">Your repertoire, by colour</p>
                 </div>
                 <div>
-                    <div class="phone"><img src="images/screens/opening-drill.webp" alt="A training position in the Giuoco Piano, with a green arrow showing the move to play and the candidate moves listed below" width="840" height="1708" loading="lazy"></div>
+                    <div class="phone"><img src="images/screens/opening-drill.webp" alt="A training position in the Giuoco Piano, with a green arrow showing the move to play and the candidate moves listed below" data-en-alt="A training position in the Giuoco Piano, with a green arrow showing the move to play and the candidate moves listed below" data-es-alt="Una posición de entrenamiento en el Giuoco Piano, con una flecha verde señalando la jugada y las candidatas debajo" width="840" height="1708" loading="lazy"></div>
                     <p class="phone-caption" data-en="Play the move, not the theory" data-es="Juega la jugada, no la teoría">Play the move, not the theory</p>
                 </div>
             </div>
@@ -304,27 +318,27 @@
 
                 <div class="act-halves">
                     <div class="half">
-                        <h4 data-en="Learn the structures" data-es="Aprende las estructuras">Learn the structures</h4>
+                        <h3 data-en="Learn the structures" data-es="Aprende las estructuras">Learn the structures</h3>
                         <p data-en="Each structure with its theory, the plans of both sides, and a question to check you read it right." data-es="Cada estructura con su teoría, los planes de cada bando y una pregunta para comprobar que la has leído bien.">Each structure with its theory, the plans of both sides, and a question to check you read it right.</p>
                         <span class="half-count">25 <span data-en="structures" data-es="estructuras">structures</span></span>
                     </div>
                     <div class="half">
-                        <h4 data-en="Practise" data-es="Practicar">Practise</h4>
+                        <h3 data-en="Practise" data-es="Practicar">Practise</h3>
                         <p data-en="Name the structure, say where the game is going, then play the plan out with a move budget." data-es="Nombra la estructura, di hacia dónde va la partida y después ejecuta el plan con un presupuesto de jugadas.">Name the structure, say where the game is going, then play the plan out with a move budget.</p>
                         <span class="half-count">1000 <span data-en="positions" data-es="posiciones">positions</span></span>
                     </div>
                 </div>
 
-                <p class="phone-caption" style="margin-top: var(--space-6);" data-en="Written and playable. The app still shows it as coming soon, and that is the truth: it opens once the first exercises have been through a round of testing." data-es="Escrito y jugable. La app todavía lo marca como próximamente, y eso es lo cierto: se abre cuando los primeros ejercicios pasen una ronda de pruebas.">Written and playable. The app still shows it as coming soon, and that is the truth: it opens once the first exercises have been through a round of testing.</p>
+                <p class="caveat" style="margin-top: var(--space-6);" data-en="Written and playable. The app still shows it as coming soon, and that is the truth: it opens once the first exercises have been through a round of testing." data-es="Escrito y jugable. La app todavía lo marca como próximamente, y eso es lo cierto: se abre cuando los primeros ejercicios pasen una ronda de pruebas.">Written and playable. The app still shows it as coming soon, and that is the truth: it opens once the first exercises have been through a round of testing.</p>
             </div>
 
             <div class="act-shots">
                 <div>
-                    <div class="phone phone-crop"><img src="images/screens/middlegame-lab.webp" alt="Middlegame Lab with two cards: Learn the structures, twenty-five of them, and Practise with a thousand positions" width="840" height="1708" loading="lazy"></div>
+                    <div class="phone phone-crop"><img src="images/screens/middlegame-lab.webp" alt="Middlegame Lab with two cards: Learn the structures, twenty-five of them, and Practise with a thousand positions" data-en-alt="Middlegame Lab with two cards: Learn the structures, twenty-five of them, and Practise with a thousand positions" data-es-alt="El Laboratorio de medio juego con dos tarjetas: aprender las veinticinco estructuras y practicar con mil posiciones" width="840" height="1708" loading="lazy"></div>
                     <p class="phone-caption" data-en="Learn it, then play it" data-es="Apréndela y después juégala">Learn it, then play it</p>
                 </div>
                 <div>
-                    <div class="phone"><img src="images/screens/middlegame-structures.webp" alt="A grid of pawn structures: the Benko, the asymmetric Benoni, the Carlsbad, the Caro-Kann formation and the French chain" width="840" height="1708" loading="lazy"></div>
+                    <div class="phone"><img src="images/screens/middlegame-structures.webp" alt="A grid of pawn structures: the Benko, the asymmetric Benoni, the Carlsbad, the Caro-Kann formation and the French chain" data-en-alt="A grid of pawn structures: the Benko, the asymmetric Benoni, the Carlsbad, the Caro-Kann formation and the French chain" data-es-alt="Una rejilla de estructuras de peones: Benko, Benoni asimétrica, Carlsbad, formación Caro-Kann y cadena francesa" width="840" height="1708" loading="lazy"></div>
                     <p class="phone-caption" data-en="Benko, Benoni, Carlsbad, French chain" data-es="Benko, Benoni, Carlsbad, cadena francesa">Benko, Benoni, Carlsbad, French chain</p>
                 </div>
             </div>
@@ -350,12 +364,12 @@
 
                 <div class="act-halves">
                     <div class="half">
-                        <h4 data-en="Learn the technique" data-es="Aprende la técnica">Learn the technique</h4>
+                        <h3 data-en="Learn the technique" data-es="Aprende la técnica">Learn the technique</h3>
                         <p data-en="King and pawns, rooks, queens, bishops and knights, each family in order of difficulty." data-es="Rey y peones, torres, damas, alfiles y caballos; cada familia en orden de dificultad.">King and pawns, rooks, queens, bishops and knights, each family in order of difficulty.</p>
                         <span class="half-count">100 <span data-en="endgames" data-es="finales">endgames</span></span>
                     </div>
                     <div class="half">
-                        <h4 data-en="Practise" data-es="Practicar">Practise</h4>
+                        <h3 data-en="Practise" data-es="Practicar">Practise</h3>
                         <p data-en="A fresh position every time, drawn from real games. Win some, hold others." data-es="Una posición nueva cada vez, sacada de partidas reales. Unas se ganan, otras se aguantan.">A fresh position every time, drawn from real games. Win some, hold others.</p>
                         <span class="half-count">45&thinsp;000+ <span data-en="drills" data-es="ejercicios">drills</span></span>
                     </div>
@@ -364,11 +378,11 @@
 
             <div class="act-shots">
                 <div>
-                    <div class="phone"><img src="images/screens/endgame-families.webp" alt="The hundred endgames grouped into families: king and pawns, rook, queen, bishop and knight endgames, each with a progress bar" width="840" height="1708" loading="lazy"></div>
+                    <div class="phone"><img src="images/screens/endgame-families.webp" alt="The hundred endgames grouped into families: king and pawns, rook, queen, bishop and knight endgames, each with a progress bar" data-en-alt="The hundred endgames grouped into families: king and pawns, rook, queen, bishop and knight endgames, each with a progress bar" data-es-alt="Los cien finales agrupados por familias: rey y peones, torres, damas, alfiles y caballos, cada una con su barra de progreso" width="840" height="1708" loading="lazy"></div>
                     <p class="phone-caption" data-en="Five families, twenty-five solved" data-es="Cinco familias, veinticinco resueltos">Five families, twenty-five solved</p>
                 </div>
                 <div>
-                    <div class="phone"><img src="images/screens/endgame-technique.webp" alt="The Inside the square endgame: the goal, a rigour selector between guided and free, and the technique explained in four numbered steps" width="840" height="1708" loading="lazy"></div>
+                    <div class="phone"><img src="images/screens/endgame-technique.webp" alt="The Inside the square endgame: the goal, a rigour selector between guided and free, and the technique explained in four numbered steps" data-en-alt="The Inside the square endgame: the goal, a rigour selector between guided and free, and the technique explained in four numbered steps" data-es-alt="El final «dentro del cuadrado»: el objetivo, el selector entre modo guiado y libre, y la técnica explicada en cuatro pasos" width="840" height="1708" loading="lazy"></div>
                     <p class="phone-caption" data-en="The goal, then the technique in four steps" data-es="El objetivo y después la técnica en cuatro pasos">The goal, then the technique in four steps</p>
                 </div>
             </div>
@@ -391,25 +405,25 @@
                 <div class="ladder">
                     <article class="rung" data-state="free">
                         <span class="rung-level">Level 01</span>
-                        <h4 data-en="First Steps" data-es="Primeros pasos">First Steps</h4>
+                        <h3 data-en="First Steps" data-es="Primeros pasos">First Steps</h3>
                         <p data-en="How the pieces move, checkmate, what a plan is." data-es="Cómo se mueven las piezas, el mate, qué es un plan.">How the pieces move, checkmate, what a plan is.</p>
                         <span class="rung-elo" data-en="29 lessons, free" data-es="29 lecciones, gratis">29 lessons, free</span>
                     </article>
                     <article class="rung">
                         <span class="rung-level">Level 02</span>
-                        <h4 data-en="Beginner" data-es="Principiante">Beginner</h4>
+                        <h3 data-en="Beginner" data-es="Principiante">Beginner</h3>
                         <p data-en="Tactics and the first openings worth knowing." data-es="Táctica y las primeras aperturas que merece la pena saber.">Tactics and the first openings worth knowing.</p>
                         <span class="rung-elo" data-en="44 lessons, 0&ndash;1000" data-es="44 lecciones, 0&ndash;1000">44 lessons, 0&ndash;1000</span>
                     </article>
                     <article class="rung">
                         <span class="rung-level">Level 03</span>
-                        <h4 data-en="Intermediate" data-es="Intermedio">Intermediate</h4>
+                        <h3 data-en="Intermediate" data-es="Intermedio">Intermediate</h3>
                         <p data-en="Strategy, structures and the endgames that decide games." data-es="Estrategia, estructuras y los finales que deciden partidas.">Strategy, structures and the endgames that decide games.</p>
                         <span class="rung-elo" data-en="91 lessons, 1000&ndash;1500" data-es="91 lecciones, 1000&ndash;1500">91 lessons, 1000&ndash;1500</span>
                     </article>
                     <article class="rung" data-state="soon">
                         <span class="rung-level">Level 04</span>
-                        <h4 data-en="Advanced" data-es="Avanzado">Advanced</h4>
+                        <h3 data-en="Advanced" data-es="Avanzado">Advanced</h3>
                         <p data-en="Calculation and long plans." data-es="Cálculo y planes largos.">Calculation and long plans.</p>
                         <span class="rung-elo" data-en="1500&ndash;2000, coming soon" data-es="1500&ndash;2000, próximamente">1500&ndash;2000, coming soon</span>
                     </article>
@@ -417,7 +431,7 @@
             </div>
 
             <div>
-                <div class="phone" style="max-width: 16rem; margin: 0 auto;"><img src="images/screens/courses.webp" alt="The courses screen: a winding path with First Steps, Beginner and Intermediate completed, and Advanced still locked" width="840" height="1708" loading="lazy"></div>
+                <div class="phone" style="max-width: 16rem; margin: 0 auto;"><img src="images/screens/courses.webp" alt="The courses screen: a winding path with First Steps, Beginner and Intermediate completed, and Advanced still locked" data-en-alt="The courses screen: a winding path with First Steps, Beginner and Intermediate completed, and Advanced still locked" data-es-alt="La pantalla de cursos: un camino con Primeros pasos, Principiante e Intermedio completados y Avanzado todavía bloqueado" width="840" height="1708" loading="lazy"></div>
                 <p class="phone-caption" style="text-align:center" data-en="One path, one lesson at a time" data-es="Un camino, una lección cada vez">One path, one lesson at a time</p>
             </div>
         </div>
@@ -438,46 +452,46 @@
 
         <div class="modes">
             <article class="mode">
-                <img src="images/app/home_play_bots.webp" alt="" width="1200" height="480" loading="lazy">
-                <h4 data-en="Twenty rivals" data-es="Veinte rivales">Twenty rivals</h4>
+                <img src="images/app/home_play_bots.webp" alt="" width="512" height="512" loading="lazy">
+                <h3 data-en="Twenty rivals" data-es="Veinte rivales">Twenty rivals</h3>
                 <p data-en="Five levels, four opponents each. They blunder like the rating on their card." data-es="Cinco niveles, cuatro rivales cada uno. Fallan como dice el nivel de su ficha.">Five levels, four opponents each. They blunder like the rating on their card.</p>
             </article>
             <article class="mode">
-                <img src="images/app/home_play_online.webp" alt="" width="1200" height="480" loading="lazy">
-                <h4>HU Chess</h4>
+                <img src="images/app/home_play_online.webp" alt="" width="512" height="512" loading="lazy">
+                <h3>HU Chess</h3>
                 <p data-en="Chess and Go online, with a clock, a rating and a monthly ranking." data-es="Ajedrez y Go en línea, con reloj, rating y clasificación mensual.">Chess and Go online, with a clock, a rating and a monthly ranking.</p>
             </article>
             <article class="mode">
-                <img src="images/app/home_tile_puzzles.webp" alt="" width="1200" height="480" loading="lazy">
-                <h4 data-en="Puzzles" data-es="Puzzles">Puzzles</h4>
+                <img src="images/app/home_tile_puzzles.webp" alt="" width="512" height="512" loading="lazy">
+                <h3 data-en="Puzzles" data-es="Puzzles">Puzzles</h3>
                 <p data-en="A daily one, by theme, a streak to keep alive and a three-minute storm." data-es="Uno diario, por temas, una racha que mantener y una tormenta de tres minutos.">A daily one, by theme, a streak to keep alive and a three-minute storm.</p>
             </article>
             <article class="mode">
-                <img src="images/app/home_tile_analysis.webp" alt="" width="1200" height="480" loading="lazy">
-                <h4 data-en="Analysis board" data-es="Tablero de análisis">Analysis board</h4>
+                <img src="images/app/home_tile_analysis.webp" alt="" width="512" height="512" loading="lazy">
+                <h3 data-en="Analysis board" data-es="Tablero de análisis">Analysis board</h3>
                 <p data-en="Set up any position, get the engine lines, ask the coach what it means." data-es="Monta cualquier posición, mira las líneas del motor y pregunta al coach qué significan.">Set up any position, get the engine lines, ask the coach what it means.</p>
             </article>
         </div>
 
-        <div class="rail" style="margin-top: clamp(2rem, 4vw, 3rem);">
+        <div class="rail" tabindex="0" role="region" aria-label="CheesCoach screenshots" data-en-label="CheesCoach screenshots" data-es-label="Capturas de CheesCoach" style="margin-top: clamp(2rem, 4vw, 3rem);">
             <figure>
-                <div class="phone"><img src="images/screens/play-setup.webp" alt="New game setup with the rival, the colour to play and the coach mode switched on" width="840" height="1708" loading="lazy"></div>
+                <div class="phone"><img src="images/screens/play-setup.webp" alt="New game setup with the rival, the colour to play and the coach mode switched on" data-en-alt="New game setup with the rival, the colour to play and the coach mode switched on" data-es-alt="La pantalla de partida nueva con el rival, el color con el que juegas y el modo coach encendido" width="840" height="1708" loading="lazy"></div>
                 <figcaption data-en="Turn the coach on before you start" data-es="Enciende el coach antes de empezar">Turn the coach on before you start</figcaption>
             </figure>
             <figure>
-                <div class="phone"><img src="images/screens/opponents.webp" alt="Choose your opponent: beginner and intermediate rivals with portraits and win-loss records" width="840" height="1708" loading="lazy"></div>
+                <div class="phone"><img src="images/screens/opponents.webp" alt="Choose your opponent: beginner and intermediate rivals with portraits and win-loss records" data-en-alt="Choose your opponent: beginner and intermediate rivals with portraits and win-loss records" data-es-alt="Elegir rival: contrincantes principiantes e intermedios con su retrato y su marcador" width="840" height="1708" loading="lazy"></div>
                 <figcaption data-en="Pick a rival, keep the score" data-es="Elige rival y lleva el marcador">Pick a rival, keep the score</figcaption>
             </figure>
             <figure>
-                <div class="phone"><img src="images/screens/puzzles.webp" alt="The exercises screen with the daily puzzle, puzzles by theme, streak and storm modes" width="840" height="1708" loading="lazy"></div>
+                <div class="phone"><img src="images/screens/puzzles.webp" alt="The exercises screen with the daily puzzle, puzzles by theme, streak and storm modes" data-en-alt="The exercises screen with the daily puzzle, puzzles by theme, streak and storm modes" data-es-alt="La pantalla de ejercicios con el puzzle diario, los puzzles por tema y los modos racha y tormenta" width="840" height="1708" loading="lazy"></div>
                 <figcaption data-en="Daily puzzle, themes, streak, storm" data-es="Puzzle diario, temas, racha, tormenta">Daily puzzle, themes, streak, storm</figcaption>
             </figure>
             <figure>
-                <div class="phone"><img src="images/screens/puzzle-streak.webp" alt="Puzzle streak in progress: find the best move without missing one" width="840" height="1708" loading="lazy"></div>
+                <div class="phone"><img src="images/screens/puzzle-streak.webp" alt="Puzzle streak in progress: find the best move without missing one" data-en-alt="Puzzle streak in progress: find the best move without missing one" data-es-alt="Una racha de puzzles en marcha: encuentra la mejor jugada sin fallar ninguna" width="840" height="1708" loading="lazy"></div>
                 <figcaption data-en="Streak: one miss and it's over" data-es="Racha: un fallo y se acabó">Streak: one miss and it's over</figcaption>
             </figure>
             <figure>
-                <div class="phone"><img src="images/screens/royalchess.webp" alt="RoyalChess daily challenge: rebuild the target position in as few moves as possible" width="840" height="1708" loading="lazy"></div>
+                <div class="phone"><img src="images/screens/royalchess.webp" alt="RoyalChess daily challenge: rebuild the target position in as few moves as possible" data-en-alt="RoyalChess daily challenge: rebuild the target position in as few moves as possible" data-es-alt="El reto diario de RoyalChess: reconstruir la posición objetivo en las menos jugadas posibles" width="840" height="1708" loading="lazy"></div>
                 <figcaption data-en="RoyalChess: the daily challenge" data-es="RoyalChess: el reto diario">RoyalChess: the daily challenge</figcaption>
             </figure>
         </div>
@@ -546,7 +560,7 @@
                 </div>
 
                 <div class="review-note" style="margin-top: var(--space-6);">
-                    <h4 data-en="The engine is yours, and it's open" data-es="El motor es tuyo, y es abierto">The engine is yours, and it's open</h4>
+                    <h3 data-en="The engine is yours, and it's open" data-es="El motor es tuyo, y es abierto">The engine is yours, and it's open</h3>
                     <p data-en="Stockfish and the Maia networks run on the device, under the GPL. The sources and the exact builds are published." data-es="Stockfish y las redes Maia corren en el dispositivo, bajo la GPL. Las fuentes y los binarios exactos están publicados.">Stockfish and the Maia networks run on the device, under the GPL. The sources and the exact builds are published.</p>
                     <p style="margin-top: var(--space-4);"><a href="open-source.html" data-en="Read the open source notice" data-es="Ver el aviso de código abierto">Read the open source notice</a></p>
                 </div>
@@ -582,13 +596,15 @@
         </div>
 
         <div class="download-shot">
-            <div class="phone"><img src="images/screens/home.webp" alt="The CheesCoach home screen on an iPhone: puzzle, streak and storm ratings, and the cards for playing, learning and the Practice Lab" width="840" height="1708" loading="lazy"></div>
+            <div class="phone"><img src="images/screens/home.webp" alt="The CheesCoach home screen on an iPhone: puzzle, streak and storm ratings, and the cards for playing, learning and the Practice Lab" data-en-alt="The CheesCoach home screen on an iPhone: puzzle, streak and storm ratings, and the cards for playing, learning and the Practice Lab" data-es-alt="La portada de CheesCoach en un iPhone: los ratings de puzzle, racha y tormenta, y las tarjetas de jugar, aprender y el Laboratorio" width="840" height="1708" loading="lazy"></div>
             <p class="phone-caption" data-en="The home screen, on an iPhone. Same app on Android and iPad." data-es="La portada, en un iPhone. La misma app en Android y en iPad.">The home screen, on an iPhone. Same app on Android and iPad.</p>
         </div>
       </div>
     </div>
 </section>
 
+
+</main>
 
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
@@ -602,7 +618,7 @@
         </div>
 
         <div>
-            <h4 class="footer-heading" data-en="The app" data-es="La app">The app</h4>
+            <h3 class="footer-heading" data-en="The app" data-es="La app">The app</h3>
             <ul class="footer-links">
                 <li><a href="#coach" data-en="The coach" data-es="El coach">The coach</a></li>
                 <li><a href="#labs" data-en="Practice Lab" data-es="Laboratorio">Practice Lab</a></li>
@@ -613,7 +629,7 @@
         </div>
 
         <div>
-            <h4 class="footer-heading" data-en="AI setup" data-es="Configurar IA">AI setup</h4>
+            <h3 class="footer-heading" data-en="AI setup" data-es="Configurar IA">AI setup</h3>
             <ul class="footer-links">
                 <li><a href="api-setup.html" data-en="Which provider" data-es="Qué proveedor">Which provider</a></li>
                 <li><a href="openai-setup.html">OpenAI</a></li>
@@ -625,7 +641,7 @@
         </div>
 
         <div>
-            <h4 class="footer-heading" data-en="Project" data-es="Proyecto">Project</h4>
+            <h3 class="footer-heading" data-en="Project" data-es="Proyecto">Project</h3>
             <ul class="footer-links">
                 <li><a href="open-source.html" data-en="Open source" data-es="Código abierto">Open source</a></li>
                 <li><a href="privacy-policy.html" data-en="Privacy" data-es="Privacidad">Privacy</a></li>
@@ -644,11 +660,22 @@
 <!-- ========== SCRIPTS ========== -->
 <script>
 (function() {
+    /* An element carrying data-en must not have element children: applyLang
+       rewrites its innerHTML and would destroy them. innerHTML rather than
+       textContent because the strings carry entities (&ldquo;, &ndash;). */
     function applyLang(lang) {
         document.documentElement.lang = lang;
         document.querySelectorAll('[data-en]').forEach(function(el) {
             var t = el.getAttribute('data-' + lang);
             if (t) el.innerHTML = t;
+        });
+        document.querySelectorAll('[data-en-alt]').forEach(function(el) {
+            var t = el.getAttribute('data-' + lang + '-alt');
+            if (t) el.setAttribute('alt', t);
+        });
+        document.querySelectorAll('[data-en-label]').forEach(function(el) {
+            var t = el.getAttribute('data-' + lang + '-label');
+            if (t) el.setAttribute('aria-label', t);
         });
         var btnEn = document.getElementById('btn-en');
         var btnEs = document.getElementById('btn-es');
@@ -661,13 +688,20 @@
             btnEs.setAttribute('aria-pressed', String(lang === 'es'));
         }
     }
-    window.setLang = function(lang) {
+    function store(lang) {
         try { localStorage.setItem('cheescoach-lang', lang); } catch (e) {}
-        applyLang(lang);
-    };
+    }
+    window.setLang = function(lang) { store(lang); applyLang(lang); };
+
     var saved = null;
     try { saved = localStorage.getItem('cheescoach-lang'); } catch (e) {}
-    if (!saved) saved = (navigator.language || '').startsWith('es') ? 'es' : 'en';
+    if (!saved) {
+        /* Persist the detected language too: the provider pages only read
+           localStorage, so without this a Spanish visitor loses Spanish the
+           moment they follow a link out of the landing. */
+        saved = (navigator.language || '').startsWith('es') ? 'es' : 'en';
+        store(saved);
+    }
     applyLang(saved);
 })();
 </script>
