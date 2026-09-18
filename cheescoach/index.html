@@ -3,444 +3,589 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CheesCoach — Entiende cada jugada</title>
-    <meta name="description" content="Juega, analiza y mejora con un coach de ajedrez con IA. Stockfish, puzzles y explicaciones claras en iPhone, iPad y Android.">
+    <title>CheesCoach — the chess app that explains your moves</title>
+    <meta name="description" content="Play, then find out what went wrong. Stockfish does the calculating, an AI coach turns it into a sentence you can use. Openings, middlegames and endgames on iPhone, iPad and Android.">
     <meta name="author" content="JuanfranDevs">
-    <meta name="theme-color" content="#08121f">
+    <meta name="theme-color" content="#080D1A">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="CheesCoach — Entiende cada jugada">
-    <meta property="og:description" content="Tu coach de ajedrez con IA para jugar, analizar y entrenar desde cualquier dispositivo.">
+    <meta property="og:title" content="CheesCoach — the chess app that explains your moves">
+    <meta property="og:description" content="Stockfish does the calculating. An AI coach turns it into a sentence you can use in your next game.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="app_icon_chesscoach.png">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&amp;family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&amp;family=JetBrains+Mono:wght@500;700;800&amp;display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="app_icon_chesscoach.png">
 
-    <!-- Design System -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/utilities.css">
-    <!-- Page-specific -->
     <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
 
 <!-- ========== NAVBAR ========== -->
-<nav class="navbar" role="navigation" aria-label="Navegacion principal">
+<nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-inner">
         <a href="index.html" class="navbar-logo">
-            <img src="app_icon_chesscoach.png" alt="CheesCoach" width="36" height="36">
+            <img src="images/app/icon.webp" alt="" width="36" height="36">
             <span>CheesCoach</span>
         </a>
 
         <ul class="navbar-links" id="nav-links">
-            <li><a href="#features" data-en="Why CheesCoach" data-es="Por qué CheesCoach">Why CheesCoach</a></li>
-            <li><a href="#screenshots" data-en="Inside the app" data-es="Dentro de la app">Inside the app</a></li>
+            <li><a href="#coach" data-en="The coach" data-es="El coach">The coach</a></li>
+            <li><a href="#openings" data-en="Labs" data-es="Laboratorios">Labs</a></li>
+            <li><a href="#courses" data-en="Courses" data-es="Cursos">Courses</a></li>
+            <li><a href="#play" data-en="Play" data-es="Jugar">Play</a></li>
             <li><a href="api-setup.html" data-en="AI setup" data-es="Configurar IA">AI setup</a></li>
-            <li><a href="#download" data-en="Download" data-es="Descargar">Download</a></li>
             <li>
                 <div class="lang-toggle">
-                    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
-                    <button id="btn-es" onclick="setLang('es')">ES</button>
+                    <button id="btn-en" class="active" onclick="setLang('en')" aria-pressed="true" lang="en">EN</button>
+                    <button id="btn-es" onclick="setLang('es')" aria-pressed="false" lang="es">ES</button>
                 </div>
             </li>
         </ul>
 
-        <button class="navbar-hamburger" id="hamburger" aria-label="Menu de navegacion" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="navbar-hamburger" id="hamburger" aria-label="Navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
         </button>
     </div>
 </nav>
 
 
 <!-- ========== HERO ========== -->
-<section class="hero" id="hero">
+<header class="hero" id="hero">
     <div class="container">
         <div class="hero-grid">
-            <div class="hero-content animate-fadeInUp">
-                <div class="hero-brandline">
-                    <img src="app_icon_chesscoach.png" alt="" width="44" height="44">
-                    <span data-en="Chess is hard. Understanding it shouldn't be." data-es="El ajedrez es difícil. Entenderlo no debería serlo.">Chess is hard. Understanding it shouldn't be.</span>
-                </div>
-                <h1 class="hero-title" data-en="Don't just see the best move. Understand it." data-es="No te limites a ver la mejor jugada. Entiéndela.">
-                    Don't just see the best move. Understand it.
-                </h1>
-                <p class="hero-subtitle" data-en="Play against Stockfish or real opponents, then turn every game into a lesson with clear AI explanations adapted to your level." data-es="Juega contra Stockfish o rivales reales y convierte cada partida en una lección con explicaciones claras de IA adaptadas a tu nivel.">
-                    Play against Stockfish or real opponents, then turn every game into a lesson with clear AI explanations adapted to your level.
+            <div class="hero-content">
+                <p class="hero-kicker">
+                    <img src="images/app/icon.webp" alt="" width="20" height="20">
+                    <span data-en="Chess coach with AI" data-es="Coach de ajedrez con IA">Chess coach with AI</span>
                 </p>
+
+                <h1 data-en="You lost that one for a reason. Here it is." data-es="Perdiste esa partida por algo. Aquí está el motivo.">
+                    You lost that one for a reason. Here it is.
+                </h1>
+
+                <p class="hero-sub" data-en="Play a game, then find out what actually went wrong. Stockfish does the calculating. An AI coach turns it into a sentence you can use in the next game." data-es="Juega una partida y descubre qué falló de verdad. Stockfish hace el cálculo. Un coach con IA lo convierte en una frase que puedes usar en la siguiente partida.">
+                    Play a game, then find out what actually went wrong. Stockfish does the calculating. An AI coach turns it into a sentence you can use in the next game.
+                </p>
+
                 <div class="hero-ctas">
                     <a href="#download" class="btn btn-primary btn-lg" data-en="Get CheesCoach" data-es="Descargar CheesCoach">Get CheesCoach</a>
-                    <a href="#demo" class="btn btn-outline btn-lg" data-en="Try the board" data-es="Probar el tablero">Try the board</a>
+                    <a href="#coach" class="btn btn-outline btn-lg" data-en="See what it says" data-es="Ver qué te dice">See what it says</a>
                 </div>
-                <p class="hero-note" data-en="Free to start · iPhone, iPad and Android · No ads" data-es="Empieza gratis · iPhone, iPad y Android · Sin anuncios">Free to start · iPhone, iPad and Android · No ads</p>
+
+                <p class="hero-note" data-en="Free to start. iPhone, iPad and Android. No ads." data-es="Empieza gratis. iPhone, iPad y Android. Sin anuncios.">Free to start. iPhone, iPad and Android. No ads.</p>
             </div>
 
-            <div class="hero-visual animate-fadeInUp delay-200" aria-label="CheesCoach game analysis preview">
-                <div class="analysis-window">
-                    <div class="analysis-topbar"><span></span><span></span><span></span><strong>CheesCoach</strong></div>
-                    <div class="analysis-body">
-                        <div class="position-preview">
-                            <img src="images/review-screenshot.png" alt="CheesCoach analyzing a chess game" width="340" height="680">
-                        </div>
-                        <div class="coach-note">
-                            <div class="move-grade"><span>♘f5</span><strong data-en="Great move" data-es="Gran jugada">Great move</strong></div>
-                            <p data-en="The knight attacks the queen and opens the diagonal towards the king. You gain time without losing control of the center." data-es="El caballo ataca la dama y abre la diagonal hacia el rey. Ganas un tiempo sin perder el control del centro.">The knight attacks the queen and opens the diagonal towards the king. You gain time without losing control of the center.</p>
-                            <div class="evaluation"><span data-en="Position" data-es="Posición">Position</span><strong>+1.4</strong></div>
-                        </div>
+            <figure class="annotation">
+                <div class="annotation-head">
+                    <span class="annotation-move">5&hellip;Nxd5<span class="glyph">??</span></span>
+                    <span class="annotation-eval">+0.3 &rarr; +2.4</span>
+                </div>
+                <span class="annotation-verdict" data-en="Blunder" data-es="Error grave">Blunder</span>
+                <div class="annotation-board" role="img" aria-label="Chess position after 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5, with the black knight on d5 marked as the blunder">
+                        <span class="l">♜</span>
+                        <span class="d"></span>
+                        <span class="l">♝</span>
+                        <span class="d">♛</span>
+                        <span class="l">♚</span>
+                        <span class="d">♝</span>
+                        <span class="l"></span>
+                        <span class="d">♜</span>
+                        <span class="d">♟</span>
+                        <span class="l">♟</span>
+                        <span class="d">♟</span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="l">♟</span>
+                        <span class="d">♟</span>
+                        <span class="l">♟</span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="l">♞</span>
+                        <span class="d"></span>
+                        <span class="l"></span>
+                        <span class="d from"></span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="d"></span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="l hit">♞</span>
+                        <span class="d">♟</span>
+                        <span class="l"></span>
+                        <span class="d w">♞</span>
+                        <span class="l"></span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="l w">♝</span>
+                        <span class="d"></span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="d"></span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="l"></span>
+                        <span class="l w">♟</span>
+                        <span class="d w">♟</span>
+                        <span class="l w">♟</span>
+                        <span class="d w">♟</span>
+                        <span class="l"></span>
+                        <span class="d w">♟</span>
+                        <span class="l w">♟</span>
+                        <span class="d w">♟</span>
+                        <span class="d w">♜</span>
+                        <span class="l w">♞</span>
+                        <span class="d w">♝</span>
+                        <span class="l w">♛</span>
+                        <span class="d w">♚</span>
+                        <span class="l"></span>
+                        <span class="d"></span>
+                        <span class="l w">♜</span>
+                </div>
+                <p class="annotation-text" data-en="Taking on d5 opens the door to 6.Nxf7. Your king gets dragged out with the white queen and bishop already pointing at it." data-es="Tomar en d5 abre la puerta a 6.Nxf7. Tu rey sale a rastras con la dama y el alfil blancos ya apuntándole.">
+                    Taking on d5 opens the door to 6.Nxf7. Your king gets dragged out with the white queen and bishop already pointing at it.
+                </p>
+                <p class="annotation-text" data-en="Play 5…Na5 instead. It costs a pawn and keeps the king at home." data-es="Juega 5…Na5. Cuesta un peón y deja al rey en casa.">
+                    Play 5…Na5 instead. It costs a pawn and keeps the king at home.
+                </p>
+                <figcaption class="annotation-foot">
+                    <span class="dot" aria-hidden="true"></span>
+                    <span data-en="Stockfish found the move. The coach wrote the reason." data-es="Stockfish encontró la jugada. El coach escribió el motivo.">Stockfish found the move. The coach wrote the reason.</span>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</header>
+
+
+<!-- ========== THE GAP ========== -->
+<section class="gap-band">
+    <div class="container">
+        <div class="gap-grid">
+            <div>
+                <span class="eyebrow" data-en="Why another chess app" data-es="Por qué otra app de ajedrez">Why another chess app</span>
+                <h2 data-en="Engines are free. Understanding isn't." data-es="Los motores son gratis. Entender, no.">Engines are free. Understanding isn't.</h2>
+                <p class="lede" data-en="Any phone can run an engine stronger than any human alive. It shows you the move and a number. It never tells you what you walked into, and a number is not a lesson. CheesCoach keeps the engine and adds the part that was missing: a plain sentence about the idea you missed, written for your rating." data-es="Cualquier móvil ejecuta un motor más fuerte que cualquier humano vivo. Te enseña la jugada y un número. Nunca te dice en qué te metiste, y un número no es una lección. CheesCoach mantiene el motor y añade lo que faltaba: una frase clara sobre la idea que se te escapó, escrita para tu nivel.">
+                    Any phone can run an engine stronger than any human alive. It shows you the move and a number. It never tells you what you walked into, and a number is not a lesson. CheesCoach keeps the engine and adds the part that was missing: a plain sentence about the idea you missed, written for your rating.
+                </p>
+            </div>
+            <blockquote class="gap-quote">
+                <p data-en="&ldquo;We're entering the endgame. King activity matters more than material now: walk him to the centre before you push anything.&rdquo;" data-es="&laquo;Entramos en el final. Ahora la actividad del rey pesa más que el material: llévalo al centro antes de empujar nada.&raquo;">
+                    &ldquo;We're entering the endgame. King activity matters more than material now: walk him to the centre before you push anything.&rdquo;
+                </p>
+                <span data-en="An actual comment, from an actual game review" data-es="Un comentario real, de un repaso real">An actual comment, from an actual game review</span>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== THE POST-MORTEM ========== -->
+<section class="band" id="coach">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow" data-en="After the game" data-es="Después de la partida">After the game</span>
+            <h2 data-en="The post-mortem, without needing a stronger friend" data-es="El post mortem, sin necesitar a un amigo más fuerte">The post-mortem, without needing a stronger friend</h2>
+            <p class="lede" data-en="Finish a game and CheesCoach runs it through Stockfish, marks the moves that cost you something, and comments them one by one as you step through. Bring games in from Lichess or paste any PGN." data-es="Termina una partida y CheesCoach la pasa por Stockfish, marca las jugadas que te costaron algo y las comenta una a una según avanzas. Trae partidas de Lichess o pega cualquier PGN.">
+                Finish a game and CheesCoach runs it through Stockfish, marks the moves that cost you something, and comments them one by one as you step through. Bring games in from Lichess or paste any PGN.
+            </p>
+        </div>
+
+        <div class="review-grid">
+            <div>
+                <div class="phone"><img src="images/screens/review-report.webp" alt="Game review showing accuracy for both players, an evaluation graph split into opening, middlegame and endgame, and the engine's best move on the board" width="840" height="1708" loading="lazy"></div>
+                <p class="phone-caption" data-en="Accuracy, mistakes and where the game turned" data-es="Precisión, errores y dónde giró la partida">Accuracy, mistakes and where the game turned</p>
+            </div>
+            <div>
+                <div class="phone"><img src="images/screens/review-coach.webp" alt="The coach commenting a single move, with the evaluation beside it" width="840" height="1708" loading="lazy"></div>
+                <p class="phone-caption" data-en="A comment on every move you step through" data-es="Un comentario en cada jugada que recorres">A comment on every move you step through</p>
+            </div>
+            <div>
+                <div class="phone"><img src="images/screens/my-games.webp" alt="Saved games list with filters for wins, losses, draws and Lichess imports" width="840" height="1708" loading="lazy"></div>
+                <p class="phone-caption" data-en="Your games, plus everything you import" data-es="Tus partidas, más todo lo que importes">Your games, plus everything you import</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== THE THREE ACTS — INTRO ========== -->
+<section class="band band-tight gradient-section" id="labs">
+    <div class="container">
+        <div class="gap-grid">
+            <div>
+                <span class="eyebrow" data-en="Practice Lab" data-es="Laboratorio">Practice Lab</span>
+                <h2 data-en="A game has three parts. So does the training." data-es="Una partida tiene tres partes. El entrenamiento también.">A game has three parts. So does the training.</h2>
+                <p class="lede" data-en="Not a pile of exercises. Three labs, one for each phase of the game, each with the same shape: learn the idea first, then play it out against an opponent that will punish you for getting it wrong." data-es="No es un montón de ejercicios. Tres laboratorios, uno por cada fase de la partida, y todos con la misma forma: primero aprendes la idea y después la juegas contra un rival que te castiga si la haces mal.">
+                    Not a pile of exercises. Three labs, one for each phase of the game, each with the same shape: learn the idea first, then play it out against an opponent that will punish you for getting it wrong.
+                </p>
+                <p class="premium-tag" style="margin-top: var(--space-6);" data-en="The three labs are Premium. The Italian Game in the opening trainer, and the first middlegame exercise, are free." data-es="Los tres laboratorios son Premium. La Italiana en el entrenador de aperturas y el primer ejercicio de medio juego son gratis.">The three labs are Premium. The Italian Game in the opening trainer, and the first middlegame exercise, are free.</p>
+            </div>
+            <div>
+                <div class="phone phone-crop" style="max-width: 17rem; margin-left: auto;"><img src="images/screens/lab-hub.webp" alt="The Practice Lab screen with three cards: Opening Lab, Endgame Lab and Middlegame Lab" width="840" height="1708" loading="lazy"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== ACT I — THE OPENING ========== -->
+<section class="act" id="openings">
+    <div class="container">
+        <div class="act-inner">
+            <div>
+                <p class="act-num"><span data-en="I — The opening" data-es="I — La apertura">I — The opening</span></p>
+                <h2 data-en="Your repertoire, until it sticks" data-es="Tu repertorio, hasta que se te quede">Your repertoire, until it sticks</h2>
+                <p class="lede" data-en="Pick the openings you actually play. The trainer drills the moves with spaced repetition and tells you when a line is due for review. Then you play the same line out against Maia, a network trained on real club games, so it goes wrong the way humans go wrong." data-es="Elige las aperturas que juegas de verdad. El entrenador repasa las jugadas con repetición espaciada y te avisa cuando una línea toca repasarla. Después juegas esa misma línea contra Maia, una red entrenada con partidas reales de club, que se equivoca como se equivocan las personas.">
+                    Pick the openings you actually play. The trainer drills the moves with spaced repetition and tells you when a line is due for review. Then you play the same line out against Maia, a network trained on real club games, so it goes wrong the way humans go wrong.
+                </p>
+
+                <div class="act-art">
+                    <img src="images/app/lab_openings.webp" alt="" width="1200" height="480" loading="lazy">
+                </div>
+
+                <div class="act-halves">
+                    <div class="half">
+                        <h4 data-en="Opening Trainer" data-es="Entrenador de aperturas">Opening Trainer</h4>
+                        <p data-en="The moves of your repertoire, drilled until you stop thinking about them." data-es="Las jugadas de tu repertorio, repasadas hasta que dejas de pensarlas.">The moves of your repertoire, drilled until you stop thinking about them.</p>
+                        <span class="half-count" data-en="Spaced repetition, three stars per line" data-es="Repetición espaciada, tres estrellas por línea">Spaced repetition, three stars per line</span>
+                    </div>
+                    <div class="half">
+                        <h4 data-en="Practise" data-es="Practicar">Practise</h4>
+                        <p data-en="Play the line for real against a rival that moves like a club player." data-es="Juega la línea de verdad contra un rival que se mueve como un jugador de club.">Play the line for real against a rival that moves like a club player.</p>
+                        <span class="half-count" data-en="Maia networks by strength" data-es="Redes Maia por nivel">Maia networks by strength</span>
                     </div>
                 </div>
-                <span class="visual-caption" data-en="Stockfish finds the move. Your coach explains the idea." data-es="Stockfish encuentra la jugada. Tu coach explica la idea.">Stockfish finds the move. Your coach explains the idea.</span>
+            </div>
+
+            <div class="act-shots">
+                <div>
+                    <div class="phone"><img src="images/screens/opening-trainer.webp" alt="Opening Trainer with a repertoire of openings for White and for Black, each with a star rating and a due-for-review marker" width="840" height="1708" loading="lazy"></div>
+                    <p class="phone-caption" data-en="Your repertoire, by colour" data-es="Tu repertorio, por color">Your repertoire, by colour</p>
+                </div>
+                <div>
+                    <div class="phone"><img src="images/screens/opening-drill.webp" alt="A training position in the Giuoco Piano, with a green arrow showing the move to play and the candidate moves listed below" width="840" height="1708" loading="lazy"></div>
+                    <p class="phone-caption" data-en="Play the move, not the theory" data-es="Juega la jugada, no la teoría">Play the move, not the theory</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 
-<!-- ========== FEATURES ========== -->
-<section class="section gradient-section" id="features">
+<!-- ========== ACT II — THE MIDDLEGAME ========== -->
+<section class="act act-rev" id="middlegames">
     <div class="container">
-        <div class="section-header reveal">
-            <div class="section-label" data-en="A coach, not another engine" data-es="Un coach, no otro motor">A coach, not another engine</div>
-            <h2 class="section-title" data-en="Train the way you actually play" data-es="Entrena como realmente juegas">Train the way you actually play</h2>
-            <p class="section-subtitle" data-en="One place to play, understand your mistakes and turn them into better decisions." data-es="Un solo lugar para jugar, entender tus errores y convertirlos en mejores decisiones.">One place to play, understand your mistakes and turn them into better decisions.</p>
-        </div>
+        <div class="act-inner">
+            <div>
+                <p class="act-num"><span data-en="II — The middlegame" data-es="II — El medio juego">II — The middlegame</span></p>
+                <h2>
+                    <span data-en="The plan when the book runs out" data-es="El plan cuando se acaba el libro">The plan when the book runs out</span>
+                    <span class="soon" data-en="Coming soon" data-es="Próximamente">Coming soon</span>
+                </h2>
+                <p class="lede" data-en="Move fifteen, the theory is over and nobody taught you what to do next. The Middlegame Lab goes by pawn structure: the Carlsbad, the Benoni, the French chain and twenty-two more, each with its theory, the plan for both sides, and positions from real games where you name the structure and then carry the plan out." data-es="Jugada quince, se acabó la teoría y nadie te enseñó qué hacer después. El Laboratorio de medio juego va por estructuras de peones: la Carlsbad, la Benoni, la cadena francesa y veintidós más, cada una con su teoría, el plan de cada bando y posiciones de partidas reales donde nombras la estructura y luego llevas el plan a cabo.">
+                    Move fifteen, the theory is over and nobody taught you what to do next. The Middlegame Lab goes by pawn structure: the Carlsbad, the Benoni, the French chain and twenty-two more, each with its theory, the plan for both sides, and positions from real games where you name the structure and then carry the plan out.
+                </p>
 
-        <div class="grid grid-3 reveal-stagger">
-            <!-- 1. Coach IA -->
-            <div class="card reveal">
-                <div class="card-icon gold">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-                        <path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 01-1 1H9a1 1 0 01-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/>
-                        <line x1="9" y1="21" x2="15" y2="21"/>
-                    </svg>
+                <div class="act-art">
+                    <img src="images/app/lab_middlegame.webp" alt="" width="1200" height="480" loading="lazy">
                 </div>
-                <h3 class="card-title" data-en="AI Coach" data-es="Coach IA">AI Coach</h3>
-                <p class="card-text" data-en="Natural language explanations of every move, based on Capablanca's principles and adapted to your level." data-es="Explicaciones en lenguaje natural de cada movimiento, basadas en los principios de Capablanca y adaptadas a tu nivel.">Natural language explanations of every move, based on Capablanca's principles and adapted to your level.</p>
+
+                <div class="act-halves">
+                    <div class="half">
+                        <h4 data-en="Learn the structures" data-es="Aprende las estructuras">Learn the structures</h4>
+                        <p data-en="Each structure with its theory, the plans of both sides, and a question to check you read it right." data-es="Cada estructura con su teoría, los planes de cada bando y una pregunta para comprobar que la has leído bien.">Each structure with its theory, the plans of both sides, and a question to check you read it right.</p>
+                        <span class="half-count">25 <span data-en="structures" data-es="estructuras">structures</span></span>
+                    </div>
+                    <div class="half">
+                        <h4 data-en="Practise" data-es="Practicar">Practise</h4>
+                        <p data-en="Name the structure, say where the game is going, then play the plan out with a move budget." data-es="Nombra la estructura, di hacia dónde va la partida y después ejecuta el plan con un presupuesto de jugadas.">Name the structure, say where the game is going, then play the plan out with a move budget.</p>
+                        <span class="half-count">1000 <span data-en="positions" data-es="posiciones">positions</span></span>
+                    </div>
+                </div>
+
+                <p class="phone-caption" style="margin-top: var(--space-6);" data-en="Written and playable. The app still shows it as coming soon, and that is the truth: it opens once the first exercises have been through a round of testing." data-es="Escrito y jugable. La app todavía lo marca como próximamente, y eso es lo cierto: se abre cuando los primeros ejercicios pasen una ronda de pruebas.">Written and playable. The app still shows it as coming soon, and that is the truth: it opens once the first exercises have been through a round of testing.</p>
             </div>
 
-            <!-- 2. Jugar vs Stockfish -->
-            <div class="card reveal">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-                        <path d="M12 2C10.5 2 9 3 9 5c0 1 .5 1.5 1 2H8L6 9h2l-1 3h2l-1 5h2v3h2v-3h2l-1-5h2l-1-3h2l-2-2h-2c.5-.5 1-1 1-2 0-2-1.5-3-3-3z"/>
-                    </svg>
+            <div class="act-shots">
+                <div>
+                    <div class="phone phone-crop"><img src="images/screens/middlegame-lab.webp" alt="Middlegame Lab with two cards: Learn the structures, twenty-five of them, and Practise with a thousand positions" width="840" height="1708" loading="lazy"></div>
+                    <p class="phone-caption" data-en="Learn it, then play it" data-es="Apréndela y después juégala">Learn it, then play it</p>
                 </div>
-                <h3 class="card-title" data-en="Play vs Stockfish" data-es="Jugar vs Stockfish">Play vs Stockfish</h3>
-                <p class="card-text" data-en="Local Stockfish 18 engine with adjustable ELO from 1320 to 3190. No internet needed." data-es="Motor Stockfish 18 local con ELO ajustable de 1320 a 3190. Sin internet necesario.">Local Stockfish 18 engine with adjustable ELO from 1320 to 3190. No internet needed.</p>
-            </div>
-
-            <!-- 3. Repasar Partidas -->
-            <div class="card reveal">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                        <line x1="16" y1="13" x2="8" y2="13"/>
-                        <line x1="16" y1="17" x2="8" y2="17"/>
-                    </svg>
+                <div>
+                    <div class="phone"><img src="images/screens/middlegame-structures.webp" alt="A grid of pawn structures: the Benko, the asymmetric Benoni, the Carlsbad, the Caro-Kann formation and the French chain" width="840" height="1708" loading="lazy"></div>
+                    <p class="phone-caption" data-en="Benko, Benoni, Carlsbad, French chain" data-es="Benko, Benoni, Carlsbad, cadena francesa">Benko, Benoni, Carlsbad, French chain</p>
                 </div>
-                <h3 class="card-title" data-en="Review Games" data-es="Repasar Partidas">Review Games</h3>
-                <p class="card-text" data-en="Import PGN from clipboard, file, or share. AI analyzes every move in detail." data-es="Importa PGN desde portapapeles, archivo o compartir. La IA analiza cada jugada con detalle.">Import PGN from clipboard, file, or share. AI analyzes every move in detail.</p>
-            </div>
-
-            <!-- 4. Puzzles -->
-            <div class="card reveal">
-                <div class="card-icon gold">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-                        <path d="M20 7h-3V4a1 1 0 00-1-1h-2a1 1 0 00-1 1v1.07A4 4 0 0012 5a4 4 0 00-1 .07V4a1 1 0 00-1-1H8a1 1 0 00-1 1v3H4a1 1 0 00-1 1v2a1 1 0 001 1h1.07A4 4 0 005 12a4 4 0 00.07 1H4a1 1 0 00-1 1v2a1 1 0 001 1h3v3a1 1 0 001 1h2a1 1 0 001-1v-1.07A4 4 0 0012 19a4 4 0 001-.07V20a1 1 0 001 1h2a1 1 0 001-1v-3h3a1 1 0 001-1v-2a1 1 0 00-1-1h-1.07A4 4 0 0019 12a4 4 0 00-.07-1H20a1 1 0 001-1V8a1 1 0 00-1-1z"/>
-                    </svg>
-                </div>
-                <h3 class="card-title" data-en="Puzzles" data-es="Puzzles">Puzzles</h3>
-                <p class="card-text" data-en="Tactical training with Lichess puzzles. Progressive rating and Streak mode to challenge yourself." data-es="Entrenamiento tactico con puzzles de Lichess. Rating progresivo y modo Streak para desafiarte.">Tactical training with Lichess puzzles. Progressive rating and Streak mode to challenge yourself.</p>
-            </div>
-
-            <!-- 5. Jugar Online -->
-            <div class="card reveal">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="2" y1="12" x2="22" y2="12"/>
-                        <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-                    </svg>
-                </div>
-                <h3 class="card-title" data-en="Play Online" data-es="Jugar Online">Play Online</h3>
-                <p class="card-text" data-en="Lichess integration for online games. Bullet, Blitz, Rapid and Classical." data-es="Integracion con Lichess para partidas online. Bullet, Blitz, Rapid y Classical.">Lichess integration for online games. Bullet, Blitz, Rapid and Classical.</p>
-            </div>
-
-            <!-- 6. Privacidad Total -->
-            <div class="card reveal">
-                <div class="card-icon gold">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                </div>
-                <h3 class="card-title" data-en="Total Privacy" data-es="Privacidad Total">Total Privacy</h3>
-                <p class="card-text" data-en="API keys encrypted with AES-256. Local engine. No mandatory login. Your data is yours." data-es="API keys cifradas con AES-256. Motor local. Sin login obligatorio. Tus datos son tuyos.">API keys encrypted with AES-256. Local engine. No mandatory login. Your data is yours.</p>
             </div>
         </div>
     </div>
 </section>
 
 
-<!-- ========== HOW IT WORKS ========== -->
-<section class="section" id="how-it-works">
+<!-- ========== ACT III — THE ENDGAME ========== -->
+<section class="act act-ice" id="endgames">
     <div class="container">
-        <div class="section-header reveal">
-            <div class="section-label" data-en="Your improvement loop" data-es="Tu ciclo de mejora">Your improvement loop</div>
-            <h2 class="section-title" data-en="Play. Understand. Try again." data-es="Juega. Entiende. Vuelve a intentarlo.">Play. Understand. Try again.</h2>
-        </div>
+        <div class="act-inner">
+            <div>
+                <p class="act-num"><span data-en="III — The endgame" data-es="III — El final">III — The endgame</span></p>
+                <h2 data-en="The hundred endgames you have to know" data-es="Los cien finales que hay que saber">The hundred endgames you have to know</h2>
+                <p class="lede" data-en="Position by position: the goal, the technique in four lines, and then you play it against an engine at full strength that will not slip. Some you have to win, some you only have to hold. Guided mode warns you the moment a move throws the result away." data-es="Posición a posición: el objetivo, la técnica en cuatro líneas y después la juegas contra un motor a plena fuerza que no se despista. Unos hay que ganarlos y otros solo aguantarlos. El modo guiado te avisa en cuanto una jugada tira el resultado.">
+                    Position by position: the goal, the technique in four lines, and then you play it against an engine at full strength that will not slip. Some you have to win, some you only have to hold. Guided mode warns you the moment a move throws the result away.
+                </p>
 
-        <div class="steps reveal" style="max-width: 900px; margin: 0 auto;">
-            <div class="step completed">
-                <div class="step-connector"></div>
-                <div class="step-number">1</div>
-                <h3 class="step-title" data-en="Play" data-es="Juega">Play</h3>
-                <p class="step-text" data-en="Choose your rival: local Stockfish or online opponent on Lichess." data-es="Elige tu rival: Stockfish local u oponente online en Lichess.">Choose your rival: local Stockfish or online opponent on Lichess.</p>
+                <div class="act-art">
+                    <img src="images/app/lab_endgames.webp" alt="" width="1200" height="480" loading="lazy">
+                </div>
+
+                <div class="act-halves">
+                    <div class="half">
+                        <h4 data-en="Learn the technique" data-es="Aprende la técnica">Learn the technique</h4>
+                        <p data-en="King and pawns, rooks, queens, bishops and knights, each family in order of difficulty." data-es="Rey y peones, torres, damas, alfiles y caballos; cada familia en orden de dificultad.">King and pawns, rooks, queens, bishops and knights, each family in order of difficulty.</p>
+                        <span class="half-count">100 <span data-en="endgames" data-es="finales">endgames</span></span>
+                    </div>
+                    <div class="half">
+                        <h4 data-en="Practise" data-es="Practicar">Practise</h4>
+                        <p data-en="A fresh position every time, drawn from real games. Win some, hold others." data-es="Una posición nueva cada vez, sacada de partidas reales. Unas se ganan, otras se aguantan.">A fresh position every time, drawn from real games. Win some, hold others.</p>
+                        <span class="half-count">45&thinsp;000+ <span data-en="drills" data-es="ejercicios">drills</span></span>
+                    </div>
+                </div>
             </div>
 
-            <div class="step active">
-                <div class="step-connector"></div>
-                <div class="step-number">2</div>
-                <h3 class="step-title" data-en="Analyze" data-es="Analiza">Analyze</h3>
-                <p class="step-text" data-en="The AI coach explains every move with educational principles." data-es="El coach IA explica cada movimiento con principios educativos.">The AI coach explains every move with educational principles.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3 class="step-title" data-en="Improve" data-es="Mejora">Improve</h3>
-                <p class="step-text" data-en="Train tactics, review mistakes, and raise your rating." data-es="Entrena tacticas, repasa errores y sube tu rating.">Train tactics, review mistakes, and raise your rating.</p>
+            <div class="act-shots">
+                <div>
+                    <div class="phone"><img src="images/screens/endgame-families.webp" alt="The hundred endgames grouped into families: king and pawns, rook, queen, bishop and knight endgames, each with a progress bar" width="840" height="1708" loading="lazy"></div>
+                    <p class="phone-caption" data-en="Five families, twenty-five solved" data-es="Cinco familias, veinticinco resueltos">Five families, twenty-five solved</p>
+                </div>
+                <div>
+                    <div class="phone"><img src="images/screens/endgame-technique.webp" alt="The Inside the square endgame: the goal, a rigour selector between guided and free, and the technique explained in four numbered steps" width="840" height="1708" loading="lazy"></div>
+                    <p class="phone-caption" data-en="The goal, then the technique in four steps" data-es="El objetivo y después la técnica en cuatro pasos">The goal, then the technique in four steps</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 
-<!-- ========== INTERACTIVE DEMO ========== -->
-<section class="section gradient-section" id="demo">
+<!-- ========== COURSES ========== -->
+<section class="band band-paper" id="courses">
     <div class="container">
-        <div class="section-header reveal">
-            <div class="section-label" data-en="Make a move" data-es="Haz una jugada">Make a move</div>
-            <h2 class="section-title" data-en="Chess starts on the board" data-es="El ajedrez empieza en el tablero">Chess starts on the board</h2>
-            <p class="section-subtitle" data-en="Move the white pieces. Black will answer automatically." data-es="Mueve las piezas blancas. Las negras responderán automáticamente.">Move the white pieces. Black will answer automatically.</p>
-        </div>
+        <div class="gap-grid">
+            <div>
+                <span class="eyebrow" data-en="Courses" data-es="Cursos">Courses</span>
+                <h2 data-en="If you'd rather be told where to start" data-es="Si prefieres que te digan por dónde empezar">If you'd rather be told where to start</h2>
+                <p class="lede" data-en="A ladder of guided courses, 164 lessons so far, each one a mix of theory, puzzles, an opening to learn and a game against a bot you have to win to move on. The first level teaches the rules from scratch and is free." data-es="Una escalera de cursos guiados, 164 lecciones por ahora, cada una con su teoría, sus puzzles, una apertura que aprender y una partida contra un bot que tienes que ganar para seguir. El primer nivel enseña las reglas desde cero y es gratis.">
+                    A ladder of guided courses, 164 lessons so far, each one a mix of theory, puzzles, an opening to learn and a game against a bot you have to win to move on. The first level teaches the rules from scratch and is free.
+                </p>
 
-        <div class="demo-wrapper reveal">
-            <div class="demo-board-area">
-                <div class="demo-board-container">
-                    <chess-board id="demo-board" position="start" draggable-pieces></chess-board>
-                </div>
-                <div class="demo-controls">
-                    <p id="demo-status" class="demo-status" data-en="Your turn - Move white" data-es="Tu turno - Mueve las blancas">Your turn - Move white</p>
-                    <button id="demo-reset" class="btn btn-outline btn-sm" data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;16&quot; height=&quot;16&quot;><polyline points=&quot;1 4 1 10 7 10&quot;/><path d=&quot;M3.51 15a9 9 0 102.13-9.36L1 10&quot;/></svg> Reset" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;16&quot; height=&quot;16&quot;><polyline points=&quot;1 4 1 10 7 10&quot;/><path d=&quot;M3.51 15a9 9 0 102.13-9.36L1 10&quot;/></svg> Reiniciar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
-                        Reset
-                    </button>
+                <div class="ladder">
+                    <article class="rung" data-state="free">
+                        <span class="rung-level">Level 01</span>
+                        <h4 data-en="First Steps" data-es="Primeros pasos">First Steps</h4>
+                        <p data-en="How the pieces move, checkmate, what a plan is." data-es="Cómo se mueven las piezas, el mate, qué es un plan.">How the pieces move, checkmate, what a plan is.</p>
+                        <span class="rung-elo" data-en="29 lessons, free" data-es="29 lecciones, gratis">29 lessons, free</span>
+                    </article>
+                    <article class="rung">
+                        <span class="rung-level">Level 02</span>
+                        <h4 data-en="Beginner" data-es="Principiante">Beginner</h4>
+                        <p data-en="Tactics and the first openings worth knowing." data-es="Táctica y las primeras aperturas que merece la pena saber.">Tactics and the first openings worth knowing.</p>
+                        <span class="rung-elo" data-en="44 lessons, 0&ndash;1000" data-es="44 lecciones, 0&ndash;1000">44 lessons, 0&ndash;1000</span>
+                    </article>
+                    <article class="rung">
+                        <span class="rung-level">Level 03</span>
+                        <h4 data-en="Intermediate" data-es="Intermedio">Intermediate</h4>
+                        <p data-en="Strategy, structures and the endgames that decide games." data-es="Estrategia, estructuras y los finales que deciden partidas.">Strategy, structures and the endgames that decide games.</p>
+                        <span class="rung-elo" data-en="91 lessons, 1000&ndash;1500" data-es="91 lecciones, 1000&ndash;1500">91 lessons, 1000&ndash;1500</span>
+                    </article>
+                    <article class="rung" data-state="soon">
+                        <span class="rung-level">Level 04</span>
+                        <h4 data-en="Advanced" data-es="Avanzado">Advanced</h4>
+                        <p data-en="Calculation and long plans." data-es="Cálculo y planes largos.">Calculation and long plans.</p>
+                        <span class="rung-elo" data-en="1500&ndash;2000, coming soon" data-es="1500&ndash;2000, próximamente">1500&ndash;2000, coming soon</span>
+                    </article>
                 </div>
             </div>
 
-            <div class="demo-info">
-                <h3 data-en="How CheesCoach works" data-es="Asi funciona CheesCoach">How CheesCoach works</h3>
-                <p data-en="This is an example of the board you'll find in the app. In CheesCoach, every move is analyzed by Stockfish and explained with artificial intelligence." data-es="Este es un ejemplo del tablero que encontraras en la app. En CheesCoach, cada movimiento se analiza con Stockfish y se explica con inteligencia artificial.">This is an example of the board you'll find in the app. In CheesCoach, every move is analyzed by Stockfish and explained with artificial intelligence.</p>
-
-                <ul class="demo-checklist">
-                    <li data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Only legal moves" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Solo movimientos legales">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
-                        Only legal moves
-                    </li>
-                    <li data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Automatic queen promotion" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Promocion automatica a dama">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
-                        Automatic queen promotion
-                    </li>
-                    <li data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Checkmate and draw detection" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> Deteccion de jaque mate y tablas">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
-                        Checkmate and draw detection
-                    </li>
-                    <li data-en="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> In the app: AI analysis of every move" data-es="<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;18&quot; height=&quot;18&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg> En la app: analisis IA de cada jugada">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
-                        In the app: AI analysis of every move
-                    </li>
-                </ul>
+            <div>
+                <div class="phone" style="max-width: 16rem; margin: 0 auto;"><img src="images/screens/courses.webp" alt="The courses screen: a winding path with First Steps, Beginner and Intermediate completed, and Advanced still locked" width="840" height="1708" loading="lazy"></div>
+                <p class="phone-caption" style="text-align:center" data-en="One path, one lesson at a time" data-es="Un camino, una lección cada vez">One path, one lesson at a time</p>
             </div>
         </div>
     </div>
 </section>
 
 
-<!-- ========== SCREENSHOTS ========== -->
-<section class="section" id="screenshots">
+<!-- ========== PLAY ========== -->
+<section class="band" id="play">
     <div class="container">
-        <div class="section-header reveal">
-            <div class="section-label" data-en="Inside CheesCoach" data-es="Dentro de CheesCoach">Inside CheesCoach</div>
-            <h2 class="section-title" data-en="Every tool stays close to the board" data-es="Todas las herramientas, cerca del tablero">Every tool stays close to the board</h2>
+        <div class="section-head">
+            <span class="eyebrow eyebrow-ice" data-en="Play" data-es="Jugar">Play</span>
+            <h2 data-en="Somebody to play, whatever mood you're in" data-es="Alguien contra quien jugar, estés como estés">Somebody to play, whatever mood you're in</h2>
+            <p class="lede" data-en="Twenty rivals with faces and ratings, from a beginner who hangs pieces to a grandmaster who doesn't. Real people online. Puzzles when you have three minutes. A board to analyse anything you like." data-es="Veinte rivales con cara y nivel, desde un principiante que cuelga piezas hasta un gran maestro que no. Gente de verdad en línea. Puzzles cuando tienes tres minutos. Y un tablero para analizar lo que quieras.">
+                Twenty rivals with faces and ratings, from a beginner who hangs pieces to a grandmaster who doesn't. Real people online. Puzzles when you have three minutes. A board to analyse anything you like.
+            </p>
         </div>
 
-        <div class="screenshots-carousel reveal">
-            <div class="screenshots-track" id="screenshots-track">
-                <!-- 1. Pantalla principal -->
-                <div class="screenshot-card">
-                    <img src="images/hero-sreenshoot.png" alt="Main Screen - Dashboard and quick access" class="screenshot-img" loading="lazy">
-                    <span class="screenshot-label" data-en="Main Screen" data-es="Pantalla principal">Main Screen</span>
-                    <span class="screenshot-sublabel" data-en="Dashboard and quick access" data-es="Dashboard y acceso rapido">Dashboard and quick access</span>
-                </div>
+        <div class="modes">
+            <article class="mode">
+                <img src="images/app/home_play_bots.webp" alt="" width="1200" height="480" loading="lazy">
+                <h4 data-en="Twenty rivals" data-es="Veinte rivales">Twenty rivals</h4>
+                <p data-en="Five levels, four opponents each. They blunder like the rating on their card." data-es="Cinco niveles, cuatro rivales cada uno. Fallan como dice el nivel de su ficha.">Five levels, four opponents each. They blunder like the rating on their card.</p>
+            </article>
+            <article class="mode">
+                <img src="images/app/home_play_online.webp" alt="" width="1200" height="480" loading="lazy">
+                <h4>HU Chess</h4>
+                <p data-en="Chess and Go online, with a clock, a rating and a monthly ranking." data-es="Ajedrez y Go en línea, con reloj, rating y clasificación mensual.">Chess and Go online, with a clock, a rating and a monthly ranking.</p>
+            </article>
+            <article class="mode">
+                <img src="images/app/home_tile_puzzles.webp" alt="" width="1200" height="480" loading="lazy">
+                <h4 data-en="Puzzles" data-es="Puzzles">Puzzles</h4>
+                <p data-en="A daily one, by theme, a streak to keep alive and a three-minute storm." data-es="Uno diario, por temas, una racha que mantener y una tormenta de tres minutos.">A daily one, by theme, a streak to keep alive and a three-minute storm.</p>
+            </article>
+            <article class="mode">
+                <img src="images/app/home_tile_analysis.webp" alt="" width="1200" height="480" loading="lazy">
+                <h4 data-en="Analysis board" data-es="Tablero de análisis">Analysis board</h4>
+                <p data-en="Set up any position, get the engine lines, ask the coach what it means." data-es="Monta cualquier posición, mira las líneas del motor y pregunta al coach qué significan.">Set up any position, get the engine lines, ask the coach what it means.</p>
+            </article>
+        </div>
 
-                <!-- 2. Modo Jugar -->
-                <div class="screenshot-card">
-                    <img src="images/play-screenshot.png" alt="Play Mode - Game vs Stockfish" class="screenshot-img" loading="lazy">
-                    <span class="screenshot-label" data-en="Play Mode" data-es="Modo Jugar">Play Mode</span>
-                    <span class="screenshot-sublabel" data-en="Game vs Stockfish" data-es="Partida vs Stockfish">Game vs Stockfish</span>
-                </div>
-
-                <!-- 3. Analisis de partida -->
-                <div class="screenshot-card">
-                    <img src="images/review-screenshot.png" alt="AI Analysis - Coach + evaluation" class="screenshot-img" loading="lazy">
-                    <span class="screenshot-label" data-en="AI Analysis" data-es="Analisis IA">AI Analysis</span>
-                    <span class="screenshot-sublabel" data-en="Coach + evaluation" data-es="Coach + evaluacion">Coach + evaluation</span>
-                </div>
-
-                <!-- 4. Puzzles -->
-                <div class="screenshot-card">
-                    <img src="images/puzzle-screenshot.png" alt="Puzzles - Tactical training" class="screenshot-img" loading="lazy">
-                    <span class="screenshot-label" data-en="Puzzles" data-es="Puzzles">Puzzles</span>
-                    <span class="screenshot-sublabel" data-en="Tactical training" data-es="Entrenamiento tactico">Tactical training</span>
-                </div>
-            </div>
-
-            <div class="screenshots-nav">
-                <button class="btn btn-icon btn-outline" id="scroll-left" aria-label="Anterior">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <button class="btn btn-icon btn-outline" id="scroll-right" aria-label="Siguiente">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="9 6 15 12 9 18"/></svg>
-                </button>
-            </div>
+        <div class="rail" style="margin-top: clamp(2rem, 4vw, 3rem);">
+            <figure>
+                <div class="phone"><img src="images/screens/play-setup.webp" alt="New game setup with the rival, the colour to play and the coach mode switched on" width="840" height="1708" loading="lazy"></div>
+                <figcaption data-en="Turn the coach on before you start" data-es="Enciende el coach antes de empezar">Turn the coach on before you start</figcaption>
+            </figure>
+            <figure>
+                <div class="phone"><img src="images/screens/opponents.webp" alt="Choose your opponent: beginner and intermediate rivals with portraits and win-loss records" width="840" height="1708" loading="lazy"></div>
+                <figcaption data-en="Pick a rival, keep the score" data-es="Elige rival y lleva el marcador">Pick a rival, keep the score</figcaption>
+            </figure>
+            <figure>
+                <div class="phone"><img src="images/screens/puzzles.webp" alt="The exercises screen with the daily puzzle, puzzles by theme, streak and storm modes" width="840" height="1708" loading="lazy"></div>
+                <figcaption data-en="Daily puzzle, themes, streak, storm" data-es="Puzzle diario, temas, racha, tormenta">Daily puzzle, themes, streak, storm</figcaption>
+            </figure>
+            <figure>
+                <div class="phone"><img src="images/screens/puzzle-streak.webp" alt="Puzzle streak in progress: find the best move without missing one" width="840" height="1708" loading="lazy"></div>
+                <figcaption data-en="Streak: one miss and it's over" data-es="Racha: un fallo y se acabó">Streak: one miss and it's over</figcaption>
+            </figure>
+            <figure>
+                <div class="phone"><img src="images/screens/royalchess.webp" alt="RoyalChess daily challenge: rebuild the target position in as few moves as possible" width="840" height="1708" loading="lazy"></div>
+                <figcaption data-en="RoyalChess: the daily challenge" data-es="RoyalChess: el reto diario">RoyalChess: the daily challenge</figcaption>
+            </figure>
         </div>
     </div>
 </section>
 
 
-<!-- ========== AI PROVIDERS ========== -->
-<section class="section gradient-section" id="ai-providers">
+<!-- ========== THE AI LAYER ========== -->
+<section class="band gradient-section" id="ai">
     <div class="container">
-        <div class="section-header reveal">
-            <div class="section-label" data-en="Artificial Intelligence" data-es="Inteligencia Artificial">Artificial Intelligence</div>
-            <h2 class="section-title" data-en="Compatible with 5 AI providers" data-es="Compatible con 5 proveedores de IA">Compatible with 5 AI providers</h2>
-            <p class="section-subtitle" data-en="Choose your favorite provider. Bring your own API key." data-es="Elige tu proveedor favorito. Trae tu propia API key.">Choose your favorite provider. Bring your own API key.</p>
-        </div>
+        <div class="ai-grid">
+            <div>
+                <span class="eyebrow eyebrow-gold" data-en="How the coach is powered" data-es="Con qué funciona el coach">How the coach is powered</span>
+                <h2 data-en="Bring your own key, or don't think about it" data-es="Trae tu clave, o no pienses en ello">Bring your own key, or don't think about it</h2>
+                <p class="lede" data-en="The engine runs on your phone. The explanations come from a language model, and you choose how you pay for that: credits inside the app, or your own API key with one of five providers, billed by them at cost." data-es="El motor corre en tu móvil. Las explicaciones vienen de un modelo de lenguaje, y tú eliges cómo pagarlas: créditos dentro de la app, o tu propia clave con uno de cinco proveedores, que te cobran ellos a precio de coste.">
+                    The engine runs on your phone. The explanations come from a language model, and you choose how you pay for that: credits inside the app, or your own API key with one of five providers, billed by them at cost.
+                </p>
 
-        <div class="grid grid-4 reveal-stagger" style="max-width: 960px; margin: 0 auto;">
-            <!-- Gemini -->
-            <a href="gemini-setup.html" class="card provider-card-link reveal" data-provider="gemini">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                        <path d="M12 2C12 2 14.5 7 17.5 9.5C20 11.5 22 12 22 12C22 12 20 12.5 17.5 14.5C14.5 17 12 22 12 22C12 22 9.5 17 6.5 14.5C4 12.5 2 12 2 12C2 12 4 11.5 6.5 9.5C9.5 7 12 2 12 2Z" fill="currentColor"/>
-                    </svg>
+                <div class="access">
+                    <div class="access-row">
+                        <span class="access-key" data-en="Credits" data-es="Créditos">Credits</span>
+                        <p data-en="Buy a pack and forget about it. Free calls to start with, so you can see what the coach sounds like before paying anything." data-es="Compras un paquete y te olvidas. Empiezas con llamadas gratis, para oír cómo habla el coach antes de pagar nada.">Buy a pack and forget about it. Free calls to start with, so you can see what the coach sounds like before paying anything.</p>
+                    </div>
+                    <div class="access-row">
+                        <span class="access-key" data-en="Your key" data-es="Tu clave">Your key</span>
+                        <p data-en="Paste an API key and the app talks to that provider directly. Typical cost of a full game review is a fraction of a cent." data-es="Pegas una clave y la app habla directamente con ese proveedor. Repasar una partida entera cuesta una fracción de céntimo.">Paste an API key and the app talks to that provider directly. Typical cost of a full game review is a fraction of a cent.</p>
+                    </div>
+                    <div class="access-row">
+                        <span class="access-key" data-en="Privacy" data-es="Privacidad">Privacy</span>
+                        <p data-en="Keys are encrypted on the device and never leave it except to reach the provider you chose. No ads, no trackers, no selling anybody's games." data-es="Las claves se cifran en el dispositivo y no salen de él salvo para llegar al proveedor que elegiste. Sin anuncios, sin rastreadores y sin vender las partidas de nadie.">Keys are encrypted on the device and never leave it except to reach the provider you chose. No ads, no trackers, no selling anybody's games.</p>
+                    </div>
                 </div>
-                <h3 class="card-title">Gemini</h3>
-                <p class="card-text text-xs">Gemini 3.5 Flash Lite</p>
-                <span class="provider-configure" data-en="Configure <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Configurar <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
-                    Configure
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-            </a>
 
-            <!-- OpenAI -->
-            <a href="openai-setup.html" class="card provider-card-link reveal" data-provider="openai">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                        <path d="M22.2 8.7C21.8 7.2 20.8 5.9 19.5 5.1C17.6 3.8 15.1 3.6 13 4.5C11.9 3.4 10.3 2.8 8.7 2.9C7 3 5.5 3.8 4.5 5.1C2.7 6.7 2.1 9.2 2.8 11.4C1.7 12.5 1.1 14.1 1.2 15.7C1.4 17.4 2.2 18.9 3.5 19.8C5.4 21.1 7.9 21.3 10 20.4C11.1 21.5 12.7 22.1 14.3 22C16 21.9 17.5 21.1 18.5 19.8C20.3 18.2 20.9 15.7 20.2 13.5C21.3 12.4 21.9 10.8 21.8 9.2L22.2 8.7Z" fill="currentColor"/>
-                    </svg>
-                </div>
-                <h3 class="card-title">OpenAI</h3>
-                <p class="card-text text-xs">GPT-5.6 Luna</p>
-                <span class="provider-configure" data-en="Configure <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Configurar <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
-                    Configure
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-            </a>
+                <p style="margin-top: var(--space-6);">
+                    <a href="api-setup.html" class="btn btn-outline" data-en="How to set up a key" data-es="Cómo configurar una clave">How to set up a key</a>
+                </p>
+            </div>
 
-            <!-- Claude -->
-            <a href="claude-setup.html" class="card provider-card-link reveal" data-provider="claude">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" fill="currentColor" opacity="0.9"/>
-                        <path d="M12 6L7 9V15L12 18L17 15V9L12 6Z" fill="var(--bg-primary)"/>
-                    </svg>
+            <div>
+                <div class="providers">
+                    <a class="provider" href="openai-setup.html">
+                        <span class="provider-mark" style="background: var(--openai-accent)"></span>
+                        <strong>OpenAI</strong>
+                        <span data-en="Recommended" data-es="Recomendado">Recommended</span>
+                    </a>
+                    <a class="provider" href="deepseek-setup.html">
+                        <span class="provider-mark" style="background: var(--deepseek-accent)"></span>
+                        <strong>DeepSeek</strong>
+                        <span data-en="Cheapest" data-es="El más barato">Cheapest</span>
+                    </a>
+                    <a class="provider" href="gemini-setup.html">
+                        <span class="provider-mark" style="background: var(--gemini-accent)"></span>
+                        <strong>Gemini</strong>
+                        <span data-en="Google" data-es="Google">Google</span>
+                    </a>
+                    <a class="provider" href="claude-setup.html">
+                        <span class="provider-mark" style="background: var(--claude-accent)"></span>
+                        <strong>Claude</strong>
+                        <span data-en="Anthropic" data-es="Anthropic">Anthropic</span>
+                    </a>
+                    <a class="provider" href="qwen-setup.html">
+                        <span class="provider-mark" style="background: var(--qwen-accent)"></span>
+                        <strong>Qwen</strong>
+                        <span data-en="Alibaba" data-es="Alibaba">Alibaba</span>
+                    </a>
                 </div>
-                <h3 class="card-title">Claude</h3>
-                <p class="card-text text-xs">Claude Haiku 4.5</p>
-                <span class="provider-configure" data-en="Configure <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Configurar <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
-                    Configure
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-            </a>
 
-            <!-- DeepSeek -->
-            <a href="deepseek-setup.html" class="card provider-card-link reveal" data-provider="deepseek">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
-                        <path d="M12 7V12L15.5 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                    </svg>
+                <div class="review-note" style="margin-top: var(--space-6);">
+                    <h4 data-en="The engine is yours, and it's open" data-es="El motor es tuyo, y es abierto">The engine is yours, and it's open</h4>
+                    <p data-en="Stockfish and the Maia networks run on the device, under the GPL. The sources and the exact builds are published." data-es="Stockfish y las redes Maia corren en el dispositivo, bajo la GPL. Las fuentes y los binarios exactos están publicados.">Stockfish and the Maia networks run on the device, under the GPL. The sources and the exact builds are published.</p>
+                    <p style="margin-top: var(--space-4);"><a href="open-source.html" data-en="Read the open source notice" data-es="Ver el aviso de código abierto">Read the open source notice</a></p>
                 </div>
-                <h3 class="card-title">DeepSeek</h3>
-                <p class="card-text text-xs">DeepSeek Chat</p>
-                <span class="provider-configure" data-en="Configure <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Configurar <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
-                    Configure
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-            </a>
-
-            <!-- Qwen (provider color inline: css/ is shared and synced separately) -->
-            <a href="qwen-setup.html" class="card provider-card-link reveal" data-provider="qwen">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                        <path d="M12 2l8.5 5v10L12 22l-8.5-5V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        <path d="M12 7l4.5 2.5v5L12 17l-4.5-2.5v-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h3 class="card-title">Qwen</h3>
-                <p class="card-text text-xs">Qwen 3.7 Flash</p>
-                <span class="provider-configure" data-en="Configure <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>" data-es="Configurar <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; width=&quot;14&quot; height=&quot;14&quot;><line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/><polyline points=&quot;12 5 19 12 12 19&quot;/></svg>">
-                    Configure
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-            </a>
+            </div>
         </div>
     </div>
 </section>
 
 
 <!-- ========== DOWNLOAD ========== -->
-<section class="section" id="download">
+<section class="band download" id="download">
     <div class="container">
-        <div class="section-header reveal">
-            <div class="section-label" data-en="Your next game starts here" data-es="Tu próxima partida empieza aquí">Your next game starts here</div>
-            <h2 class="section-title" data-en="Take your coach with you" data-es="Lleva tu coach contigo">Take your coach with you</h2>
-            <p class="section-subtitle" data-en="Start free on iPhone, iPad or Android. No ads and no subscription required." data-es="Empieza gratis en iPhone, iPad o Android. Sin anuncios y sin suscripción obligatoria.">Start free on iPhone, iPad or Android. No ads and no subscription required.</p>
-        </div>
+      <div class="download-grid">
+        <div class="download-copy">
+        <span class="eyebrow" data-en="Your next game" data-es="Tu próxima partida">Your next game</span>
+        <h2 data-en="Take the coach with you" data-es="Llévate el coach contigo">Take the coach with you</h2>
+        <p class="lede" data-en="Start free on iPhone, iPad or Android. No ads, and no subscription needed to play, analyse or take the first course." data-es="Empieza gratis en iPhone, iPad o Android. Sin anuncios, y sin suscripción para jugar, analizar o hacer el primer curso.">
+            Start free on iPhone, iPad or Android. No ads, and no subscription needed to play, analyse or take the first course.
+        </p>
 
-        <div class="download-actions reveal">
-            <a href="https://play.google.com/store/apps/details?id=com.app.cheescoach" class="store-button" aria-label="Get it on Google Play" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.03 12l2.668-2.492zM5.864 2.658L16.8 9.99l-2.302 2.302-8.634-8.634z"/></svg>
+        <div class="stores">
+            <a href="https://play.google.com/store/apps/details?id=com.app.cheescoach" class="store-button" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.03 12l2.668-2.492zM5.864 2.658L16.8 9.99l-2.302 2.302-8.634-8.634z"/></svg>
                 <span><small data-en="Get it on" data-es="Disponible en">Get it on</small>Google Play</span>
             </a>
-            <a href="https://apps.apple.com/app/id6790447113" class="store-button" aria-label="Download on the App Store" target="_blank" rel="noopener noreferrer">
+            <a href="https://apps.apple.com/app/id6790447113" class="store-button" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M17.05 12.54c-.02-2.16 1.76-3.21 1.84-3.26a3.96 3.96 0 00-3.12-1.69c-1.31-.14-2.59.79-3.26.79-.68 0-1.72-.77-2.83-.75a4.15 4.15 0 00-3.5 2.13c-1.51 2.61-.38 6.45 1.06 8.56.72 1.03 1.56 2.18 2.67 2.14 1.08-.04 1.49-.69 2.8-.69 1.3 0 1.68.69 2.81.66 1.17-.02 1.9-1.04 2.59-2.08a8.5 8.5 0 001.18-2.4 3.75 3.75 0 01-2.24-3.41zM14.91 6.2a3.8 3.8 0 00.87-2.73 3.88 3.88 0 00-2.52 1.3 3.64 3.64 0 00-.9 2.63 3.2 3.2 0 002.55-1.2z"/></svg>
                 <span><small data-en="Download on the" data-es="Descárgala en el">Download on the</small>App Store</span>
             </a>
         </div>
 
-        <p class="text-center text-muted text-sm mt-6 reveal" data-en="Your progress follows you across devices when you sign in." data-es="Tu progreso te acompaña entre dispositivos cuando inicias sesión.">Your progress follows you across devices when you sign in.</p>
+        <p class="download-note" data-en="Sign in and your games, ratings and progress follow you to the other device." data-es="Inicia sesión y tus partidas, ratings y progreso te siguen al otro dispositivo.">Sign in and your games, ratings and progress follow you to the other device.</p>
+        </div>
+
+        <div class="download-shot">
+            <div class="phone"><img src="images/screens/home.webp" alt="The CheesCoach home screen on an iPhone: puzzle, streak and storm ratings, and the cards for playing, learning and the Practice Lab" width="840" height="1708" loading="lazy"></div>
+            <p class="phone-caption" data-en="The home screen, on an iPhone. Same app on Android and iPad." data-es="La portada, en un iPhone. La misma app en Android y en iPad.">The home screen, on an iPhone. Same app on Android and iPad.</p>
+        </div>
+      </div>
     </div>
 </section>
 
@@ -450,28 +595,31 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="index.html" class="navbar-logo">
-                <img src="app_icon_chesscoach.png" alt="CheesCoach" width="36" height="36">
+                <img src="images/app/icon.webp" alt="" width="36" height="36">
                 <span>CheesCoach</span>
             </a>
-            <p data-en="Chess coach with artificial intelligence. Analyze, learn and improve your game." data-es="Coach de ajedrez con inteligencia artificial. Analiza, aprende y mejora tu juego.">Chess coach with artificial intelligence. Analyze, learn and improve your game.</p>
+            <p data-en="A chess coach on your phone: Stockfish for the truth, AI for the reason." data-es="Un coach de ajedrez en el móvil: Stockfish para la verdad, IA para el motivo.">A chess coach on your phone: Stockfish for the truth, AI for the reason.</p>
         </div>
 
         <div>
-            <h4 class="footer-heading" data-en="Product" data-es="Producto">Product</h4>
+            <h4 class="footer-heading" data-en="The app" data-es="La app">The app</h4>
             <ul class="footer-links">
-                <li><a href="#features" data-en="Why CheesCoach" data-es="Por qué CheesCoach">Why CheesCoach</a></li>
-                <li><a href="#screenshots" data-en="Inside the app" data-es="Dentro de la app">Inside the app</a></li>
+                <li><a href="#coach" data-en="The coach" data-es="El coach">The coach</a></li>
+                <li><a href="#labs" data-en="Practice Lab" data-es="Laboratorio">Practice Lab</a></li>
+                <li><a href="#courses" data-en="Courses" data-es="Cursos">Courses</a></li>
+                <li><a href="#play" data-en="Play" data-es="Jugar">Play</a></li>
                 <li><a href="#download" data-en="Download" data-es="Descargar">Download</a></li>
             </ul>
         </div>
 
         <div>
-            <h4 class="footer-heading" data-en="Resources" data-es="Recursos">Resources</h4>
+            <h4 class="footer-heading" data-en="AI setup" data-es="Configurar IA">AI setup</h4>
             <ul class="footer-links">
-                <li><a href="gemini-setup.html">Gemini</a></li>
+                <li><a href="api-setup.html" data-en="Which provider" data-es="Qué proveedor">Which provider</a></li>
                 <li><a href="openai-setup.html">OpenAI</a></li>
-                <li><a href="claude-setup.html">Claude</a></li>
                 <li><a href="deepseek-setup.html">DeepSeek</a></li>
+                <li><a href="gemini-setup.html">Gemini</a></li>
+                <li><a href="claude-setup.html">Claude</a></li>
                 <li><a href="qwen-setup.html">Qwen</a></li>
             </ul>
         </div>
@@ -481,19 +629,19 @@
             <ul class="footer-links">
                 <li><a href="open-source.html" data-en="Open source" data-es="Código abierto">Open source</a></li>
                 <li><a href="privacy-policy.html" data-en="Privacy" data-es="Privacidad">Privacy</a></li>
+                <li><a href="mailto:juanfrandevs@gmail.com" data-en="Contact" data-es="Contacto">Contact</a></li>
             </ul>
         </div>
     </div>
 
     <div class="footer-bottom">
-        <p data-en="&copy; 2026 CheesCoach. Made with &#9823; and AI." data-es="&copy; 2026 CheesCoach. Hecho con &#9823; y IA.">&copy; 2026 CheesCoach. Made with &#9823; and AI.</p>
-        <p><span data-en="Developed by" data-es="Desarrollado por">Developed by</span> JuanfranDevs</p>
+        <p data-en="&copy; 2026 CheesCoach" data-es="&copy; 2026 CheesCoach">&copy; 2026 CheesCoach</p>
+        <p><span data-en="Built by" data-es="Hecho por">Built by</span> JuanfranDevs</p>
     </div>
 </footer>
 
 
 <!-- ========== SCRIPTS ========== -->
-<!-- Language toggle (must be before other scripts) -->
 <script>
 (function() {
     function applyLang(lang) {
@@ -504,23 +652,26 @@
         });
         var btnEn = document.getElementById('btn-en');
         var btnEs = document.getElementById('btn-es');
-        if (btnEn) btnEn.classList.toggle('active', lang === 'en');
-        if (btnEs) btnEs.classList.toggle('active', lang === 'es');
+        if (btnEn) {
+            btnEn.classList.toggle('active', lang === 'en');
+            btnEn.setAttribute('aria-pressed', String(lang === 'en'));
+        }
+        if (btnEs) {
+            btnEs.classList.toggle('active', lang === 'es');
+            btnEs.setAttribute('aria-pressed', String(lang === 'es'));
+        }
     }
     window.setLang = function(lang) {
-        localStorage.setItem('cheescoach-lang', lang);
+        try { localStorage.setItem('cheescoach-lang', lang); } catch (e) {}
         applyLang(lang);
     };
-    var saved = localStorage.getItem('cheescoach-lang');
+    var saved = null;
+    try { saved = localStorage.getItem('cheescoach-lang'); } catch (e) {}
     if (!saved) saved = (navigator.language || '').startsWith('es') ? 'es' : 'en';
     applyLang(saved);
 })();
 </script>
 
-<!-- Chess board web component -->
-<script type="module" src="https://unpkg.com/chessboard-element@1.2.0?module"></script>
-
-<!-- Landing page interactivity (IIFE, works from file://) -->
 <script src="js/landing.js"></script>
 
 </body>
