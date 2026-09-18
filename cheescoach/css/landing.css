@@ -241,10 +241,12 @@
 
 .annotation-board {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    /* Without explicit rows the ranks size to their content, so an empty rank
-       collapses into a thin strip and the board stops being a board. */
-    grid-template-rows: repeat(8, 1fr);
+    /* minmax(0, 1fr), not 1fr: plain `1fr` means minmax(AUTO, 1fr), so every
+       rank reserves at least the height of the piece standing on it and the
+       empty rank is left with the remainder — 5px against 49px, measured.
+       Zeroing the minimum is what makes all 64 squares actually square. */
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
     aspect-ratio: 1;
     border-radius: var(--radius-md);
     overflow: hidden;
